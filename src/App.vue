@@ -3,44 +3,33 @@
     <TopBar />
 
     <div class="viewContainer">
-      <!-- <div class="topBar">
-        <p class="title2">C-01 project</p>
-        <div class="socialsContainer">
-          <div class="logoContainer" @click="goToExternal('')">
-            <DiscordLogo />
-          </div>
-          <div class="logoContainer" @click="goToExternal('')">
-            <TwitterLogo />
-          </div>
-        </div>
-      </div> -->
-
       <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" />
+      <div class="r1"></div>
     </div>
 
     <div class="viewContainer">
       <div class="center">
-        <div class="row">
+        <div class="row r2">
           <div class="left">
-            <p class="title1">Avatar /</p>
-            <p class="date">8.088</p>
-            <p class="text">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="title1 t1">Avatar /</p>
+            <p class="date d1">8.088</p>
+            <p class="text tx1">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
           <div class="right"></div>
         </div>
-        <div class="row">
+        <div class="row r3">
           <div class="left"></div>
           <div class="right">
-            <p class="title1">Pre sale /</p>
-            <p class="date">11.113</p>
-            <p class="text">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="title1 title3 t2">Pre sale /</p>
+            <p class="date d2">11.113</p>
+            <p class="text tx2">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
         </div>
         <div class="row">
           <div class="left">
-            <p class="title1">Public sale /</p>
-            <p class="date">08.367</p>
-            <p class="text">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="title1 t3">Public sale /</p>
+            <p class="date d3">08.367</p>
+            <p class="text tx3">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
           <div class="right"></div>
         </div>
@@ -78,8 +67,7 @@
       <div class="center">
         <p class="title1 title3">Total distribution /</p>
         <div class="contentTotalDistr">
-          <Circle1 style="width: 300px; margin: auto" />
-          <!-- <img :src="require('@/assets/imgs/circle.jpg')" /> -->
+          <Circle1 class="spinner" />
           <p class="text">
             Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
             laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
@@ -102,9 +90,9 @@
       <div class="center">
         <p class="title1">FAQ /</p>
         <div class="contentFAQ">
-          <div class="inline" v-for="i in Faq" :key="i">
+          <div class="inline" v-for="(item, i) in Faq" :key="i">
             <div class="cornerLeftTop" />
-            <p class="text">{{ i }}</p>
+            <p class="text">{{ item }}</p>
             <div class="cornerRightBottom" />
           </div>
         </div>
@@ -115,7 +103,7 @@
       <div class="center">
         <p class="title1 title3">The theam /</p>
         <div class="contentTeam">
-          <PersonaCard style="personaCard" v-for="i in Team" :key="i" />
+          <PersonaCard style="personaCard" v-for="(item, i) in Team" :key="i" />
         </div>
       </div>
     </div>
@@ -130,6 +118,10 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 import Circle1 from "@/assets/imgs/circle.svg";
 import RoadMap from "@/assets/imgs/roadmap.svg";
 import TopBar from "@/components/TopBar";
@@ -140,14 +132,65 @@ export default {
   components: { Circle1, RoadMap, TopBar, PersonaCard },
   data: function () {
     return {
+      scrollMarker: false,
+      loaded: false,
       RoadMap: ["", "", "", "", ""],
       Faq: ["Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?"],
       Team: ["", "", "", ""],
     };
   },
+  mounted() {
+    this.scrollAnimation();
+  },
   methods: {
     goToExternal(url) {
       window.open(url);
+    },
+    scrollAnimation() {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r1",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t1", { x: innerWidth * 1, opacity: 0 })
+        .from(".d1", { x: innerWidth * 1, opacity: 0 })
+        .from(".tx1", { x: innerWidth * 1, opacity: 0 });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r2",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t2", { x: innerWidth * 1, opacity: 0 })
+        .from(".d2", { x: innerWidth * 1, opacity: 0 })
+        .from(".tx2", { x: innerWidth * 1, opacity: 0 });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r3",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t3", { x: innerWidth * 1, opacity: 0 })
+        .from(".d3", { x: innerWidth * 1, opacity: 0 })
+        .from(".tx3", { x: innerWidth * 1, opacity: 0 });
     },
   },
 };
@@ -178,6 +221,7 @@ body,
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .title1 {
@@ -224,6 +268,21 @@ body,
   width: 23%;
   min-width: 200px;
   margin: auto;
+  animation: moveLogo 0.3s forwards linear;
+}
+
+@keyframes moveLogo {
+  0% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.1;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
 /*********************************** Second View ***********************************/
@@ -249,18 +308,42 @@ body,
 .left {
   width: 50%;
   text-align: left;
+  //animation: moveLeft 0.3s forwards linear;
   .text {
     text-align: right;
   }
 }
 
+// @keyframes moveLeft {
+//   0% {
+//     transform: translateX(-200%);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateX(0%);
+//     opacity: 1;
+//   }
+// }
+
 .right {
   width: 50%;
   text-align: right;
+  // animation: moveRight 0.3s forwards linear;
   .text {
     text-align: left;
   }
 }
+
+// @keyframes moveRight {
+//   0% {
+//     transform: translateX(+200%);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateX(0%);
+//     opacity: 1;
+//   }
+// }
 
 .date {
   font-family: Impact, sans-serif;
@@ -358,6 +441,21 @@ body,
   margin: auto;
   margin-top: -50px;
   //border: 1px solid $white-color;
+}
+
+.spinner {
+  width: 300px;
+  margin: auto;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 .roadMap {

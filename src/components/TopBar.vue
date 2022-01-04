@@ -2,10 +2,10 @@
   <div class="topBar">
     <p class="title2">C-01 project</p>
     <div class="socialsContainer">
-      <div class="logoContainer" @click="goToExternal('')">
+      <div class="logoContainer" @click="goToExternal('https://discord.gg/c-01')">
         <DiscordLogo />
       </div>
-      <div class="logoContainer" @click="goToExternal('')">
+      <div class="logoContainer" @click="goToExternal('https://twitter.com/C_01_Project')">
         <TwitterLogo />
       </div>
     </div>
@@ -22,6 +22,11 @@ export default {
     msg: String,
   },
   components: { DiscordLogo, TwitterLogo },
+  methods: {
+    goToExternal(url) {
+      window.open(url);
+    },
+  },
 };
 </script>
 
