@@ -13,8 +13,7 @@
         </div>
       </div>
 
-      <!-- <MainLogo class="mainLogo" /> -->
-      <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" alt="Vue Logo" />
+      <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" />
     </div>
 
     <div class="viewContainer">
@@ -51,7 +50,7 @@
         <p class="title1 title3">About c-01 /</p>
         <div class="card">
           <div class="cardLeft">
-            <img :src="require('@/assets/imgs/about.jpg')" alt="Vue Logo" />
+            <img :src="require('@/assets/imgs/about.jpg')" />
           </div>
           <div class="cardRight">
             <p class="text">
@@ -75,7 +74,8 @@
       <div class="center">
         <p class="title1 title3">Total distribution /</p>
         <div class="contentTotalDistr">
-          <img :src="require('@/assets/imgs/circle.jpg')" alt="Vue Logo" />
+          <Circle1 style="width: 300px; margin: auto" />
+          <!-- <img :src="require('@/assets/imgs/circle.jpg')" /> -->
           <p class="text">
             Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
             laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
@@ -88,38 +88,60 @@
     <div class="viewContainer">
       <div class="center">
         <p class="title1 title3">Roadmap /</p>
-        <div class="contentRoadMap"></div>
+        <div class="contentRoadMap">
+          <RoadMap style="width: 100%; margin: auto" />
+          <!-- <img class="roadMap" :src="require('@/assets/imgs/roadmap.jpg')" /> -->
+        </div>
       </div>
     </div>
 
     <div class="viewContainer">
       <div class="center">
         <p class="title1">FAQ /</p>
-        <div class="contentFAQ"></div>
+        <div class="contentFAQ">
+          <div class="inline" v-for="i in Faq" :key="i">
+            <div class="cornerLeftTop" />
+            <p class="text">{{ i }}</p>
+            <div class="cornerRightBottom" />
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="viewContainer">
       <div class="center">
-        <p class="title1">The theam /</p>
-        <div class="contentTeam"></div>
+        <p class="title1 title3">The theam /</p>
+        <div class="contentTeam">
+          <div class="teamMember" v-for="i in Team" :key="i">
+            <div class="cornerLeftTop" />
+            <p class="text">{{ i }}</p>
+            <div class="cornerRightBottom" />
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="footer">
-      <img class="footerImg" :src="require('@/assets/imgs/footer_banner.jpg')" alt="Vue Logo" />
+      <img class="footerImg" :src="require('@/assets/imgs/footer_banner.jpg')" />
     </div>
   </div>
 </template>
 
 <script>
-// import MainLogo from "@/assets/C-01_Logo_1.png";
 import DiscordLogo from "@/assets/socials/discord.svg";
 import TwitterLogo from "@/assets/socials/twitter.svg";
+import Circle1 from "@/assets/imgs/circle.svg";
+import RoadMap from "@/assets/imgs/roadmap.svg";
 
 export default {
   name: "App",
-  components: { DiscordLogo, TwitterLogo },
+  components: { DiscordLogo, TwitterLogo, Circle1, RoadMap },
+  data: function () {
+    return {
+      Faq: ["Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?"],
+      Team: ["", "", "", ""],
+    };
+  },
 };
 </script>
 
@@ -149,7 +171,7 @@ body,
   justify-content: center;
   min-height: 100vh;
   //height: 100vh;
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 
 .title1 {
@@ -367,9 +389,11 @@ body,
   justify-content: center;
   margin: auto;
   margin-top: 50px;
+  //border: 1px solid $white-color;
+}
+
+.roadMap {
   width: 600px;
-  height: 300px;
-  border: 1px solid $white-color;
 }
 
 /*********************************** Seven View ***********************************/
@@ -381,23 +405,55 @@ body,
   margin: auto;
   margin-top: 50px;
   width: 600px;
-  height: 300px;
-  border: 1px solid $white-color;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+}
+
+.cornerLeftTop {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px 0 0 0;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 4px $white-color);
+  border-left: 2px solid $white-color;
+  border-top: 2px solid $white-color;
+}
+
+.cornerRightBottom {
+  width: 40px;
+  height: 40px;
+  border-radius: 0 0 8px 0;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 4px $white-color);
+  border-right: 2px solid $white-color;
+  border-bottom: 2px solid $white-color;
 }
 
 /*********************************** Eighth View ***********************************/
 
 .contentTeam {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 50px;
-  width: 600px;
+  width: 100%;
+  //border: 1px solid $white-color;
+}
+
+.teamMember {
+  margin: 10px;
+  width: 300px;
   height: 300px;
   border: 1px solid $white-color;
 }
-
 /*********************************** Footer ***********************************/
 
 .footer {
