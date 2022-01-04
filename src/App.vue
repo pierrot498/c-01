@@ -4,10 +4,10 @@
       <div class="topBar">
         <p class="title2">C-01 project</p>
         <div class="socialsContainer">
-          <div class="logoContainer">
+          <div class="logoContainer" @click="goToExternal('')">
             <DiscordLogo />
           </div>
-          <div class="logoContainer">
+          <div class="logoContainer" @click="goToExternal('')">
             <TwitterLogo />
           </div>
         </div>
@@ -66,7 +66,9 @@
     <div class="viewContainer">
       <div class="center">
         <p class="title1">NFT /</p>
-        <div class="cardNft"></div>
+        <div class="cardNft">
+          <PersonaCard style="personaCard" />
+        </div>
       </div>
     </div>
 
@@ -90,7 +92,6 @@
         <p class="title1 title3">Roadmap /</p>
         <div class="contentRoadMap">
           <RoadMap style="width: 100%; margin: auto" />
-          <!-- <img class="roadMap" :src="require('@/assets/imgs/roadmap.jpg')" /> -->
         </div>
       </div>
     </div>
@@ -112,17 +113,16 @@
       <div class="center">
         <p class="title1 title3">The theam /</p>
         <div class="contentTeam">
-          <div class="teamMember" v-for="i in Team" :key="i">
-            <div class="cornerLeftTop" />
-            <p class="text">{{ i }}</p>
-            <div class="cornerRightBottom" />
-          </div>
+          <PersonaCard style="personaCard" v-for="i in Team" :key="i" />
         </div>
       </div>
     </div>
 
     <div class="footer">
-      <img class="footerImg" :src="require('@/assets/imgs/footer_banner.jpg')" />
+      <div class="footerCut">
+        <img class="footerImg" :src="require('@/assets/imgs/footer_banner.jpg')" />
+      </div>
+      <button class="footerButton" @click="goToExternal('')">Join Discord</button>
     </div>
   </div>
 </template>
@@ -132,15 +132,22 @@ import DiscordLogo from "@/assets/socials/discord.svg";
 import TwitterLogo from "@/assets/socials/twitter.svg";
 import Circle1 from "@/assets/imgs/circle.svg";
 import RoadMap from "@/assets/imgs/roadmap.svg";
+import PersonaCard from "@/components/PersonaCard";
 
 export default {
   name: "App",
-  components: { DiscordLogo, TwitterLogo, Circle1, RoadMap },
+  components: { DiscordLogo, TwitterLogo, Circle1, RoadMap, PersonaCard },
   data: function () {
     return {
+      RoadMap: ["", "", "", "", ""],
       Faq: ["Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?"],
       Team: ["", "", "", ""],
     };
+  },
+  methods: {
+    goToExternal(url) {
+      window.open(url);
+    },
   },
 };
 </script>
@@ -246,8 +253,13 @@ body,
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
   border-radius: 5px;
   cursor: pointer;
+  opacity: 0.85;
+
   &:hover {
     border: 1px solid #ffffff;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    opacity: 1;
+    transform: translateY(-1px);
   }
 }
 
@@ -327,6 +339,7 @@ body,
   width: 100%;
   height: 500px;
   border: 1px solid $white-color;
+  overflow: hidden;
 }
 
 .cardLeft {
@@ -357,9 +370,6 @@ body,
 .cardNft {
   margin: auto;
   margin-top: 50px;
-  width: 400px;
-  height: 500px;
-  border: 1px solid $white-color;
 }
 
 /*********************************** Fifth View ***********************************/
@@ -440,7 +450,7 @@ body,
 .contentTeam {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 50px;
@@ -448,11 +458,7 @@ body,
   //border: 1px solid $white-color;
 }
 
-.teamMember {
-  margin: 10px;
-  width: 300px;
-  height: 300px;
-  border: 1px solid $white-color;
+.personaCard {
 }
 /*********************************** Footer ***********************************/
 
@@ -460,12 +466,49 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0px 0px 7px #ffffff;
+}
+
+.footerCut {
+  overflow: hidden;
+  max-height: 500px;
 }
 
 .footerImg {
   width: 100%;
-  // height: 100%;
-  // max-height: 500px;
+  height: auto;
   object-fit: cover;
+  z-index: 1;
+}
+
+.footerButton {
+  margin: auto;
+  margin-top: -100px;
+
+  z-index: 10;
+  width: 400px;
+  height: 80px;
+
+  font-family: "MADE Sunflower", sans-serif;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 400;
+
+  border: 1px solid $white-color;
+  border-radius: 5px;
+  color: $white-color;
+  background-color: transparent;
+  box-sizing: border-box;
+  filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
+  cursor: pointer;
+  opacity: 0.85;
+  background: linear-gradient($white-color, transparent);
+
+  &:hover {
+    border: 1px solid $white-color;
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    opacity: 1;
+    transform: translateY(-1px);
+  }
 }
 </style>
