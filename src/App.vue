@@ -37,9 +37,10 @@
     </div>
 
     <div class="viewContainer">
+      <div class="r4"></div>
       <div class="center">
-        <p class="title1 title3">About c-01 /</p>
-        <div class="card">
+        <p class="title1 title3 t4">About c-01 /</p>
+        <div class="card c4">
           <div class="cardLeft">
             <img :src="require('@/assets/imgs/about.jpg')" />
           </div>
@@ -55,18 +56,20 @@
     </div>
 
     <div class="viewContainer">
+      <div class="r5"></div>
       <div class="center">
-        <p class="title1">NFT /</p>
-        <div class="cardNft">
+        <p class="title1 t5">NFT /</p>
+        <div class="cardNft c5">
           <PersonaCard style="personaCard" />
         </div>
       </div>
     </div>
 
     <div class="viewContainer">
+      <div class="r6"></div>
       <div class="center">
-        <p class="title1 title3">Total distribution /</p>
-        <div class="contentTotalDistr">
+        <p class="title1 title3 t6">Total distribution /</p>
+        <div class="contentTotalDistr c6">
           <Circle1 class="spinner" />
           <p class="text">
             Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
@@ -78,21 +81,23 @@
     </div>
 
     <div class="viewContainer">
+      <div class="r7"></div>
       <div class="center">
-        <p class="title1 title3">Roadmap /</p>
-        <div class="contentRoadMap">
+        <p class="title1 title3 t7">Roadmap /</p>
+        <div class="contentRoadMap c7">
           <RoadMap style="width: 100%; margin: auto" />
         </div>
       </div>
     </div>
 
     <div class="viewContainer">
+      <div class="r8"></div>
       <div class="center">
-        <p class="title1">FAQ /</p>
-        <div class="contentFAQ">
+        <p class="title1 t8">FAQ /</p>
+        <div class="contentFAQ c8">
           <div class="inline" v-for="(item, i) in Faq" :key="i">
             <div class="cornerLeftTop" />
-            <p class="text">{{ item }}</p>
+            <p class="text faqTxt">{{ item }}</p>
             <div class="cornerRightBottom" />
           </div>
         </div>
@@ -100,9 +105,10 @@
     </div>
 
     <div class="viewContainer">
+      <div class="r9"></div>
       <div class="center">
-        <p class="title1 title3">The theam /</p>
-        <div class="contentTeam">
+        <p class="title1 title3 t9">The theam /</p>
+        <div class="contentTeam c9">
           <PersonaCard style="personaCard" v-for="(item, i) in Team" :key="i" />
         </div>
       </div>
@@ -147,6 +153,7 @@ export default {
       window.open(url);
     },
     scrollAnimation() {
+      /************ TIMELINE ***********/
       gsap
         .timeline({
           scrollTrigger: {
@@ -158,10 +165,9 @@ export default {
             pin: false,
           },
         })
-        .from(".t1", { x: innerWidth * 1, opacity: 0 })
-        .from(".d1", { x: innerWidth * 1, opacity: 0 })
-        .from(".tx1", { x: innerWidth * 1, opacity: 0 });
-
+        .from(".t1", { x: -innerWidth * 1, opacity: 0 })
+        .from(".d1", { x: -innerWidth * 1, opacity: 0 })
+        .from(".tx1", { x: -innerWidth * 1, opacity: 0 });
       gsap
         .timeline({
           scrollTrigger: {
@@ -176,7 +182,6 @@ export default {
         .from(".t2", { x: innerWidth * 1, opacity: 0 })
         .from(".d2", { x: innerWidth * 1, opacity: 0 })
         .from(".tx2", { x: innerWidth * 1, opacity: 0 });
-
       gsap
         .timeline({
           scrollTrigger: {
@@ -188,9 +193,165 @@ export default {
             pin: false,
           },
         })
-        .from(".t3", { x: innerWidth * 1, opacity: 0 })
-        .from(".d3", { x: innerWidth * 1, opacity: 0 })
-        .from(".tx3", { x: innerWidth * 1, opacity: 0 });
+        .from(".t3", { x: -innerWidth * 1, opacity: 0 })
+        .from(".d3", { x: -innerWidth * 1, opacity: 0 })
+        .from(".tx3", { x: -innerWidth * 1, opacity: 0 });
+
+      /************ ABOUT ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r4",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t4", { x: innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r4",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".c4", { x: -innerWidth * 1, opacity: 0 });
+
+      /************ NFT ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r5",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t5", { x: -innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r5",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".c5", { x: innerWidth * 1, opacity: 0 });
+
+      /************ TOTAL DISTRIBUTION ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r6",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t6", { x: innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r6",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".c6", { x: -innerWidth * 1, opacity: 0 });
+
+      /************ ROADMAP ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r7",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t7", { x: innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r7",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".c7", { x: -innerWidth * 1, opacity: 0 });
+
+      /************ FAQ ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r8",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t8", { x: -innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r8",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".c8", { x: innerWidth * 1, opacity: 0 });
+
+      /************ TEAM ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r9",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t9", { x: innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r9",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".c9", { x: -innerWidth * 1, opacity: 0 });
     },
   },
 };
@@ -308,48 +469,23 @@ body,
 .left {
   width: 50%;
   text-align: left;
-  //animation: moveLeft 0.3s forwards linear;
   .text {
     text-align: right;
   }
 }
 
-// @keyframes moveLeft {
-//   0% {
-//     transform: translateX(-200%);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0%);
-//     opacity: 1;
-//   }
-// }
-
 .right {
   width: 50%;
   text-align: right;
-  // animation: moveRight 0.3s forwards linear;
   .text {
     text-align: left;
   }
 }
 
-// @keyframes moveRight {
-//   0% {
-//     transform: translateX(+200%);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: translateX(0%);
-//     opacity: 1;
-//   }
-// }
-
 .date {
   font-family: Impact, sans-serif;
   font-size: 150px;
   font-weight: 500;
-  //line-height: 183px;
   margin: 0;
 }
 
@@ -358,7 +494,6 @@ body,
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.3em;
-  //line-height: 19px;
   margin: 0;
   text-justify: auto;
 }
@@ -481,6 +616,32 @@ body,
   justify-content: center;
   flex-wrap: nowrap;
   margin-bottom: 50px;
+  height: 50px;
+  cursor: pointer;
+  opacity: 0.85;
+
+  > * {
+    transition: all 300ms ease-in-out;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+  &:hover .faqTxt {
+    margin-top: 5px;
+  }
+  &:hover .cornerLeftTop {
+    margin-right: 10px;
+    margin-top: -10px;
+  }
+  &:hover .cornerRightBottom {
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+}
+
+.faqTxt {
+  width: 500px;
 }
 
 .cornerLeftTop {
@@ -501,6 +662,7 @@ body,
   filter: drop-shadow(0px 0px 4px $white-color);
   border-right: 2px solid $white-color;
   border-bottom: 2px solid $white-color;
+  margin-top: 10px;
 }
 
 /*********************************** Eighth View ***********************************/
@@ -508,11 +670,11 @@ body,
 .contentTeam {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 50px;
-  width: 100%;
+  width: 800px;
   //border: 1px solid $white-color;
 }
 
@@ -552,6 +714,8 @@ body,
   text-transform: uppercase;
   font-size: 40px;
   font-weight: 400;
+
+  transition: all 200ms;
 
   border: 1px solid $white-color;
   border-radius: 5px;

@@ -66,6 +66,7 @@ export default {
   border-radius: 5px;
   cursor: pointer;
   opacity: 0.85;
+  transition: all 200ms;
 
   &:hover {
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);

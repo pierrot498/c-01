@@ -32,8 +32,25 @@ export default {
 <style lang="scss" scoped>
 .teamMember {
   margin: 10px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
   //border: 1px solid red;
+  transition: all 500ms ease-in-out;
+  opacity: 0.85;
+
+  > * {
+    transition: all 500ms ease-in-out;
+  }
+
+  &:hover {
+    opacity: 1;
+    margin: 0;
+    // margin-left: 5px;
+    // margin-right: 5px;
+    // margin-bottom: 5px;
+  }
+  &:hover .persona {
+    margin: -30px 30px;
+  }
 }
 
 .name {
@@ -44,12 +61,15 @@ export default {
 }
 
 .personaContainer {
-  //border: 1px solid red;
+  > * {
+    transition: all 500ms ease-in-out;
+  }
 }
 
 .persona {
   width: 300px;
   margin: -40px 20px;
+  cursor: pointer;
 }
 
 .cornerLeftTop,
