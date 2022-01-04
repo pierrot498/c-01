@@ -1,7 +1,9 @@
 <template>
   <div id="app">
+    <TopBar />
+
     <div class="viewContainer">
-      <div class="topBar">
+      <!-- <div class="topBar">
         <p class="title2">C-01 project</p>
         <div class="socialsContainer">
           <div class="logoContainer" @click="goToExternal('')">
@@ -11,7 +13,7 @@
             <TwitterLogo />
           </div>
         </div>
-      </div>
+      </div> -->
 
       <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" />
     </div>
@@ -128,15 +130,14 @@
 </template>
 
 <script>
-import DiscordLogo from "@/assets/socials/discord.svg";
-import TwitterLogo from "@/assets/socials/twitter.svg";
 import Circle1 from "@/assets/imgs/circle.svg";
 import RoadMap from "@/assets/imgs/roadmap.svg";
+import TopBar from "@/components/TopBar";
 import PersonaCard from "@/components/PersonaCard";
 
 export default {
   name: "App",
-  components: { DiscordLogo, TwitterLogo, Circle1, RoadMap, PersonaCard },
+  components: { Circle1, RoadMap, TopBar, PersonaCard },
   data: function () {
     return {
       RoadMap: ["", "", "", "", ""],
@@ -177,15 +178,13 @@ body,
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  //height: 100vh;
-  // border: 1px solid red;
 }
 
 .title1 {
   font-family: "MADE Sunflower", sans-serif;
   text-transform: uppercase;
   font-size: 30px;
-  line-height: 37px;
+  //line-height: 37px;
   font-weight: 400;
   letter-spacing: 0.3em;
   text-align: left;
@@ -196,7 +195,7 @@ body,
   font-family: "MADE Sunflower", sans-serif;
   text-transform: uppercase;
   font-size: 25px;
-  line-height: 30px;
+  //line-height: 30px;
   font-weight: 400;
   letter-spacing: 0.3em;
   text-align: left;
@@ -218,50 +217,6 @@ body,
 }
 
 /*********************************** First View ***********************************/
-
-.topBar {
-  position: fixed;
-  top: 25px;
-  width: calc(100% - 100px);
-  height: 100px;
-  padding: 0 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.socialsContainer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 190px;
-}
-
-.logoContainer {
-  width: 60px;
-  min-width: 60px;
-  height: 60px;
-  min-height: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
-  border-radius: 5px;
-  cursor: pointer;
-  opacity: 0.85;
-
-  &:hover {
-    border: 1px solid #ffffff;
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-    opacity: 1;
-    transform: translateY(-1px);
-  }
-}
 
 .mainLogo {
   object-fit: fit;
@@ -311,7 +266,7 @@ body,
   font-family: Impact, sans-serif;
   font-size: 150px;
   font-weight: 500;
-  line-height: 183px;
+  //line-height: 183px;
   margin: 0;
 }
 
@@ -320,7 +275,7 @@ body,
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.3em;
-  line-height: 19px;
+  //line-height: 19px;
   margin: 0;
   text-justify: auto;
 }
@@ -332,14 +287,14 @@ body,
 }
 
 .card {
-  margin-top: 50px;
+  margin-top: 75px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
   height: 500px;
-  border: 1px solid $white-color;
-  overflow: hidden;
+  //border: 1px solid $white-color;
+  //overflow: hidden;
 }
 
 .cardLeft {
@@ -354,6 +309,9 @@ body,
 
 .cardRight {
   width: 55%;
+  border-top: 1px solid $white-color;
+  border-right: 1px solid $white-color;
+  border-bottom: 1px solid $white-color;
   p {
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 300;
@@ -369,7 +327,7 @@ body,
 
 .cardNft {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 75px;
 }
 
 /*********************************** Fifth View ***********************************/
@@ -379,7 +337,7 @@ body,
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 0px;
   width: 600px;
 
   img {
@@ -398,7 +356,7 @@ body,
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 50px;
+  margin-top: -50px;
   //border: 1px solid $white-color;
 }
 
@@ -413,8 +371,10 @@ body,
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 50px;
-  width: 600px;
+  margin-top: 75px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 200px;
 }
 
 .inline {
@@ -463,6 +423,7 @@ body,
 /*********************************** Footer ***********************************/
 
 .footer {
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -503,12 +464,50 @@ body,
   cursor: pointer;
   opacity: 0.85;
   background: linear-gradient($white-color, transparent);
+  text-shadow: 1px 1px 2px black;
 
   &:hover {
     border: 1px solid $white-color;
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     opacity: 1;
     transform: translateY(-1px);
+  }
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .title1,
+  .title2 {
+    font-size: 20px;
+    //line-height: auto;
+    font-weight: 400;
+  }
+  .text {
+    font-size: 10px;
+    // line-height: 19px;
+    font-weight: 300;
+  }
+  .date {
+    font-size: 50px;
+    font-weight: 500;
+    // line-height: 183px;
+  }
+
+  .center {
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .cardRight {
+    overflow: hidden;
+  }
+
+  .footerButton {
+    margin: auto;
+    margin-top: -75px;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
   }
 }
 </style>
