@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <div class="firstViewContainer">
+    <div class="viewContainer">
       <div class="topBar">
-        <p class="Title1">C-01 project</p>
+        <p class="title2">C-01 project</p>
         <div class="socialsContainer">
           <div class="logoContainer">
             <DiscordLogo />
@@ -17,11 +17,11 @@
       <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" alt="Vue Logo" />
     </div>
 
-    <div class="secondViewContainer">
+    <div class="viewContainer">
       <div class="center">
         <div class="row">
           <div class="left">
-            <p class="Title2">Avatar /</p>
+            <p class="title1">Avatar /</p>
             <p class="date">8.088</p>
             <p class="text">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
@@ -30,20 +30,84 @@
         <div class="row">
           <div class="left"></div>
           <div class="right">
-            <p class="Title2">Pre sale /</p>
+            <p class="title1">Pre sale /</p>
             <p class="date">11.113</p>
             <p class="text">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
         </div>
         <div class="row">
           <div class="left">
-            <p class="Title2">Public sale /</p>
+            <p class="title1">Public sale /</p>
             <p class="date">08.367</p>
             <p class="text">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
           <div class="right"></div>
         </div>
       </div>
+    </div>
+
+    <div class="viewContainer">
+      <div class="center">
+        <p class="title1 title3">About c-01 /</p>
+        <div class="card">
+          <div class="cardLeft">
+            <img :src="require('@/assets/imgs/about.jpg')" alt="Vue Logo" />
+          </div>
+          <div class="cardRight">
+            <p class="text">
+              Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
+              laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
+              fugiat ad consequatur veniam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="viewContainer">
+      <div class="center">
+        <p class="title1">NFT /</p>
+        <div class="cardNft"></div>
+      </div>
+    </div>
+
+    <div class="viewContainer">
+      <div class="center">
+        <p class="title1 title3">Total distribution /</p>
+        <div class="contentTotalDistr">
+          <img :src="require('@/assets/imgs/circle.jpg')" alt="Vue Logo" />
+          <p class="text">
+            Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
+            laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
+            fugiat ad consequatur veniam.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="viewContainer">
+      <div class="center">
+        <p class="title1 title3">Roadmap /</p>
+        <div class="contentRoadMap"></div>
+      </div>
+    </div>
+
+    <div class="viewContainer">
+      <div class="center">
+        <p class="title1">FAQ /</p>
+        <div class="contentFAQ"></div>
+      </div>
+    </div>
+
+    <div class="viewContainer">
+      <div class="center">
+        <p class="title1">The theam /</p>
+        <div class="contentTeam"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img class="footerImg" :src="require('@/assets/imgs/footer_banner.jpg')" alt="Vue Logo" />
     </div>
   </div>
 </template>
@@ -79,32 +143,63 @@ body,
   background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
 }
 
-.firstViewContainer {
+.viewContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
   min-height: 100vh;
+  //height: 100vh;
+  border: 1px solid red;
 }
 
+.title1 {
+  font-family: "MADE Sunflower", sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 37px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-align: left;
+  margin: 0;
+}
+
+.title2 {
+  font-family: "MADE Sunflower", sans-serif;
+  text-transform: uppercase;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-align: left;
+  margin: 0;
+}
+
+.text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  line-height: 19px;
+  margin: 0;
+  text-justify: auto;
+}
+
+.right {
+  text-align: right;
+}
+
+/*********************************** First View ***********************************/
+
 .topBar {
-  width: 80%;
+  position: fixed;
+  top: 25px;
+  width: calc(100% - 100px);
   height: 100px;
-  margin: 0 auto;
+  padding: 0 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.Title1 {
-  font-family: "MADE Sunflower", sans-serif;
-  color: $white-color;
-  text-transform: uppercase;
-  font-size: 25px;
-  font-weight: 400;
-  line-height: 100%;
-  letter-spacing: 0.3em;
 }
 
 .socialsContainer {
@@ -142,12 +237,7 @@ body,
   margin: auto;
 }
 
-.secondViewContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100vh;
-}
+/*********************************** Second View ***********************************/
 
 .center {
   display: flex;
@@ -155,6 +245,7 @@ body,
   justify-content: center;
   height: 100%;
   margin: auto;
+  width: 100%;
   max-width: 900px;
 }
 
@@ -182,28 +273,143 @@ body,
   }
 }
 
-.Title2 {
-  font-family: "MADE Sunflower", sans-serif;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  margin: 0;
-}
-
 .date {
-  font-family: "MADE Sunflower", sans-serif;
+  font-family: Impact, sans-serif;
   font-size: 150px;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 183px;
   margin: 0;
-  //letter-spacing: 0.3em;
 }
 
 .text {
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.3em;
+  line-height: 19px;
   margin: 0;
+  text-justify: auto;
+}
+
+/*********************************** Third View ***********************************/
+
+.title3 {
+  text-align: right;
+}
+
+.card {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+  border: 1px solid $white-color;
+}
+
+.cardLeft {
+  width: 45%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0px 0px 7px #ffffff;
+  }
+}
+
+.cardRight {
+  width: 55%;
+  p {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0;
+    text-align: left;
+    padding: 20px;
+  }
+}
+
+/*********************************** Fourth View ***********************************/
+
+.cardNft {
+  margin: auto;
+  margin-top: 50px;
+  width: 400px;
+  height: 500px;
+  border: 1px solid $white-color;
+}
+
+/*********************************** Fifth View ***********************************/
+
+.contentTotalDistr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 600px;
+
+  img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+}
+
+/*********************************** Sixth View ***********************************/
+
+.contentRoadMap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 300px;
+  border: 1px solid $white-color;
+}
+
+/*********************************** Seven View ***********************************/
+
+.contentFAQ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 300px;
+  border: 1px solid $white-color;
+}
+
+/*********************************** Eighth View ***********************************/
+
+.contentTeam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  margin-top: 50px;
+  width: 600px;
+  height: 300px;
+  border: 1px solid $white-color;
+}
+
+/*********************************** Footer ***********************************/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footerImg {
+  width: 100%;
+  // height: 100%;
+  // max-height: 500px;
+  object-fit: cover;
 }
 </style>
