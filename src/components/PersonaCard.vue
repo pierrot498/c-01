@@ -1,19 +1,19 @@
 <template>
   <div class="teamMember">
-    <p class="text name">Prénom nom</p>
+    <p class="text name">{{ name }}</p>
     <div class="personaContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
       <div class="cornerLeftTop2" />
-      <img class="persona" :style="style" :src="require('@/assets/imgs/persona.png')" />
+      <img class="persona" :style="style" :src="require('@/assets/imgs/personas/persona1.png')" />
       <div class="cornerRightBottom2" />
     </div>
     <div class="socialsContainer2">
-      <div class="logoContainer2" @click="goToExternal('')">
+      <div class="logoContainer2" @click="goToExternal(insta)">
         <i class="fa fa-instagram"></i>
       </div>
-      <div class="logoContainer2" @click="goToExternal('')">
+      <div class="logoContainer2" @click="goToExternal(discord)">
         <i class="fa fa-twitter" />
       </div>
-      <div class="logoContainer2" @click="goToExternal('')">
+      <div class="logoContainer2" @click="goToExternal(twitter)">
         <i class="fa fa-discord"></i>
       </div>
     </div>
@@ -25,6 +25,9 @@ export default {
   name: "PersonaCard",
   props: {
     name: String,
+    insta: String,
+    discord: String,
+    twitter: String,
   },
   data() {
     return {
@@ -78,8 +81,12 @@ export default {
 .name {
   text-transform: uppercase;
   font-size: 19px;
+  margin: auto;
   margin-bottom: -10px;
-  margin-left: 15px;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .personaContainer {
@@ -111,8 +118,8 @@ export default {
   filter: drop-shadow(0px 0px 4px $white-color);
   border-right: 2px solid $white-color;
   border-bottom: 2px solid $white-color;
-  margin-top: 10px;
-  margin-left: calc(100% - 60px);
+  margin-top: -5px;
+  margin-left: calc(100% - 62px);
 }
 
 .socialsContainer2 {
@@ -122,7 +129,7 @@ export default {
   align-items: center;
   width: 100%;
   margin-left: 15px;
-  margin-top: -30px;
+  margin-top: -25px;
 }
 
 .logoContainer2 {
@@ -157,13 +164,13 @@ export default {
       margin: 0;
     }
     &:hover .persona {
-      margin: -10px 40px;
+      margin: -20px 20px;
     }
   }
 
   .persona {
     width: 200px;
-    margin: -20px 30px;
+    margin: -30px 10px;
   }
 
   .cornerLeftTop2,
@@ -171,15 +178,15 @@ export default {
     height: 40px;
     width: 40px;
   }
-
   .cornerRightBottom2 {
+    margin-top: -5px;
     margin-left: calc(100% - 40px);
   }
 
   .name {
     font-size: 15px;
     margin-bottom: -10px;
-    margin-left: 15px;
+    margin-left: 25px;
   }
 
   .fa {
@@ -187,8 +194,8 @@ export default {
   }
 
   .socialsContainer2 {
-    margin-left: 15px;
-    margin-top: -35px;
+    margin-left: 0px;
+    margin-top: -20px;
   }
 }
 </style>

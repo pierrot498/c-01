@@ -75,7 +75,7 @@
         <!-- <p class="title1 t5">NFT /</p> -->
         <GlitchTxt class="title1 t5">NFT /</GlitchTxt>
         <div class="cardNft c5">
-          <PersonaCard style="personaCard" />
+          <PersonaCardExtend class="PersonaCardExtend" :name="'Asian girl'" />
         </div>
       </div>
     </div>
@@ -131,7 +131,7 @@
         <!-- <p class="title1 title3 t9">The theam /</p> -->
         <GlitchTxt class="title1 title3 t9">The theam /</GlitchTxt>
         <div class="contentTeam c9">
-          <PersonaCard style="personaCard" v-for="(item, i) in Team" :key="i" />
+          <PersonaCard class="personaCard" v-for="(item, i) in Team" :key="i" :name="item.name" :insta="item.insta" :discord="item.discord" :twitter="item.twitter" />
         </div>
       </div>
     </div>
@@ -152,6 +152,7 @@ import Logo4 from "@/assets/imgs/1stroke.svg";
 
 import TopBar from "@/components/TopBar";
 import PersonaCard from "@/components/PersonaCard";
+import PersonaCardExtend from "@/components/PersonaCardExtend";
 import GlitchTxt from "@/components/GlitchTxt";
 import Spinner from "@/components/Spinner";
 import RoadMap from "@/components/RoadMap";
@@ -159,7 +160,7 @@ import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, TopBar, PersonaCard, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, TopBar, PersonaCard, PersonaCardExtend, Footer },
   data: function () {
     return {
       scrollMarker: false,
@@ -187,7 +188,32 @@ export default {
           hide: true,
         },
       ],
-      Team: ["", "", "", ""],
+      Team: [
+        {
+          name: "Prénom Nom",
+          insta: "",
+          twitter: "",
+          discord: "",
+        },
+        {
+          name: "Prénom Nom",
+          insta: "",
+          twitter: "",
+          discord: "",
+        },
+        {
+          name: "Prénom Nom",
+          insta: "",
+          twitter: "",
+          discord: "",
+        },
+        {
+          name: "Prénom Nom",
+          insta: "",
+          twitter: "",
+          discord: "",
+        },
+      ],
     };
   },
   mounted() {
@@ -982,7 +1008,7 @@ body,
   }
 
   .personaCard {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 }
 </style>
