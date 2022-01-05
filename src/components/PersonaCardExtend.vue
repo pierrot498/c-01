@@ -92,7 +92,6 @@ export default {
   > * {
     transition: all 500ms ease-in-out;
   }
-
   &:hover .characters {
     padding-left: 20px;
   }
@@ -204,6 +203,9 @@ export default {
   flex-wrap: nowrap;
   padding: 30px 10px;
   // border: 1px solid red;
+  &:hover {
+    margin-left: -10px;
+  }
 }
 
 .personaMini {
@@ -301,6 +303,9 @@ export default {
     flex-direction: row;
     //border: 1px solid red;
     padding: 0;
+    &:hover {
+      margin-left: 0px;
+    }
   }
 
   .name {

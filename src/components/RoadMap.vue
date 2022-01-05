@@ -1,5 +1,19 @@
 <template>
   <div class="roadMapContainer triger">
+    <div class="blockContainer top">
+      <div class="block b1">
+        <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+        <p class="title">TITLE1</p>
+      </div>
+      <div class="block b2">
+        <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+        <p class="title">TITLE2</p>
+      </div>
+      <div class="block b3">
+        <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+        <p class="title">TITLE3</p>
+      </div>
+    </div>
     <div class="roadMap2">
       <RoadMap1 class="rmap o1" />
       <RoadMap2 class="rmap line1 o2" />
@@ -10,6 +24,17 @@
       <RoadMap7 class="rmap o7" />
       <RoadMap8 class="rmap line2 o8" />
       <RoadMap9 class="rmap o9" />
+    </div>
+
+    <div class="blockContainer bottom">
+      <div class="block b4">
+        <p class="title">TITLE4</p>
+        <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+      </div>
+      <div class="block b5">
+        <p class="title">TITLE5</p>
+        <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+      </div>
     </div>
   </div>
 </template>
@@ -88,7 +113,7 @@ export default {
     opacity: 1;
   }
   50% {
-    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) blur(0px);
+    filter: drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 2px rgba(33, 196, 250, 1)) blur(0px);
     opacity: 1;
   }
   100% {
@@ -143,6 +168,60 @@ export default {
   }
 }
 
+.roadMapContainer {
+  margin-left: -50px;
+  margin-top: 100px;
+}
+
+.blockContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  //border: 1px solid red;
+}
+
+.top {
+  margin-bottom: -200px;
+  // margin-left: -100px;
+  width: 800px;
+  text-align: left;
+}
+
+.bottom {
+  margin-bottom: -100px;
+  // margin-left: -100px;
+  width: 500px;
+  text-align: right;
+}
+
+.block {
+  width: 200px;
+
+  // margin-left: 20px;
+  // margin-right: 20px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.b1 {
+  margin-top: 90px;
+  margin-bottom: -90px;
+}
+
+.b3 {
+  margin-top: 50px;
+  margin-bottom: -50px;
+}
+
+.b4 {
+  margin-top: -30px;
+}
+
+.b5 {
+  margin-top: -40px;
+}
 @media screen and (max-width: $layout-breakpoint-medium) {
   .roadMap2 {
     margin-left: -350px;

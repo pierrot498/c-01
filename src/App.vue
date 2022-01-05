@@ -796,6 +796,14 @@ body,
   //border: 1px solid $white-color;
 }
 
+@media screen and (max-width: $layout-breakpoint-large) {
+  .center {
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+
 @media screen and (max-width: $layout-breakpoint-medium) {
   .title1,
   .title2 {
@@ -817,12 +825,6 @@ body,
   .inline2 {
     zoom: 50%;
   }
-  .center {
-    width: calc(100% - 50px);
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
   .hideme {
     display: none;
   }
@@ -842,11 +844,11 @@ body,
     margin-bottom: 50px;
   }
 
-  .roadMap {
-    transform: rotate(90deg);
+  // .roadMap {
+  //   transform: rotate(90deg);
 
-    margin-left: 85%;
-  }
+  //   margin-left: 85%;
+  // }
 
   .spinMove {
     margin-top: -175px;
