@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <TopBar />
-
     <canvas id="canvas" class="canvas" @mousemove="mouseMove"></canvas>
 
     <div class="viewContainer">
-      <!-- <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" /> -->
       <div class="inline2">
         <Logo1 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2s infinite' : 'moveLogo 0.4s forwards linear' }" />
         <Logo2 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.8s infinite' : 'moveLogo 0.6s forwards linear' }" />
@@ -19,7 +17,8 @@
       <div class="center">
         <div class="row r2">
           <div class="left">
-            <p class="title1 t1">Avatar /</p>
+            <GlitchTxt class="title1 t1">Avatar /</GlitchTxt>
+            <!-- <p class="title1 t1">Avatar /</p> -->
             <p class="date d1">8.088</p>
             <p class="text tx1">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
@@ -28,14 +27,16 @@
         <div class="row r3">
           <div class="left"></div>
           <div class="right">
-            <p class="title1 title3 t2">Pre sale /</p>
+            <GlitchTxt class="title1 title3 t2">Pre sale /</GlitchTxt>
+            <!-- <p class="title1 title3 t2">Pre sale /</p> -->
             <p class="date d2">11.113</p>
             <p class="text tx2">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
         </div>
         <div class="row">
           <div class="left">
-            <p class="title1 t3">Public sale /</p>
+            <GlitchTxt class="title1 t3">Public sale /</GlitchTxt>
+            <!-- <p class="title1 t3">Public sale /</p> -->
             <p class="date d3">08.367</p>
             <p class="text tx3">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
@@ -47,7 +48,8 @@
     <div class="viewContainer">
       <div class="r4"></div>
       <div class="center">
-        <p class="title1 title3 t4">About c-01 /</p>
+        <!-- <p class="title1 title3 t4">About c-01 /</p> -->
+        <GlitchTxt class="title1 title3 t4">About c-01 /</GlitchTxt>
         <div class="card c4">
           <div class="cardLeft">
             <img :src="require('@/assets/imgs/about.jpg')" />
@@ -66,7 +68,8 @@
     <div class="viewContainer">
       <div class="r5"></div>
       <div class="center">
-        <p class="title1 t5">NFT /</p>
+        <!-- <p class="title1 t5">NFT /</p> -->
+        <GlitchTxt class="title1 t5">NFT /</GlitchTxt>
         <div class="cardNft c5">
           <PersonaCard style="personaCard" />
         </div>
@@ -76,9 +79,10 @@
     <div class="viewContainer">
       <div class="r6"></div>
       <div class="center">
-        <p class="title1 title3 t6">Total distribution /</p>
+        <!-- <p class="title1 title3 t6">Total distribution /</p> -->
+        <GlitchTxt class="title1 title3 t6">Total distribution /</GlitchTxt>
         <div class="contentTotalDistr c6">
-          <Circle1 class="spinner" />
+          <Spinner class="spinner" />
           <p class="text">
             Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
             laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
@@ -91,7 +95,8 @@
     <div class="viewContainer">
       <div class="r7"></div>
       <div class="center">
-        <p class="title1 title3 t7">Roadmap /</p>
+        <!-- <p class="title1 title3 t7">Roadmap /</p> -->
+        <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
           <RoadMap style="width: 100%; margin: auto" />
         </div>
@@ -101,7 +106,8 @@
     <div class="viewContainer">
       <div class="r8"></div>
       <div class="center">
-        <p class="title1 t8">FAQ /</p>
+        <!-- <p class="title1 t8">FAQ /</p> -->
+        <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
           <div class="inline" v-for="(item, i) in Faq" :key="i">
             <div class="cornerLeftTop" />
@@ -115,19 +121,15 @@
     <div class="viewContainer">
       <div class="r9"></div>
       <div class="center">
-        <p class="title1 title3 t9">The theam /</p>
+        <!-- <p class="title1 title3 t9">The theam /</p> -->
+        <GlitchTxt class="title1 title3 t9">The theam /</GlitchTxt>
         <div class="contentTeam c9">
           <PersonaCard style="personaCard" v-for="(item, i) in Team" :key="i" />
         </div>
       </div>
     </div>
 
-    <div class="footer">
-      <div class="footerCut">
-        <img class="footerImg" :src="require('@/assets/imgs/footer_banner.jpg')" />
-      </div>
-      <button class="footerButton" @click="goToExternal('')">Join Discord</button>
-    </div>
+    <Footer />
   </div>
 </template>
 
@@ -136,19 +138,21 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import Logo1 from "@/assets/imgs/Ctest-01.svg";
-import Logo2 from "@/assets/imgs/Ctest2-01.svg";
-import Logo3 from "@/assets/imgs/C-01.svg";
-import Logo4 from "@/assets/imgs/1-01.svg";
+import Logo1 from "@/assets/imgs/Cstroke.svg";
+import Logo2 from "@/assets/imgs/-stroke.svg";
+import Logo3 from "@/assets/imgs/0stroke.svg";
+import Logo4 from "@/assets/imgs/1stroke.svg";
 
-import Circle1 from "@/assets/imgs/circle.svg";
 import RoadMap from "@/assets/imgs/roadmap.svg";
 import TopBar from "@/components/TopBar";
 import PersonaCard from "@/components/PersonaCard";
+import GlitchTxt from "@/components/GlitchTxt";
+import Spinner from "@/components/Spinner";
+import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Circle1, RoadMap, TopBar, PersonaCard },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, GlitchTxt, RoadMap, TopBar, PersonaCard, Footer },
   data: function () {
     return {
       mouse: { x: 0, y: 0 },
@@ -164,7 +168,6 @@ export default {
     this.starsAnimation();
     setTimeout(() => {
       this.loaded = true;
-      console.log("ee");
     }, 1000);
   },
   methods: {
@@ -551,6 +554,7 @@ body,
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 0;
 }
 
 .mainLogo {
@@ -564,14 +568,17 @@ body,
 
 @keyframes moveLogo {
   0% {
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
     transform: translateY(-200%);
     opacity: 0;
   }
   95% {
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
     transform: translateY(-100%);
     opacity: 0.1;
   }
   100% {
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(0px);
     transform: translateY(0%);
     opacity: 1;
   }
@@ -591,226 +598,43 @@ body,
   margin: 0;
   line-height: 0;
   height: 200px;
+  margin: 0 20px;
+
   fill: $white-color;
+  > * {
+    //fill: $white-color;
+    stroke: $white-color;
+    stroke-width: 10px;
+    transition: all 500ms ease-in-out;
+  }
   box-sizing: border-box;
-  filter: drop-shadow(2px 2px 10px rgba(33, 196, 250, 0.9));
+  // filter: drop-shadow(2px 2px 10px rgba(33, 196, 250, 0.9));
   //border: 1px solid red;
   //animation: glitch1 2.5s infinite;
   transition: all 500ms ease-in-out;
-  // animation: letter 2s infinite;
+  filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1));
 }
-
-// .l1 {
-//   animation: moveLogo 0.4s forwards linear;
-// }
-
-// .l2 {
-//   animation: moveLogo 0.6s forwards linear;
-// }
-
-// .l3 {
-//   animation: moveLogo 0.8s forwards linear;
-// }
-
-// .l4 {
-//   animation: moveLogo 1s forwards linear;
-// }
 
 @keyframes letter {
   0% {
-    filter: drop-shadow(-2px -2px 5px rgba(33, 196, 250, 1)) blur(0px);
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1)) sepia(20%);
     opacity: 0.85;
   }
   45% {
-    filter: drop-shadow(2px 2px 5px rgba(33, 196, 250, 0.9)) blur(0px);
+    filter: drop-shadow(0px 0px 20px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1)) sepia(50%);
     opacity: 0.85;
   }
   50% {
-    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 0.9)) blur(0px);
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1)) sepia(80%);
     opacity: 1;
   }
   55% {
-    filter: drop-shadow(2px 2px 5px rgba(33, 196, 250, 0.9)) blur(0px);
+    filter: drop-shadow(0px 0px 30px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1)) sepia(10%);
     opacity: 0.85;
   }
   100% {
-    filter: drop-shadow(-2px -2px 5px rgba(33, 196, 250, 1)) blur(0px);
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1));
     opacity: 0.8;
-  }
-}
-
-// .inline2:nth-child(2) {
-//   fill: #67f3da;
-//   animation: glitch2 2.5s infinite;
-// }
-
-// .inline2:nth-child(3) {
-//   fill: #f16f6f;
-//   animation: glitch3 2.5s infinite;
-// }
-
-@keyframes glitch1 {
-  0% {
-    transform: none;
-    opacity: 1;
-  }
-  7% {
-    transform: skew(-0.5deg, -0.9deg);
-    opacity: 0.75;
-  }
-  10% {
-    transform: none;
-    opacity: 1;
-  }
-  27% {
-    transform: none;
-    opacity: 1;
-  }
-  30% {
-    transform: skew(0.8deg, -0.1deg);
-    opacity: 0.75;
-  }
-  35% {
-    transform: none;
-    opacity: 1;
-  }
-  52% {
-    transform: none;
-    opacity: 1;
-  }
-  55% {
-    transform: skew(-1deg, 0.2deg);
-    opacity: 0.75;
-  }
-  50% {
-    transform: none;
-    opacity: 1;
-  }
-  72% {
-    transform: none;
-    opacity: 1;
-  }
-  75% {
-    transform: skew(0.4deg, 1deg);
-    opacity: 0.75;
-  }
-  80% {
-    transform: none;
-    opacity: 1;
-  }
-  100% {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes glitch2 {
-  0% {
-    transform: none;
-    opacity: 0.25;
-  }
-  7% {
-    transform: translate(-2px, -3px);
-    opacity: 0.5;
-  }
-  10% {
-    transform: none;
-    opacity: 0.25;
-  }
-  27% {
-    transform: none;
-    opacity: 0.25;
-  }
-  30% {
-    transform: translate(-5px, -2px);
-    opacity: 0.5;
-  }
-  35% {
-    transform: none;
-    opacity: 0.25;
-  }
-  52% {
-    transform: none;
-    opacity: 0.25;
-  }
-  55% {
-    transform: translate(-5px, -1px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: none;
-    opacity: 0.25;
-  }
-  72% {
-    transform: none;
-    opacity: 0.25;
-  }
-  75% {
-    transform: translate(-2px, -6px);
-    opacity: 0.5;
-  }
-  80% {
-    transform: none;
-    opacity: 0.25;
-  }
-  100% {
-    transform: none;
-    opacity: 0.25;
-  }
-}
-
-@keyframes glitch3 {
-  0% {
-    transform: none;
-    opacity: 0.25;
-  }
-  7% {
-    transform: translate(2px, 3px);
-    opacity: 0.5;
-  }
-  10% {
-    transform: none;
-    opacity: 0.25;
-  }
-  27% {
-    transform: none;
-    opacity: 0.25;
-  }
-  30% {
-    transform: translate(5px, 2px);
-    opacity: 0.5;
-  }
-  35% {
-    transform: none;
-    opacity: 0.25;
-  }
-  52% {
-    transform: none;
-    opacity: 0.25;
-  }
-  55% {
-    transform: translate(5px, 1px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: none;
-    opacity: 0.25;
-  }
-  72% {
-    transform: none;
-    opacity: 0.25;
-  }
-  75% {
-    transform: translate(2px, 6px);
-    opacity: 0.5;
-  }
-  80% {
-    transform: none;
-    opacity: 0.25;
-  }
-  100% {
-    transform: none;
-    opacity: 0.25;
   }
 }
 
@@ -924,15 +748,12 @@ body,
   justify-content: center;
   margin: auto;
   margin-top: 0px;
-  width: 600px;
+  max-width: 600px;
+}
 
-  img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-    margin: auto;
-    padding-bottom: 50px;
-  }
+.spinner {
+  margin: 50px auto;
+  //border: 1px solid red;
 }
 
 /*********************************** Sixth View ***********************************/
@@ -944,21 +765,6 @@ body,
   margin: auto;
   margin-top: -50px;
   //border: 1px solid $white-color;
-}
-
-.spinner {
-  width: 300px;
-  margin: auto;
-  animation: rotation 2s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
 }
 
 .roadMap {
@@ -1047,69 +853,10 @@ body,
   //border: 1px solid $white-color;
 }
 
-.personaCard {
-}
-/*********************************** Footer ***********************************/
-
-.footer {
-  margin-top: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0px 0px 7px #ffffff;
-}
-
-.footerCut {
-  overflow: hidden;
-  max-height: 500px;
-}
-
-.footerImg {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.footerButton {
-  margin: auto;
-  margin-top: -100px;
-
-  z-index: 10;
-  width: 400px;
-  height: 80px;
-
-  font-family: "MADE Sunflower", sans-serif;
-  text-transform: uppercase;
-  font-size: 40px;
-  font-weight: 400;
-
-  transition: all 200ms;
-
-  border: 1px solid $white-color;
-  border-radius: 5px;
-  color: $white-color;
-  background-color: transparent;
-  box-sizing: border-box;
-  filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
-  //cursor: pointer;
-  cursor: url("./assets/imgs/cursorPointer.png") 21 21, auto;
-  opacity: 0.85;
-  background: linear-gradient($white-color, transparent);
-  text-shadow: 1px 1px 2px black;
-
-  &:hover {
-    border: 1px solid $white-color;
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-    opacity: 1;
-    transform: translateY(-1px);
-  }
-}
-
 @media screen and (max-width: $layout-breakpoint-medium) {
   .title1,
   .title2 {
-    font-size: 20px;
+    font-size: 15px;
     //line-height: auto;
     font-weight: 400;
   }
@@ -1124,6 +871,9 @@ body,
     // line-height: 183px;
   }
 
+  .inline2 {
+    zoom: 50%;
+  }
   .center {
     width: calc(100% - 50px);
     margin-left: 25px;
@@ -1132,14 +882,6 @@ body,
 
   .cardRight {
     overflow: hidden;
-  }
-
-  .footerButton {
-    margin: auto;
-    margin-top: -75px;
-    width: 200px;
-    height: 40px;
-    font-size: 20px;
   }
 }
 </style>

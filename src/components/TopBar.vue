@@ -1,6 +1,7 @@
 <template>
   <div class="topBar">
     <p class="title2">C-01 project</p>
+    <!-- <GlitchTxt class="title2">C-01 project</GlitchTxt> -->
     <div class="socialsContainer">
       <div class="logoContainer" @click="goToExternal('https://discord.gg/c-01')">
         <DiscordLogo class="svg" />
@@ -15,13 +16,14 @@
 <script>
 import DiscordLogo from "@/assets/socials/discord.svg";
 import TwitterLogo from "@/assets/socials/twitter.svg";
+// import GlitchTxt from "@/components/GlitchTxt";
 
 export default {
   name: "TopBar",
   props: {
     msg: String,
   },
-  components: { DiscordLogo, TwitterLogo },
+  components: { /*GlitchTxt, */ DiscordLogo, TwitterLogo },
   methods: {
     goToExternal(url) {
       window.open(url);
