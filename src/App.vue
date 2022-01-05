@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TopBar />
-    <canvas id="canvas" class="canvas" @mousemove="mouseMove"></canvas>
+    <canvas id="canvas" class="canvas"></canvas>
 
     <div class="viewContainer">
       <div class="inline2">
@@ -22,10 +22,10 @@
             <p class="date d1">8.088</p>
             <p class="text tx1">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
-          <div class="right"></div>
+          <div class="right hideme"></div>
         </div>
         <div class="row r3">
-          <div class="left"></div>
+          <div class="left hideme"></div>
           <div class="right">
             <GlitchTxt class="title1 title3 t2">Pre sale /</GlitchTxt>
             <!-- <p class="title1 title3 t2">Pre sale /</p> -->
@@ -40,7 +40,7 @@
             <p class="date d3">08.367</p>
             <p class="text tx3">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
-          <div class="right"></div>
+          <div class="right hideme"></div>
         </div>
       </div>
     </div>
@@ -50,6 +50,10 @@
       <div class="center">
         <!-- <p class="title1 title3 t4">About c-01 /</p> -->
         <GlitchTxt class="title1 title3 t4">About c-01 /</GlitchTxt>
+
+        <!-- <div class="mobileLeft showme">
+          <img :src="require('@/assets/imgs/about.jpg')" />
+        </div> -->
         <div class="card c4">
           <div class="cardLeft">
             <img :src="require('@/assets/imgs/about.jpg')" />
@@ -98,7 +102,7 @@
         <!-- <p class="title1 title3 t7">Roadmap /</p> -->
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
-          <RoadMap style="width: 100%; margin: auto" />
+          <RoadMap class="roadMap" />
         </div>
       </div>
     </div>
@@ -109,9 +113,12 @@
         <!-- <p class="title1 t8">FAQ /</p> -->
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
-          <div class="inline" v-for="(item, i) in Faq" :key="i">
+          <div class="inline" v-for="(item, i) in Faq" :key="i" @click="item.hide = !item.hide">
             <div class="cornerLeftTop" />
-            <p class="text faqTxt">{{ item }}</p>
+            <div class="faqCol">
+              <p class="text faqTxt">{{ item.q }}</p>
+              <p class="text faqTxt answer" v-if="!item.hide">{{ item.r }}</p>
+            </div>
             <div class="cornerRightBottom" />
           </div>
         </div>
@@ -143,23 +150,43 @@ import Logo2 from "@/assets/imgs/-stroke.svg";
 import Logo3 from "@/assets/imgs/0stroke.svg";
 import Logo4 from "@/assets/imgs/1stroke.svg";
 
-import RoadMap from "@/assets/imgs/roadmap.svg";
 import TopBar from "@/components/TopBar";
 import PersonaCard from "@/components/PersonaCard";
 import GlitchTxt from "@/components/GlitchTxt";
 import Spinner from "@/components/Spinner";
+import RoadMap from "@/components/RoadMap";
 import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, GlitchTxt, RoadMap, TopBar, PersonaCard, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, TopBar, PersonaCard, Footer },
   data: function () {
     return {
-      mouse: { x: 0, y: 0 },
       scrollMarker: false,
       loaded: false,
       RoadMap: ["", "", "", "", ""],
-      Faq: ["Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?", "Quo illo voluptatem et soluta error est error recusandae ?"],
+      Faq: [
+        {
+          q: "Quo illo voluptatem et soluta error est error recusandae ?",
+          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          hide: true,
+        },
+        {
+          q: "Quo illo voluptatem et soluta error est error recusandae ?",
+          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          hide: true,
+        },
+        {
+          q: "Quo illo voluptatem et soluta error est error recusandae ?",
+          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          hide: true,
+        },
+        {
+          q: "Quo illo voluptatem et soluta error est error recusandae ?",
+          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          hide: true,
+        },
+      ],
       Team: ["", "", "", ""],
     };
   },
@@ -174,11 +201,6 @@ export default {
     goToExternal(url) {
       window.open(url);
     },
-    mouseMove(e) {
-      this.mouse.x = e.clientX;
-      this.mouse.y = e.clientY;
-      //console.log(this.mouse.x + " " + this.mouse.y);
-    },
     starsAnimation() {
       const canvas = document.getElementById("canvas");
       const c = canvas.getContext("2d");
@@ -187,10 +209,6 @@ export default {
       let h;
 
       const setCanvasExtents = () => {
-        // w = document.body.clientWidth;
-        // h = document.body.clientHeight;
-        // canvas.width = w;
-        // canvas.height = h;
         w = canvas.getBoundingClientRect().width;
         h = canvas.getBoundingClientRect().height;
         canvas.width = w;
@@ -217,19 +235,17 @@ export default {
         return out;
       };
 
-      let stars = makeStars(3000);
+      let stars = makeStars(2000);
 
       const clear = () => {
         c.clearRect(0, 0, canvas.width, canvas.height);
-        // c.fillStyle = "black";
-        // c.fillRect(0, 0, canvas.width, canvas.height);
       };
 
       const putPixel = (x, y, brightness) => {
         const intensity = brightness * 255;
         const rgb = "rgb(" + intensity + "," + intensity + "," + intensity + ")";
         c.fillStyle = rgb;
-        c.fillRect(x, y, 1, 1);
+        c.fillRect(x, y, 2, 2);
       };
 
       const moveStars = (distance) => {
@@ -500,14 +516,17 @@ body,
   background-color: $background-color1;
   background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
   cursor: url("./assets/imgs/cursorDefault.png") 21 21, auto;
+  z-index: 0;
 }
 
 .viewContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
   overflow-x: hidden;
+  z-index: 200;
 }
 
 .title1 {
@@ -546,6 +565,10 @@ body,
   text-align: right;
 }
 
+.showme {
+  display: none;
+}
+
 /*********************************** First View ***********************************/
 
 .canvas {
@@ -554,7 +577,7 @@ body,
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
 }
 
 .mainLogo {
@@ -702,9 +725,6 @@ body,
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  height: 500px;
-  //border: 1px solid $white-color;
-  //overflow: hidden;
 }
 
 .cardLeft {
@@ -746,9 +766,9 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
-  margin-top: 0px;
+  width: 100%;
   max-width: 600px;
+  margin: auto;
 }
 
 .spinner {
@@ -762,13 +782,15 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 600px;
   margin: auto;
-  margin-top: -50px;
-  //border: 1px solid $white-color;
 }
 
 .roadMap {
-  width: 600px;
+  margin: 50px auto;
+  margin-bottom: 0px;
+  //border: 1px solid red;
 }
 
 /*********************************** Seven View ***********************************/
@@ -778,45 +800,62 @@ body,
   flex-direction: column;
   justify-content: center;
   margin: auto;
-  margin-top: 75px;
   width: 100%;
   max-width: 600px;
-  margin-bottom: 200px;
+  margin: auto;
+  margin-top: 75px;
 }
 
 .inline {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
   margin-bottom: 50px;
-  height: 50px;
-  //cursor: pointer;
   cursor: url("./assets/imgs/cursorPointer.png") 21 21, auto;
   opacity: 0.85;
+  // border: 1px solid red;
 
+  transition: all 300ms ease-in-out;
   > * {
     transition: all 300ms ease-in-out;
   }
 
   &:hover {
     opacity: 1;
+    margin-left: -40px;
+    margin-right: -40px;
   }
-  &:hover .faqTxt {
-    margin-top: 5px;
-  }
-  &:hover .cornerLeftTop {
-    margin-right: 10px;
-    margin-top: -10px;
-  }
-  &:hover .cornerRightBottom {
-    margin-left: 10px;
-    margin-top: 20px;
+  &:hover .faqCol {
+    margin: 50px;
   }
 }
 
+.faqCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //border: 1px solid red;
+  margin: 20px;
+  transition: all 300ms ease-in-out;
+  > * {
+    transition: all 300ms ease-in-out;
+  }
+}
+
+.faqActive {
+  margin-top: 50px;
+}
+
 .faqTxt {
+  text-align: center;
+  margin: auto;
   width: 500px;
+  transition: all 300ms ease-in-out;
+}
+
+.answer {
+  margin-top: 50px;
 }
 
 .cornerLeftTop {
@@ -827,6 +866,7 @@ body,
   filter: drop-shadow(0px 0px 4px $white-color);
   border-left: 2px solid $white-color;
   border-top: 2px solid $white-color;
+  margin-bottom: -40px;
 }
 
 .cornerRightBottom {
@@ -837,7 +877,25 @@ body,
   filter: drop-shadow(0px 0px 4px $white-color);
   border-right: 2px solid $white-color;
   border-bottom: 2px solid $white-color;
-  margin-top: 10px;
+  // margin-top: 10px;
+  margin-left: calc(100% - 40px);
+  margin-top: -40px;
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .faqTxt {
+    width: 300px;
+  }
+  .inline {
+    &:hover {
+      opacity: 1;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    &:hover .faqCol {
+      margin: 15px;
+    }
+  }
 }
 
 /*********************************** Eighth View ***********************************/
@@ -856,7 +914,7 @@ body,
 @media screen and (max-width: $layout-breakpoint-medium) {
   .title1,
   .title2 {
-    font-size: 15px;
+    font-size: 19px;
     //line-height: auto;
     font-weight: 400;
   }
@@ -880,8 +938,51 @@ body,
     margin-right: 25px;
   }
 
+  .hideme {
+    display: none;
+  }
+  .showme {
+    display: block;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .card {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .cardLeft {
+    width: 100%;
+    margin-bottom: -5px;
+    z-index: 21;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      box-shadow: 0px 0px 7px #ffffff;
+    }
+  }
+
   .cardRight {
-    overflow: hidden;
+    width: 100%;
+    border-top: none;
+    border-left: 1px solid $white-color;
+    border-right: 1px solid $white-color;
+    border-bottom: 1px solid $white-color;
+  }
+
+  .personaCard {
+    margin-bottom: 20px;
   }
 }
 </style>

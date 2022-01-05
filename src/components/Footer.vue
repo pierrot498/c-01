@@ -20,11 +20,13 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  position: relative;
   margin-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 0px 0px 7px #ffffff;
+  z-index: 20;
 }
 
 .footerCut {
@@ -36,7 +38,6 @@ export default {
   width: 100%;
   height: auto;
   object-fit: cover;
-  z-index: 1;
 }
 
 .footerButton {

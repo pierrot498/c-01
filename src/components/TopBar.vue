@@ -45,7 +45,7 @@ export default {
   align-items: center;
 
   vertical-align: middle;
-  z-index: 100;
+  z-index: 1000;
   transition: all 200ms;
 }
 

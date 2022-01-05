@@ -22,14 +22,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.finalSpinner {
-  //border: 1px solid red;
-  margin-left: 0px;
-}
-
 .spin {
-  width: 300px;
-  height: 300px;
+  // width: 300px;
+  // height: 300px;
+  margin-left: -300px;
+  margin-bottom: 300px;
 }
 
 .spinner2 {
@@ -78,15 +75,10 @@ export default {
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
-  .finalSpinner {
-    margin-left: -40px;
-  }
-
   .spin {
-    width: 200px;
-    height: 200px;
+    margin-left: -200px;
+    margin-bottom: 200px;
   }
-
   .spinner2 {
     max-width: 200px;
   }

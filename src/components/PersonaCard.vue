@@ -2,9 +2,9 @@
   <div class="teamMember">
     <p class="text name">Prénom nom</p>
     <div class="personaContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
-      <div class="cornerLeftTop" />
+      <div class="cornerLeftTop2" />
       <img class="persona" :style="style" :src="require('@/assets/imgs/persona.png')" />
-      <div class="cornerRightBottom" />
+      <div class="cornerRightBottom2" />
     </div>
     <div class="socialsContainer2">
       <div class="logoContainer2" @click="goToExternal('')">
@@ -41,12 +41,12 @@ export default {
     },
     mouseMove(e) {
       let rect = e.target.getBoundingClientRect();
-      let dx = e.clientX - rect.width;
-      let dy = e.clientY - rect.height;
+      let dx = e.clientX - rect.top / 2;
+      let dy = e.clientY - rect.left / 2;
       //console.log(dx, dy);
 
-      let tiltx = dy / rect.top;
-      let tilty = -(dx / rect.left);
+      let tiltx = dy / rect.top / 1.5;
+      let tilty = -(dx / rect.left) / 1.5;
       let radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
       let degree = radius * 20;
 
@@ -94,13 +94,24 @@ export default {
   cursor: url("../assets/imgs/cursorPointer.png") 21 21, auto;
 }
 
-.cornerLeftTop,
-.cornerRightBottom {
-  height: 60px;
+.cornerLeftTop2 {
   width: 60px;
+  height: 60px;
+  border-radius: 8px 0 0 0;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 4px $white-color);
+  border-left: 2px solid $white-color;
+  border-top: 2px solid $white-color;
 }
-
-.cornerRightBottom {
+.cornerRightBottom2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 0 0 8px 0;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 0px 4px $white-color);
+  border-right: 2px solid $white-color;
+  border-bottom: 2px solid $white-color;
+  margin-top: 10px;
   margin-left: calc(100% - 60px);
 }
 
@@ -155,13 +166,13 @@ export default {
     margin: -20px 30px;
   }
 
-  .cornerLeftTop,
-  .cornerRightBottom {
+  .cornerLeftTop2,
+  .cornerRightBottom2 {
     height: 40px;
     width: 40px;
   }
 
-  .cornerRightBottom {
+  .cornerRightBottom2 {
     margin-left: calc(100% - 40px);
   }
 

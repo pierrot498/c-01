@@ -13,7 +13,8 @@
     "core-js": "^3.6.5",
     "gsap": "^3.9.1",
     "vue": "^2.6.11",
-    "vue-svg-loader": "^0.16.0"
+    "vue-svg-loader": "^0.16.0",
+    "vue2vis": "^0.0.18"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
