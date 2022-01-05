@@ -1,7 +1,7 @@
 <template>
   <div class="topBar">
-    <p class="title2">C-01 project</p>
-    <!-- <GlitchTxt class="title2">C-01 project</GlitchTxt> -->
+    <!-- <p class="title2">C-01 project</p> -->
+    <GlitchTxt class="title2">C-01 project</GlitchTxt>
     <div class="socialsContainer">
       <div class="logoContainer" @click="goToExternal('https://discord.gg/c-01')">
         <DiscordLogo class="svg" />

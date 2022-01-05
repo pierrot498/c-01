@@ -255,7 +255,7 @@ export default {
             y: Math.random() * 900 - 450,
             z: Math.random() * 1000,
             size: Math.random() * 4,
-            color: { r: Math.random() * 255, g: Math.random() * 255, b: Math.random() * 255 },
+            color: { r: Math.random() * 10, g: Math.random() * 10, b: Math.random() * 10 },
             speed: Math.random(),
           };
           //console.log(s.x + " " + s.y + " " + s.z);
@@ -527,7 +527,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("http://fonts.cdnfonts.com/css/made-sunflower");
+@import url("https://fonts.cdnfonts.com/css/made-sunflower");
 
 html,
 body,
