@@ -20,7 +20,7 @@
             <GlitchTxt class="title1 t1">Avatar /</GlitchTxt>
             <!-- <p class="title1 t1">Avatar /</p> -->
             <p class="date d1">8.088</p>
-            <p class="text tx1">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="text avatarTxt tx1">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
           <div class="right hideme"></div>
         </div>
@@ -30,7 +30,7 @@
             <GlitchTxt class="title1 title3 t2">Pre sale /</GlitchTxt>
             <!-- <p class="title1 title3 t2">Pre sale /</p> -->
             <p class="date d2">11.113</p>
-            <p class="text tx2">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="text avatarTxt tx2">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
         </div>
         <div class="row">
@@ -38,7 +38,7 @@
             <GlitchTxt class="title1 t3">Public sale /</GlitchTxt>
             <!-- <p class="title1 t3">Public sale /</p> -->
             <p class="date d3">08.367</p>
-            <p class="text tx3">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="text avatarTxt tx3">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
           </div>
           <div class="right hideme"></div>
         </div>
@@ -116,7 +116,7 @@
           <div class="inline" v-for="(item, i) in Faq" :key="i" @click="item.hide = !item.hide">
             <div class="cornerLeftTop" />
             <div class="faqCol">
-              <p class="text faqTxt">{{ item.q }}</p>
+              <p class="text faqTxt question">{{ item.q }}</p>
               <p class="text faqTxt answer" v-if="!item.hide">{{ item.r }}</p>
             </div>
             <div class="cornerRightBottom" />
@@ -254,6 +254,9 @@ export default {
             x: Math.random() * 1600 - 800,
             y: Math.random() * 900 - 450,
             z: Math.random() * 1000,
+            size: Math.random() * 4,
+            color: { r: Math.random() * 255, g: Math.random() * 255, b: Math.random() * 255 },
+            speed: Math.random(),
           };
           //console.log(s.x + " " + s.y + " " + s.z);
           out.push(s);
@@ -267,11 +270,11 @@ export default {
         c.clearRect(0, 0, canvas.width, canvas.height);
       };
 
-      const putPixel = (x, y, brightness) => {
+      const putPixel = (x, y, brightness, size, color) => {
         const intensity = brightness * 255;
-        const rgb = "rgb(" + intensity + "," + intensity + "," + intensity + ")";
+        const rgb = "rgb(" + color.r * intensity + "," + color.g * intensity + "," + color.b * intensity + ")";
         c.fillStyle = rgb;
-        c.fillRect(x, y, 2, 2);
+        c.fillRect(x, y, size, size);
       };
 
       const moveStars = (distance) => {
@@ -306,9 +309,9 @@ export default {
           if (x < 0 || x >= w || y < 0 || y >= h) {
             continue;
           }
-          const d = star.z / 1000.0;
+          const d = star.z / (1000.0 * star.speed);
           const b = 1 - d * d;
-          putPixel(x, y, b);
+          putPixel(x, y, b, star.size, star.color);
         }
 
         setTimeout(() => {
@@ -739,6 +742,10 @@ body,
   text-justify: auto;
 }
 
+.avatarTxt {
+  font-size: 16px;
+}
+
 /*********************************** Third View ***********************************/
 
 .title3 {
@@ -880,6 +887,10 @@ body,
   transition: all 300ms ease-in-out;
 }
 
+.question {
+  font-weight: 800;
+}
+
 .answer {
   margin-top: 50px;
 }
@@ -979,6 +990,12 @@ body,
     width: 100%;
   }
 
+  .personaCard {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: $layout-breakpoint-small) {
   .card {
     margin-top: 50px;
     display: flex;
@@ -1005,10 +1022,6 @@ body,
     border-left: 1px solid $white-color;
     border-right: 1px solid $white-color;
     border-bottom: 1px solid $white-color;
-  }
-
-  .personaCard {
-    margin-bottom: 50px;
   }
 }
 </style>

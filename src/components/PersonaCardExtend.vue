@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="description">
+    <div class="description hideMe">
       <p class="text descrText">{{ selectedPersona.txt }}</p>
     </div>
     <div class="teamMember">
@@ -10,6 +10,9 @@
         <img class="persona" :style="style" :src="selectedPersona.pic" />
         <div class="cornerRightBottom2" />
       </div>
+    </div>
+    <div class="description showMe">
+      <p class="text descrText">{{ selectedPersona.txt }}</p>
     </div>
     <div class="characters">
       <img class="personaMini" v-for="(persona, i) in personaList" :key="i" @click="selectPersona(i)" :src="persona.pic" />
@@ -93,6 +96,10 @@ export default {
   &:hover .characters {
     padding-left: 20px;
   }
+}
+
+.showMe {
+  display: none;
 }
 
 .teamMember {
@@ -225,7 +232,7 @@ export default {
   font-weight: 100;
 }
 
-@media screen and (max-width: $layout-breakpoint-medium) {
+@media screen and (max-width: $layout-breakpoint-small) {
   .teamMember {
     margin: 10px;
 
@@ -253,10 +260,58 @@ export default {
     margin-left: calc(100% - 40px);
   }
 
+  .showMe {
+    display: block;
+  }
+
+  .hideMe {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column;
+
+    &:hover .characters {
+      padding-left: 0px;
+    }
+  }
+
+  .description {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    //border: 1px solid red;
+  }
+
+  .descrText {
+    margin: auto;
+    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-top: 10px;
+    font-size: 12px;
+    font-weight: 100;
+    //border: 1px solid red;
+  }
+
+  .characters {
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    flex-direction: row;
+    //border: 1px solid red;
+    padding: 0;
+  }
+
   .name {
-    font-size: 15px;
+    text-transform: uppercase;
+    font-size: 19px;
+    margin: auto;
     margin-bottom: -10px;
-    margin-left: 15px;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>
