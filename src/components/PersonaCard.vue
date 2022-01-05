@@ -1,9 +1,9 @@
 <template>
   <div class="teamMember">
     <p class="text name">Prénom nom</p>
-    <div class="personaContainer">
+    <div class="personaContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
       <div class="cornerLeftTop" />
-      <img class="persona" :src="require('@/assets/imgs/persona.png')" />
+      <img class="persona" :style="style" :src="require('@/assets/imgs/persona.png')" />
       <div class="cornerRightBottom" />
     </div>
     <div class="socialsContainer2">
@@ -25,6 +25,42 @@ export default {
   name: "PersonaCard",
   props: {
     name: String,
+  },
+  data() {
+    return {
+      style: "",
+    };
+  },
+  methods: {
+    mouseEnter() {
+      console.log("mouseneter");
+      this.popup = true;
+      this.$el.addEventListener("mousemove", this.mouseMove, false);
+    },
+    mouseLeave() {
+      this.popup = false;
+      // this.$el.removeEventListener('mousemove', this.mouseMove());
+    },
+    mouseMove(e) {
+      let cx = window.innerWidth / 2;
+      let cy = window.innerHeight / 2;
+      let dx = e.clientX - cx;
+      let dy = e.clientY - cy;
+
+      console.log(dx, dy);
+
+      let tiltx = dy / cy;
+      let tilty = -(dx / cx);
+      let radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
+      let degree = radius * 20;
+
+      this.style = "transform: rotate3d(" + tiltx + ", " + tilty + ", 0, " + degree + "deg)";
+
+      // TweenLite.to("#container", 1, {
+      //   transform: "rotate3d(" + tiltx + ", " + tilty + ", 0, " + degree + "deg)",
+      //   ease: Power2.easeOut,
+      // });
+    },
   },
 };
 </script>
@@ -69,7 +105,13 @@ export default {
 .persona {
   width: 300px;
   margin: -40px 20px;
-  cursor: pointer;
+  //transform: rotate3d(0, 1, 0, 45deg);
+  //border: 1px solid red;
+  // cursor: pointer;
+  cursor: url("../assets/imgs/cursorPointer.png"), auto;
+  &:hover {
+    //transform: rotate3d(1, 1, 1, 45deg);
+  }
 }
 
 .cornerLeftTop,

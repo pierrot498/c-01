@@ -2,8 +2,16 @@
   <div id="app">
     <TopBar />
 
+    <canvas id="canvas" class="canvas" @mousemove="mouseMove"></canvas>
+
     <div class="viewContainer">
-      <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" />
+      <!-- <img class="mainLogo" :src="require('@/assets/C-01_Logo_1.png')" /> -->
+      <div class="inline2">
+        <Logo1 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2s infinite' : 'moveLogo 0.4s forwards linear' }" />
+        <Logo2 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.8s infinite' : 'moveLogo 0.6s forwards linear' }" />
+        <Logo3 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2.2s infinite' : 'moveLogo 0.8s forwards linear' }" />
+        <Logo4 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.6s infinite' : 'moveLogo 1s forwards linear' }" />
+      </div>
       <div class="r1"></div>
     </div>
 
@@ -128,6 +136,11 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import Logo1 from "@/assets/imgs/C-01.svg";
+import Logo2 from "@/assets/imgs/0-01.svg";
+import Logo3 from "@/assets/imgs/--01.svg";
+import Logo4 from "@/assets/imgs/1-01.svg";
+
 import Circle1 from "@/assets/imgs/circle.svg";
 import RoadMap from "@/assets/imgs/roadmap.svg";
 import TopBar from "@/components/TopBar";
@@ -135,9 +148,10 @@ import PersonaCard from "@/components/PersonaCard";
 
 export default {
   name: "App",
-  components: { Circle1, RoadMap, TopBar, PersonaCard },
+  components: { Logo1, Logo2, Logo3, Logo4, Circle1, RoadMap, TopBar, PersonaCard },
   data: function () {
     return {
+      mouse: { x: 0, y: 0 },
       scrollMarker: false,
       loaded: false,
       RoadMap: ["", "", "", "", ""],
@@ -147,10 +161,117 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
+    this.starsAnimation();
+    setTimeout(() => {
+      this.loaded = true;
+      console.log("ee");
+    }, 1000);
   },
   methods: {
     goToExternal(url) {
       window.open(url);
+    },
+    mouseMove(e) {
+      this.mouse.x = e.clientX;
+      this.mouse.y = e.clientY;
+      //console.log(this.mouse.x + " " + this.mouse.y);
+    },
+    starsAnimation() {
+      const canvas = document.getElementById("canvas");
+      const c = canvas.getContext("2d");
+
+      let w;
+      let h;
+
+      const setCanvasExtents = () => {
+        // w = document.body.clientWidth;
+        // h = document.body.clientHeight;
+        // canvas.width = w;
+        // canvas.height = h;
+        w = canvas.getBoundingClientRect().width;
+        h = canvas.getBoundingClientRect().height;
+        canvas.width = w;
+        canvas.height = h;
+        console.log(w + " " + h);
+      };
+
+      setCanvasExtents();
+      window.onresize = () => {
+        setCanvasExtents();
+      };
+
+      const makeStars = (count) => {
+        const out = [];
+        for (let i = 0; i < count; i++) {
+          const s = {
+            x: Math.random() * 1600 - 800,
+            y: Math.random() * 900 - 450,
+            z: Math.random() * 1000,
+          };
+          //console.log(s.x + " " + s.y + " " + s.z);
+          out.push(s);
+        }
+        return out;
+      };
+
+      let stars = makeStars(3000);
+
+      const clear = () => {
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        // c.fillStyle = "black";
+        // c.fillRect(0, 0, canvas.width, canvas.height);
+      };
+
+      const putPixel = (x, y, brightness) => {
+        const intensity = brightness * 255;
+        const rgb = "rgb(" + intensity + "," + intensity + "," + intensity + ")";
+        c.fillStyle = rgb;
+        c.fillRect(x, y, 1, 1);
+      };
+
+      const moveStars = (distance) => {
+        const count = stars.length;
+        for (var i = 0; i < count; i++) {
+          const s = stars[i];
+          s.z -= distance;
+          while (s.z <= 1) {
+            s.z += 1000;
+          }
+        }
+      };
+
+      let prevTime;
+      const init = (time) => {
+        prevTime = time;
+        requestAnimationFrame(tick);
+      };
+
+      const tick = (time) => {
+        let elapsed = time - prevTime;
+        prevTime = time;
+        moveStars(elapsed * 0.1);
+        clear();
+        const cx = w / 2;
+        const cy = h / 2;
+        const count = stars.length;
+        for (var i = 0; i < count; i++) {
+          const star = stars[i];
+          const x = cx + star.x / (star.z * 0.001);
+          const y = cy + star.y / (star.z * 0.001);
+          if (x < 0 || x >= w || y < 0 || y >= h) {
+            continue;
+          }
+          const d = star.z / 1000.0;
+          const b = 1 - d * d;
+          putPixel(x, y, b);
+        }
+
+        setTimeout(() => {
+          requestAnimationFrame(tick);
+        }, 20);
+      };
+
+      requestAnimationFrame(init);
     },
     scrollAnimation() {
       /************ TIMELINE ***********/
@@ -375,6 +496,7 @@ body,
   color: $white-color;
   background-color: $background-color1;
   background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
+  cursor: url("./assets/imgs/cursorDefault.png"), auto;
 }
 
 .viewContainer {
@@ -423,13 +545,21 @@ body,
 
 /*********************************** First View ***********************************/
 
+.canvas {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 .mainLogo {
   object-fit: fit;
   max-width: 450px;
   width: 23%;
   min-width: 200px;
   margin: auto;
-  animation: moveLogo 0.3s forwards linear;
+  // animation: moveLogo 0.3s forwards linear;
 }
 
 @keyframes moveLogo {
@@ -437,12 +567,250 @@ body,
     transform: translateY(-200%);
     opacity: 0;
   }
-  75% {
+  95% {
+    transform: translateY(-100%);
     opacity: 0.1;
   }
   100% {
     transform: translateY(0%);
     opacity: 1;
+  }
+}
+
+.inline2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: auto;
+  width: 700px;
+  //border: 1px solid red;
+}
+
+.logoLetter {
+  margin: 0;
+  line-height: 0;
+  //height: 200px;
+  fill: $white-color;
+  box-sizing: border-box;
+  filter: drop-shadow(2px 2px 10px rgba(33, 196, 250, 0.9));
+  //border: 1px solid red;
+  //animation: glitch1 2.5s infinite;
+  transition: all 500ms ease-in-out;
+  // animation: letter 2s infinite;
+}
+
+// .l1 {
+//   animation: moveLogo 0.4s forwards linear;
+// }
+
+// .l2 {
+//   animation: moveLogo 0.6s forwards linear;
+// }
+
+// .l3 {
+//   animation: moveLogo 0.8s forwards linear;
+// }
+
+// .l4 {
+//   animation: moveLogo 1s forwards linear;
+// }
+
+@keyframes letter {
+  0% {
+    filter: drop-shadow(-2px -2px 5px rgba(33, 196, 250, 1)) blur(0px);
+    opacity: 0.85;
+  }
+  45% {
+    filter: drop-shadow(2px 2px 5px rgba(33, 196, 250, 0.9)) blur(0px);
+    opacity: 0.85;
+  }
+  50% {
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 0.9)) blur(0px);
+    opacity: 1;
+  }
+  55% {
+    filter: drop-shadow(2px 2px 5px rgba(33, 196, 250, 0.9)) blur(0px);
+    opacity: 0.85;
+  }
+  100% {
+    filter: drop-shadow(-2px -2px 5px rgba(33, 196, 250, 1)) blur(0px);
+    opacity: 0.8;
+  }
+}
+
+// .inline2:nth-child(2) {
+//   fill: #67f3da;
+//   animation: glitch2 2.5s infinite;
+// }
+
+// .inline2:nth-child(3) {
+//   fill: #f16f6f;
+//   animation: glitch3 2.5s infinite;
+// }
+
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
   }
 }
 
@@ -617,7 +985,8 @@ body,
   flex-wrap: nowrap;
   margin-bottom: 50px;
   height: 50px;
-  cursor: pointer;
+  //cursor: pointer;
+  cursor: url("./assets/imgs/cursorPointer.png"), auto;
   opacity: 0.85;
 
   > * {
@@ -723,7 +1092,8 @@ body,
   background-color: transparent;
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
-  cursor: pointer;
+  //cursor: pointer;
+  cursor: url("./assets/imgs/cursorPointer.png"), auto;
   opacity: 0.85;
   background: linear-gradient($white-color, transparent);
   text-shadow: 1px 1px 2px black;

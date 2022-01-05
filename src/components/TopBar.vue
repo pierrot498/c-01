@@ -64,7 +64,8 @@ export default {
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
   border-radius: 5px;
-  cursor: pointer;
+  //cursor: pointer;
+  cursor: url("../assets/imgs/cursorPointer.png"), auto;
   opacity: 0.85;
   transition: all 200ms;
 
