@@ -845,11 +845,11 @@ body,
 .contentTeam {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 50px;
-  width: 800px;
+  max-width: 800px;
   //border: 1px solid $white-color;
 }
 

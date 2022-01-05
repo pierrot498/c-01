@@ -33,33 +33,24 @@ export default {
   },
   methods: {
     mouseEnter() {
-      console.log("mouseneter");
-      this.popup = true;
-      this.$el.addEventListener("mousemove", this.mouseMove, false);
+      console.log("mouseEnter");
     },
     mouseLeave() {
-      this.popup = false;
-      // this.$el.removeEventListener('mousemove', this.mouseMove());
+      console.log("mouseLeave");
+      this.style = "transform: none";
     },
     mouseMove(e) {
-      let cx = window.innerWidth / 2;
-      let cy = window.innerHeight / 2;
-      let dx = e.clientX - cx;
-      let dy = e.clientY - cy;
+      let rect = e.target.getBoundingClientRect();
+      let dx = e.clientX - rect.width;
+      let dy = e.clientY - rect.height;
+      //console.log(dx, dy);
 
-      console.log(dx, dy);
-
-      let tiltx = dy / cy;
-      let tilty = -(dx / cx);
+      let tiltx = dy / rect.top;
+      let tilty = -(dx / rect.left);
       let radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
       let degree = radius * 20;
 
       this.style = "transform: rotate3d(" + tiltx + ", " + tilty + ", 0, " + degree + "deg)";
-
-      // TweenLite.to("#container", 1, {
-      //   transform: "rotate3d(" + tiltx + ", " + tilty + ", 0, " + degree + "deg)",
-      //   ease: Power2.easeOut,
-      // });
     },
   },
 };
@@ -68,8 +59,6 @@ export default {
 <style lang="scss" scoped>
 .teamMember {
   margin: 10px;
-  // margin-bottom: 50px;
-  //border: 1px solid red;
   transition: all 500ms ease-in-out;
   opacity: 0.85;
 
@@ -80,9 +69,6 @@ export default {
   &:hover {
     opacity: 1;
     margin: 0;
-    // margin-left: 5px;
-    // margin-right: 5px;
-    // margin-bottom: 5px;
   }
   &:hover .persona {
     margin: -30px 30px;
@@ -105,13 +91,7 @@ export default {
 .persona {
   width: 300px;
   margin: -40px 20px;
-  //transform: rotate3d(0, 1, 0, 45deg);
-  //border: 1px solid red;
-  // cursor: pointer;
   cursor: url("../assets/imgs/cursorPointer.png") 21 21, auto;
-  &:hover {
-    //transform: rotate3d(1, 1, 1, 45deg);
-  }
 }
 
 .cornerLeftTop,
@@ -154,6 +134,50 @@ export default {
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     opacity: 1;
     transform: translateY(-1px);
+  }
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .teamMember {
+    margin: 10px;
+
+    &:hover {
+      opacity: 1;
+      margin: 0;
+    }
+    &:hover .persona {
+      margin: -10px 40px;
+    }
+  }
+
+  .persona {
+    width: 200px;
+    margin: -20px 30px;
+  }
+
+  .cornerLeftTop,
+  .cornerRightBottom {
+    height: 40px;
+    width: 40px;
+  }
+
+  .cornerRightBottom {
+    margin-left: calc(100% - 40px);
+  }
+
+  .name {
+    font-size: 15px;
+    margin-bottom: -10px;
+    margin-left: 15px;
+  }
+
+  .fa {
+    font-size: 30px;
+  }
+
+  .socialsContainer2 {
+    margin-left: 15px;
+    margin-top: -35px;
   }
 }
 </style>
