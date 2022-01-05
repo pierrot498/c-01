@@ -113,7 +113,7 @@ export default {
     opacity: 1;
   }
   50% {
-    filter: drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 2px rgba(33, 196, 250, 1)) blur(0px);
+    filter: drop-shadow(0px 0px 3px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 2px rgb(250, 156, 33)) blur(0px);
     opacity: 1;
   }
   100% {
@@ -123,22 +123,25 @@ export default {
 }
 
 .line1 {
-  animation: shineRoadMapLine1 3s infinite linear;
+  animation: shineRoadMapLine1 4.5s infinite linear;
   z-index: 20;
 }
 
 @keyframes shineRoadMapLine1 {
   0% {
+    width: 815px;
     transform: rotate(-0.5deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
     opacity: 0.85;
   }
   50% {
+    width: 785px;
     transform: rotate(0.5deg);
     filter: drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) blur(0px);
     opacity: 1;
   }
   100% {
+    width: 815px;
     transform: rotate(-0.5deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
     opacity: 0.85;
@@ -146,22 +149,25 @@ export default {
 }
 
 .line2 {
-  animation: shineRoadMapLine2 3s infinite linear;
+  animation: shineRoadMapLine2 4.8s infinite linear;
   z-index: 20;
 }
 
 @keyframes shineRoadMapLine2 {
   0% {
+    width: 815px;
     transform: rotate(1deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
     opacity: 0.85;
   }
   50% {
+    width: 785px;
     transform: rotate(-1deg);
     filter: drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) blur(0px);
     opacity: 1;
   }
   100% {
+    width: 815px;
     transform: rotate(1deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
     opacity: 0.85;
@@ -196,13 +202,19 @@ export default {
 
 .block {
   width: 200px;
-
-  // margin-left: 20px;
-  // margin-right: 20px;
+  > * {
+    stroke: $white-color;
+    stroke-width: 2px;
+    transition: all 500ms ease-in-out;
+  }
 }
 
 .text {
   font-size: 12px;
+}
+
+.title:hover {
+  font-size: 30px;
 }
 
 .b1 {

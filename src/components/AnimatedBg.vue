@@ -150,6 +150,7 @@ export default {
           }
           const d = star.z / (1000.0 * star.speed);
           const b = 1 - d * d;
+
           putPixel(x, y, b, star.size, star.color);
         }
 
@@ -172,5 +173,33 @@ export default {
   top: 0;
   left: 0;
   z-index: 1;
+  animation: killBg 10s infinite alternate;
+}
+
+@keyframes killBg {
+  0% {
+    transform: rotate(0deg);
+    filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(0px);
+  }
+  10% {
+    transform: rotate(-10deg);
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) blur(2px);
+  }
+  50% {
+    transform: rotate(0deg);
+    filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(0px);
+  }
+  60% {
+    transform: rotate(10deg);
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) blur(2px);
+  }
+  90% {
+    transform: rotate(0deg);
+    filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) blur(2px);
+  }
+  100% {
+    transform: rotate(0deg);
+    filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(0px);
+  }
 }
 </style>
