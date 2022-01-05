@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TopBar />
-    <canvas id="canvas" class="canvas"></canvas>
+    <AnimatedBg />
 
     <div class="viewContainer">
       <div class="inline2">
@@ -86,8 +86,10 @@
         <!-- <p class="title1 title3 t6">Total distribution /</p> -->
         <GlitchTxt class="title1 title3 t6">Total distribution /</GlitchTxt>
         <div class="contentTotalDistr c6">
-          <Spinner class="spinner" />
-          <p class="text">
+          <div class="spinMove">
+            <Spinner class="spinner" />
+          </div>
+          <p class="text totalTxt">
             Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
             laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
             fugiat ad consequatur veniam.
@@ -113,7 +115,7 @@
         <!-- <p class="title1 t8">FAQ /</p> -->
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
-          <div class="inline" v-for="(item, i) in Faq" :key="i" @click="item.hide = !item.hide">
+          <div class="inline" v-for="(item, i) in Faq" :key="i" @click="item.hide = !item.hide" :id="'faq' + i">
             <div class="cornerLeftTop" />
             <div class="faqCol">
               <p class="text faqTxt question">{{ item.q }}</p>
@@ -131,7 +133,7 @@
         <!-- <p class="title1 title3 t9">The theam /</p> -->
         <GlitchTxt class="title1 title3 t9">The theam /</GlitchTxt>
         <div class="contentTeam c9">
-          <PersonaCard class="personaCard" v-for="(item, i) in Team" :key="i" :name="item.name" :insta="item.insta" :discord="item.discord" :twitter="item.twitter" />
+          <PersonaCard class="personaCard" v-for="(item, i) in Team" :key="i" :name="item.name" :insta="item.insta" :discord="item.discord" :twitter="item.twitter" :id="'pcard' + i" />
         </div>
       </div>
     </div>
@@ -151,6 +153,7 @@ import Logo3 from "@/assets/imgs/0stroke.svg";
 import Logo4 from "@/assets/imgs/1stroke.svg";
 
 import TopBar from "@/components/TopBar";
+import AnimatedBg from "@/components/AnimatedBg";
 import PersonaCard from "@/components/PersonaCard";
 import PersonaCardExtend from "@/components/PersonaCardExtend";
 import GlitchTxt from "@/components/GlitchTxt";
@@ -160,7 +163,7 @@ import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, TopBar, PersonaCard, PersonaCardExtend, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
   data: function () {
     return {
       scrollMarker: false,
@@ -218,7 +221,6 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
-    this.starsAnimation();
     setTimeout(() => {
       this.loaded = true;
     }, 1000);
@@ -226,100 +228,6 @@ export default {
   methods: {
     goToExternal(url) {
       window.open(url);
-    },
-    starsAnimation() {
-      const canvas = document.getElementById("canvas");
-      const c = canvas.getContext("2d");
-
-      let w;
-      let h;
-
-      const setCanvasExtents = () => {
-        w = canvas.getBoundingClientRect().width;
-        h = canvas.getBoundingClientRect().height;
-        canvas.width = w;
-        canvas.height = h;
-        console.log(w + " " + h);
-      };
-
-      setCanvasExtents();
-      window.onresize = () => {
-        setCanvasExtents();
-      };
-
-      const makeStars = (count) => {
-        const out = [];
-        for (let i = 0; i < count; i++) {
-          const s = {
-            x: Math.random() * 1600 - 800,
-            y: Math.random() * 900 - 450,
-            z: Math.random() * 1000,
-            size: Math.random() * 4,
-            color: { r: Math.random() * 10, g: Math.random() * 10, b: Math.random() * 10 },
-            speed: Math.random(),
-          };
-          //console.log(s.x + " " + s.y + " " + s.z);
-          out.push(s);
-        }
-        return out;
-      };
-
-      let stars = makeStars(2000);
-
-      const clear = () => {
-        c.clearRect(0, 0, canvas.width, canvas.height);
-      };
-
-      const putPixel = (x, y, brightness, size, color) => {
-        const intensity = brightness * 255;
-        const rgb = "rgb(" + color.r * intensity + "," + color.g * intensity + "," + color.b * intensity + ")";
-        c.fillStyle = rgb;
-        c.fillRect(x, y, size, size);
-      };
-
-      const moveStars = (distance) => {
-        const count = stars.length;
-        for (var i = 0; i < count; i++) {
-          const s = stars[i];
-          s.z -= distance;
-          while (s.z <= 1) {
-            s.z += 1000;
-          }
-        }
-      };
-
-      let prevTime;
-      const init = (time) => {
-        prevTime = time;
-        requestAnimationFrame(tick);
-      };
-
-      const tick = (time) => {
-        let elapsed = time - prevTime;
-        prevTime = time;
-        moveStars(elapsed * 0.1);
-        clear();
-        const cx = w / 2;
-        const cy = h / 2;
-        const count = stars.length;
-        for (var i = 0; i < count; i++) {
-          const star = stars[i];
-          const x = cx + star.x / (star.z * 0.001);
-          const y = cy + star.y / (star.z * 0.001);
-          if (x < 0 || x >= w || y < 0 || y >= h) {
-            continue;
-          }
-          const d = star.z / (1000.0 * star.speed);
-          const b = 1 - d * d;
-          putPixel(x, y, b, star.size, star.color);
-        }
-
-        setTimeout(() => {
-          requestAnimationFrame(tick);
-        }, 20);
-      };
-
-      requestAnimationFrame(init);
     },
     scrollAnimation() {
       /************ TIMELINE ***********/
@@ -378,18 +286,7 @@ export default {
             pin: false,
           },
         })
-        .from(".t4", { x: innerWidth * 1, opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r4",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
+        .from(".t4", { x: innerWidth * 1, opacity: 0 })
         .from(".c4", { x: -innerWidth * 1, opacity: 0 });
 
       /************ NFT ***********/
@@ -404,18 +301,7 @@ export default {
             pin: false,
           },
         })
-        .from(".t5", { x: -innerWidth * 1, opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r5",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
+        .from(".t5", { x: -innerWidth * 1, opacity: 0 })
         .from(".c5", { x: innerWidth * 1, opacity: 0 });
 
       /************ TOTAL DISTRIBUTION ***********/
@@ -430,19 +316,9 @@ export default {
             pin: false,
           },
         })
-        .from(".t6", { x: innerWidth * 1, opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r6",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".c6", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t6", { x: innerWidth * 1, opacity: 0 })
+        .from(".spinMove", { x: -innerWidth * 1, opacity: 0 })
+        .from(".totalTxt", { x: innerWidth * 1, opacity: 0 });
 
       /************ ROADMAP ***********/
       gsap
@@ -456,18 +332,7 @@ export default {
             pin: false,
           },
         })
-        .from(".t7", { x: innerWidth * 1, opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r7",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
+        .from(".t7", { x: innerWidth * 1, opacity: 0 })
         .from(".c7", { x: -innerWidth * 1, opacity: 0 });
 
       /************ FAQ ***********/
@@ -482,19 +347,11 @@ export default {
             pin: false,
           },
         })
-        .from(".t8", { x: -innerWidth * 1, opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r8",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".c8", { x: innerWidth * 1, opacity: 0 });
+        .from(".t8", { x: -innerWidth * 1, opacity: 0 })
+        .from("#faq0", { x: innerWidth * 1, opacity: 0 })
+        .from("#faq1", { x: -innerWidth * 1, opacity: 0 })
+        .from("#faq2", { x: innerWidth * 1, opacity: 0 })
+        .from("#faq3", { x: -innerWidth * 1, opacity: 0 });
 
       /************ TEAM ***********/
       gsap
@@ -508,19 +365,11 @@ export default {
             pin: false,
           },
         })
-        .from(".t9", { x: innerWidth * 1, opacity: 0 });
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r9",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".c9", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t9", { x: innerWidth * 1, opacity: 0 })
+        .from("#pcard0", { x: -innerWidth * 1, opacity: 0 })
+        .from("#pcard1", { x: innerWidth * 1, opacity: 0 })
+        .from("#pcard2", { x: -innerWidth * 1, opacity: 0 })
+        .from("#pcard3", { x: innerWidth * 1, opacity: 0 });
     },
   },
 };
@@ -534,6 +383,7 @@ body,
 #app {
   margin: 0;
   padding: 0;
+  background: $background-color1;
 }
 
 #app {
@@ -599,15 +449,6 @@ body,
 }
 
 /*********************************** First View ***********************************/
-
-.canvas {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
 
 .mainLogo {
   object-fit: fit;
@@ -737,7 +578,6 @@ body,
   font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  letter-spacing: 0.3em;
   margin: 0;
   text-justify: auto;
 }
@@ -804,6 +644,12 @@ body,
   margin: auto;
 }
 
+.spinMove {
+  margin-top: -250px;
+  margin-bottom: 350px;
+  //border: 1px solid red;
+}
+
 .spinner {
   margin: 50px auto;
   //border: 1px solid red;
@@ -858,6 +704,8 @@ body,
     opacity: 1;
     margin-left: -40px;
     margin-right: -40px;
+    margin-top: -35px;
+    margin-bottom: 25px;
   }
   &:hover .faqCol {
     margin: 50px;
@@ -992,6 +840,17 @@ body,
 
   .personaCard {
     margin-bottom: 50px;
+  }
+
+  .roadMap {
+    transform: rotate(90deg);
+
+    margin-left: 85%;
+  }
+
+  .spinMove {
+    margin-top: -175px;
+    margin-bottom: 225px;
   }
 }
 
