@@ -16,14 +16,14 @@
 <script>
 import DiscordLogo from "@/assets/socials/discord.svg";
 import TwitterLogo from "@/assets/socials/twitter.svg";
-// import GlitchTxt from "@/components/GlitchTxt";
+import GlitchTxt from "@/components/GlitchTxt";
 
 export default {
   name: "TopBar",
   props: {
     msg: String,
   },
-  components: { /*GlitchTxt, */ DiscordLogo, TwitterLogo },
+  components: { GlitchTxt, DiscordLogo, TwitterLogo },
   methods: {
     goToExternal(url) {
       window.open(url);
