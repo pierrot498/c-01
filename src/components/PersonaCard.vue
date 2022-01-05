@@ -108,7 +108,7 @@ export default {
   //transform: rotate3d(0, 1, 0, 45deg);
   //border: 1px solid red;
   // cursor: pointer;
-  cursor: url("../assets/imgs/cursorPointer.png"), auto;
+  cursor: url("../assets/imgs/cursorPointer.png") 21 21, auto;
   &:hover {
     //transform: rotate3d(1, 1, 1, 45deg);
   }

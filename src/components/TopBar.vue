@@ -3,10 +3,10 @@
     <p class="title2">C-01 project</p>
     <div class="socialsContainer">
       <div class="logoContainer" @click="goToExternal('https://discord.gg/c-01')">
-        <DiscordLogo />
+        <DiscordLogo class="svg" />
       </div>
       <div class="logoContainer" @click="goToExternal('https://twitter.com/C_01_Project')">
-        <TwitterLogo />
+        <TwitterLogo class="svg" />
       </div>
     </div>
   </div>
@@ -41,13 +41,17 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  vertical-align: middle;
+  z-index: 100;
+  transition: all 200ms;
 }
 
 .socialsContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 190px;
+  //width: 190px;
 }
 
 .logoContainer {
@@ -59,13 +63,14 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 50px;
 
   border: 1px solid #ffffff;
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
   border-radius: 5px;
   //cursor: pointer;
-  cursor: url("../assets/imgs/cursorPointer.png"), auto;
+  cursor: url("../assets/imgs/cursorPointer.png") 21 21, auto;
   opacity: 0.85;
   transition: all 200ms;
 
@@ -76,9 +81,39 @@ export default {
   }
 }
 
+.svg {
+  zoom: 100%;
+}
+
 @media screen and (max-width: $layout-breakpoint-medium) {
   .topBar {
-    display: none;
+    top: 0px;
+    height: 80px;
+    width: calc(100% - 50px);
+    padding: 0 25px;
+    box-shadow: 0px 4px 7px -5px #ffffff;
+    background-color: $background-color1;
+  }
+
+  .title2 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .socialsContainer {
+    margin-right: -20px;
+  }
+
+  .logoContainer {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    margin-right: 10px;
+  }
+
+  .svg {
+    zoom: 75%;
   }
 }
 </style>

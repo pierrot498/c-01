@@ -136,9 +136,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import Logo1 from "@/assets/imgs/C-01.svg";
-import Logo2 from "@/assets/imgs/0-01.svg";
-import Logo3 from "@/assets/imgs/--01.svg";
+import Logo1 from "@/assets/imgs/Ctest-01.svg";
+import Logo2 from "@/assets/imgs/Ctest2-01.svg";
+import Logo3 from "@/assets/imgs/C-01.svg";
 import Logo4 from "@/assets/imgs/1-01.svg";
 
 import Circle1 from "@/assets/imgs/circle.svg";
@@ -496,7 +496,7 @@ body,
   color: $white-color;
   background-color: $background-color1;
   background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
-  cursor: url("./assets/imgs/cursorDefault.png"), auto;
+  cursor: url("./assets/imgs/cursorDefault.png") 21 21, auto;
 }
 
 .viewContainer {
@@ -590,7 +590,7 @@ body,
 .logoLetter {
   margin: 0;
   line-height: 0;
-  //height: 200px;
+  height: 200px;
   fill: $white-color;
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 10px rgba(33, 196, 250, 0.9));
@@ -986,7 +986,7 @@ body,
   margin-bottom: 50px;
   height: 50px;
   //cursor: pointer;
-  cursor: url("./assets/imgs/cursorPointer.png"), auto;
+  cursor: url("./assets/imgs/cursorPointer.png") 21 21, auto;
   opacity: 0.85;
 
   > * {
@@ -1093,7 +1093,7 @@ body,
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
   //cursor: pointer;
-  cursor: url("./assets/imgs/cursorPointer.png"), auto;
+  cursor: url("./assets/imgs/cursorPointer.png") 21 21, auto;
   opacity: 0.85;
   background: linear-gradient($white-color, transparent);
   text-shadow: 1px 1px 2px black;
