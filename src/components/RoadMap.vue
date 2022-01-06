@@ -1,5 +1,5 @@
 <template>
-  <div class="roadMapContainer triger">
+  <div class="roadMapContainer">
     <div class="blockContainer top">
       <div class="block b1">
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
@@ -74,7 +74,7 @@ export default {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".triger",
+            trigger: "#triger",
             start: "center center",
             end: "bottom top",
             markers: this.scrollMarker,

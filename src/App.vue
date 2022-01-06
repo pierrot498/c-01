@@ -99,7 +99,7 @@
     </div>
 
     <div class="viewContainer" id="road">
-      <div class="r7"></div>
+      <div class="r7" id="triger"></div>
       <div class="center">
         <!-- <p class="title1 title3 t7">Roadmap /</p> -->
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
