@@ -5,10 +5,10 @@
 
     <div class="viewContainer">
       <div class="inline2">
-        <Logo1 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2s infinite' : 'moveLogo 0.4s forwards linear' }" />
-        <Logo2 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.8s infinite' : 'moveLogo 0.6s forwards linear' }" />
-        <Logo3 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2.2s infinite' : 'moveLogo 0.8s forwards linear' }" />
-        <Logo4 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.6s infinite' : 'moveLogo 1s forwards linear' }" />
+        <Logo1 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 3s infinite' : 'moveLogo 0.4s forwards linear' }" />
+        <Logo2 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2.8s infinite' : 'moveLogo 0.6s forwards linear' }" />
+        <Logo3 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 3.2s infinite' : 'moveLogo 0.8s forwards linear' }" />
+        <Logo4 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2.6s infinite' : 'moveLogo 1s forwards linear' }" />
       </div>
       <div class="r1"></div>
     </div>
