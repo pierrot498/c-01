@@ -73,20 +73,20 @@ export default {
             pin: false,
           },
         })
-        .from(".o1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o2", { x: -innerWidth * 1, opacity: 0 })
-        .from(".b1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o3", { x: -innerWidth * 1, opacity: 0 })
-        .from(".b4", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o4", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o5", { x: -innerWidth * 1, opacity: 0 })
-        .from(".b2", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o6", { x: innerWidth * 1, opacity: 0 })
-        .from(".o7", { x: innerWidth * 1, opacity: 0 })
-        .from(".b5", { x: innerWidth * 1, opacity: 0 })
-        .from(".o8", { x: innerWidth * 1, opacity: 0 })
-        .from(".o9", { x: innerWidth * 1, opacity: 0 })
-        .from(".b3", { x: innerWidth * 1, opacity: 0 });
+        .from(".o1", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o2", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".b1", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o3", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".b4", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o4", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o5", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".b2", { x: -innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o6", { x: innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o7", { x: innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".b5", { x: innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o8", { x: innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".o9", { x: innerWidth * 1, opacity: 0, duration: 0.1 })
+        .from(".b3", { x: innerWidth * 1, opacity: 0, duration: 0.1 });
     },
   },
 };
