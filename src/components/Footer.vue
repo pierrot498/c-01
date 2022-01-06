@@ -55,7 +55,6 @@ export default {
 .footer {
   position: relative;
   margin-top: 200px;
-
   box-shadow: 0px 0px 3px #ffffff;
   z-index: 20;
 }
@@ -154,18 +153,43 @@ export default {
 
 .small {
   font-family: "MADE Sunflower", sans-serif;
-  font-size: 10px;
-  font-weight: 100;
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 00;
   opacity: 0.3;
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
-  .footerButton {
+  .footercontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: calc(100% - 20px);
+    // height: 400px;
     margin: auto;
-    margin-top: -75px;
-    width: 200px;
-    height: 40px;
-    font-size: 20px;
+    padding: 0 10px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    //border: 1px solid red;
+  }
+
+  .text {
+    font-family: "MADE Sunflower", sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 500;
+  }
+
+  .link {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .small {
+    text-transform: none;
+    font-size: 8px;
+    opacity: 0.4;
   }
 }
 </style>
