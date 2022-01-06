@@ -324,7 +324,7 @@ export default {
               .call(() => {
                 setTimeout(() => {
                   this.show.faq = true;
-                }, 2000);
+                }, 8000);
               });
           }, 100);
         }
