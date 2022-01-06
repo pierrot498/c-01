@@ -227,7 +227,6 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
-    window.addEventListener("scroll", this.handleScroll);
     setTimeout(() => {
       this.loaded = true;
     }, 1000);
@@ -396,9 +395,6 @@ export default {
   methods: {
     goToExternal(url) {
       window.open(url);
-    },
-    handleScroll() {
-      //console.log("Scrolling !");
     },
     scrollAnimation() {
       /************ TIMELINE ***********/

@@ -13,12 +13,20 @@ export default {
         x: 0,
         y: 0,
       },
+      lastScroll: 0,
+      scrollV: 0,
     };
   },
   mounted() {
     this.starsAnimation();
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
+    handleScroll() {
+      //console.log(this.scrollV);
+      this.scrollV = window.scrollY - this.lastScroll;
+      this.lastScroll = window.scrollY;
+    },
     mouseMove(e) {
       this.cursor.x = e.clientX;
       this.cursor.y = e.clientY;
@@ -77,9 +85,11 @@ export default {
         const count = stars.length;
         for (var i = 0; i < count; i++) {
           const s = stars[i];
+          s.y += this.scrollV;
           s.z -= distance;
           while (s.z <= 1) {
             s.z += 1000;
+            s.y = Math.random() * 900 - 450;
           }
         }
       };
