@@ -371,7 +371,7 @@ export default {
               .call(() => {
                 setTimeout(() => {
                   this.show.faq = true;
-                }, 2500);
+                }, 500);
               });
           }, 100);
         }

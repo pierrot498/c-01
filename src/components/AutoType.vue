@@ -25,13 +25,16 @@ export default {
   mounted() {},
   methods: {
     autoType() {
-      setTimeout(() => {
-        this.autoTxt += this.txt[this.pos];
-        if (this.pos < this.txt.length - 1) {
-          this.pos++;
-          this.autoType();
-        }
-      }, 5);
+      setTimeout(
+        () => {
+          this.autoTxt += this.txt[this.pos];
+          if (this.pos < this.txt.length - 1) {
+            this.pos++;
+            this.autoType();
+          }
+        },
+        Math.random() > 0.1 ? 2 : 50
+      );
     },
   },
 };
