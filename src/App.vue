@@ -438,7 +438,7 @@ export default {
           scrollTrigger: {
             trigger: ".r3",
             start: "center top",
-            end: "bottom top",
+            end: "bottom center",
             markers: this.scrollMarker,
             scrub: false,
             pin: false,
