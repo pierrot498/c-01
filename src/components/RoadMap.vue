@@ -3,18 +3,19 @@
     <div class="blockContainer top">
       <div class="block b1">
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-        <p class="title">TITLE1</p>
+        <p class="title">TITLE 1</p>
       </div>
       <div class="block b2">
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-        <p class="title">TITLE2</p>
+        <p class="title">TITLE 2</p>
       </div>
       <div class="block b3">
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-        <p class="title">TITLE3</p>
+        <p class="title">TITLE 3</p>
       </div>
     </div>
     <div class="roadMap2">
+      <!-- v-bind:style="{ animation: loaded ? ' animation: shineRoadMap 3s infinite linear;' : 'turnOn 3s forwards linear' }"  -->
       <RoadMap1 class="rmap o1" />
       <RoadMap2 class="rmap line1 o2" />
       <RoadMap3 class="rmap o3" />
@@ -28,11 +29,11 @@
 
     <div class="blockContainer bottom">
       <div class="block b4">
-        <p class="title">TITLE4</p>
+        <p class="title">TITLE 4</p>
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
       </div>
       <div class="block b5">
-        <p class="title">TITLE5</p>
+        <p class="title">TITLE 5</p>
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
       </div>
     </div>
@@ -57,8 +58,17 @@ import RoadMap9 from "@/assets/imgs/roadmap/5Ellipse Roadmap-01.svg";
 export default {
   name: "RoadMap",
   components: { RoadMap1, RoadMap2, RoadMap3, RoadMap4, RoadMap5, RoadMap6, RoadMap7, RoadMap8, RoadMap9 },
+  data: function () {
+    return {
+      loaded: false,
+    };
+  },
   mounted() {
     this.scrollAnimation();
+    setTimeout(() => {
+      this.loaded = true;
+      console.log("plop");
+    }, 1000);
   },
   methods: {
     scrollAnimation() {
@@ -73,19 +83,10 @@ export default {
             pin: false,
           },
         })
-        .from(".o1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o2", { x: -innerWidth * 1, opacity: 0 })
         .from(".b1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o3", { x: -innerWidth * 1, opacity: 0 })
         .from(".b4", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o4", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o5", { x: -innerWidth * 1, opacity: 0 })
         .from(".b2", { x: -innerWidth * 1, opacity: 0 })
-        .from(".o6", { x: innerWidth * 1, opacity: 0 })
-        .from(".o7", { x: innerWidth * 1, opacity: 0 })
         .from(".b5", { x: innerWidth * 1, opacity: 0 })
-        .from(".o8", { x: innerWidth * 1, opacity: 0 })
-        .from(".o9", { x: innerWidth * 1, opacity: 0 })
         .from(".b3", { x: innerWidth * 1, opacity: 0 });
     },
   },
@@ -107,7 +108,8 @@ export default {
   fill: $white-color;
   //opacity: 0.85;
   //filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
-  animation: shineRoadMap 3s infinite linear;
+  // animation: shineRoadMap 3s infinite linear;
+  animation: turnOn 3s forwards linear;
 
   > * {
     stroke: $white-color;
@@ -130,6 +132,17 @@ export default {
   100% {
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
     //opacity: 1;
+  }
+}
+
+@keyframes turnOn {
+  0% {
+    filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
+    opacity: 0;
+  }
+  100% {
+    filter: drop-shadow(0px 0px 3px rgba(33, 196, 250, 1)) blur(0px);
+    opacity: 1;
   }
 }
 
@@ -160,7 +173,7 @@ export default {
 }
 
 .line2 {
-  animation: shineRoadMapLine2 4.8s infinite linear;
+  //animation: shineRoadMapLine2 4.8s infinite linear;
   z-index: 20;
 }
 
@@ -269,7 +282,7 @@ export default {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
-    border: 1px solid red;
+    //border: 1px solid red;
   }
 }
 </style>

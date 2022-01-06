@@ -30,22 +30,22 @@ export default {
         {
           name: "Mark Zuckerberg",
           pic: require("@/assets/imgs/personas/persona4.png"),
-          txt: "Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?",
+          txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "Elon Musk ",
           pic: require("@/assets/imgs/personas/persona3.png"),
-          txt: "Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?",
+          txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "Jeff Bezos",
           pic: require("@/assets/imgs/personas/persona2.png"),
-          txt: "Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?",
+          txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "Asian Girl",
           pic: require("@/assets/imgs/personas/persona1.png"),
-          txt: "Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?",
+          txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
       ],
       selectedPersona: {},
@@ -219,12 +219,12 @@ export default {
 }
 
 .description {
-  width: 120px;
+  width: 150px;
   margin-right: -20px;
   height: 425px;
   //border: 1px solid red;
   overflow: hidden;
-  margin-left: -50px;
+  margin-left: -70px;
 }
 
 .descrText {

@@ -17,25 +17,28 @@
       <div class="center">
         <div class="row r2">
           <div class="left">
-            <GlitchTxt class="title1 t1">Avatar /</GlitchTxt>
-            <p class="date d1">8.088</p>
-            <p class="text avatarTxt tx1">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <GlitchTxt class="title1 t1">Avatars /</GlitchTxt>
+            <p class="date d1">8.888</p>
+            <p class="text avatarTxt tx1">C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most experienced people in the industry to deliver a remarkable, cutting-edge product.</p>
           </div>
+
           <div class="right hideme"></div>
         </div>
         <div class="row r3">
           <div class="left hideme"></div>
           <div class="right">
-            <GlitchTxt class="title1 title3 t2">Pre sale /</GlitchTxt>
-            <p class="date d2">11.113</p>
-            <p class="text avatarTxt tx2">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <GlitchTxt class="title1 title3 t2">Raffle Registration /</GlitchTxt>
+            <p class="date d2">01.13</p>
+            <p class="text avatarTxt tx2">
+              You can participate in our Raffle to get a chance to mint your own C-01. On Tuesday 13th, 2pm UTC, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with at least 0.28 ETH inside.
+            </p>
           </div>
         </div>
         <div class="row">
           <div class="left">
             <GlitchTxt class="title1 t3">Public sale /</GlitchTxt>
-            <p class="date d3">08.367</p>
-            <p class="text avatarTxt tx3">Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.</p>
+            <p class="date d3">01.14</p>
+            <p class="text avatarTxt tx3">The winners of the raffle will be able to mint on Wednesday,14th at 4pm UTC with a maximum amount of 2 NFTs per wallet. If you are one of our whitelisted members, you will be able to mint 2 hours prior, at 2pm UTC.</p>
           </div>
           <div class="right hideme"></div>
         </div>
@@ -52,9 +55,9 @@
           </div>
           <div class="cardRight">
             <p class="text">
-              Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
-              laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
-              fugiat ad consequatur veniam.
+              C-01 represents the synergy between the world of fashion and digital ownership. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create exclusive digital
+              collections with well-known clothing brands reserved for C-01 holders.The blockchain brings the decentralization and community around new digital initiatives, and we have the vision to keep it that way. That’s why we decided to split the revenue made with the fashion industry directly
+              with our community and core holders. The money earned will be given to our holders in terms of tokens, exclusive branded NFT drops, and physical merch drops from all our fashion partners.
             </p>
           </div>
         </div>
@@ -324,7 +327,7 @@ export default {
               .call(() => {
                 setTimeout(() => {
                   this.show.faq = true;
-                }, 8000);
+                }, 2500);
               });
           }, 100);
         }
@@ -669,6 +672,9 @@ body,
   font-size: 16px;
 }
 
+.t2 {
+  font-size: 22px;
+}
 /*********************************** Third View ***********************************/
 
 .title3 {
