@@ -1,6 +1,6 @@
 <template>
   <div class="roadMapContainer">
-    <div class="blockContainer top">
+    <!-- <div class="blockContainer top">
       <div class="block b1">
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
         <p class="title">TITLE 1</p>
@@ -13,7 +13,7 @@
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
         <p class="title">TITLE 3</p>
       </div>
-    </div>
+    </div> -->
 
     <RoadMap class="" />
     <!-- <div class="roadMap2">    
@@ -28,7 +28,7 @@
       <RoadMap9 class="rmap o9" />
     </div> -->
 
-    <div class="blockContainer bottom">
+    <!-- <div class="blockContainer bottom">
       <div class="block b4">
         <p class="title">TITLE 4</p>
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
@@ -37,7 +37,7 @@
         <p class="title">TITLE 5</p>
         <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -46,7 +46,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import RoadMap from "@/assets/imgs/roadmap.svg";
+import RoadMap from "@/assets/imgs/ROADMAP-01.svg";
 
 // import RoadMap1 from "@/assets/imgs/roadmap/1Ellipse Roadmap-01.svg";
 // import RoadMap2 from "@/assets/imgs/roadmap/Line 1-01.svg";
@@ -70,7 +70,6 @@ export default {
     this.scrollAnimation();
     setTimeout(() => {
       this.loaded = true;
-      console.log("plop");
     }, 1000);
   },
   methods: {

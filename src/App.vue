@@ -92,12 +92,48 @@
       </div>
     </div>
 
+    <!-- <div class="r7" id="triger"></div>
     <div class="viewContainer" id="road" v-if="show.road" v-bind:style="{ opacity: show.roadLock ? '1' : '0' }">
-      <div class="r7" id="triger"></div>
       <div class="center">
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
-          <!-- <RoadMap class="roadMap" /> -->
+          <RoadMap class="roadMap" />
+        </div>
+      </div>
+    </div> -->
+
+    <div class="viewContainer" id="faq" v-if="show.road" v-bind:style="{ opacity: show.roadLock ? '1' : '0' }">
+      <div class="r77"></div>
+      <div class="center">
+        <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
+        <div class="contentRoadMap c7">
+          <div class="roadMapContainer">
+            <div class="blockContainer top">
+              <div class="block b1">
+                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title">TITLE 1</p>
+              </div>
+              <div class="block b2">
+                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title">TITLE 2</p>
+              </div>
+              <div class="block b3">
+                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title">TITLE 3</p>
+              </div>
+            </div>
+            <RoadMap class="roadMap" />
+            <div class="blockContainer bottom">
+              <div class="block b4">
+                <p class="title">TITLE 4</p>
+                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+              </div>
+              <div class="block b5">
+                <p class="title">TITLE 5</p>
+                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -150,12 +186,12 @@ import PersonaCardExtend from "@/components/PersonaCardExtend";
 import GlitchTxt from "@/components/GlitchTxt";
 import AutoType from "@/components/AutoType";
 import Spinner from "@/components/Spinner";
-// import RoadMap from "@/components/RoadMap";
+import RoadMap from "@/assets/imgs/ROADMAP-01.svg";
 import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, /*RoadMap,*/ GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
   data: function () {
     return {
       scrollMarker: false,
@@ -325,7 +361,7 @@ export default {
             gsap
               .timeline({
                 scrollTrigger: {
-                  trigger: ".r7",
+                  trigger: ".r77",
                   start: "center center",
                   end: "bottom top",
                   markers: this.scrollMarker,
@@ -334,6 +370,11 @@ export default {
                 },
               })
               .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
+              .from(".b1", { x: -innerWidth * 1, opacity: 0 })
+              .from(".b4", { x: -innerWidth * 1, opacity: 0 })
+              .from(".b2", { x: -innerWidth * 1, opacity: 0 })
+              .from(".b5", { x: innerWidth * 1, opacity: 0 })
+              .from(".b3", { x: innerWidth * 1, opacity: 0 })
               .call(() => {
                 setTimeout(() => {
                   this.show.faq = true;
@@ -767,11 +808,86 @@ body,
 }
 
 .roadMap {
-  margin: 50px auto;
-  margin-bottom: 0px;
+  width: 800px;
+  height: 510px;
+  transition: all 500ms ease-in-out;
+  fill: $white-color;
+  //opacity: 0.85;
+  //filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
+  // animation: shineRoadMap 3s infinite linear;
+  animation: turnOn 3s forwards linear;
+
+  > * {
+    stroke: $white-color;
+    stroke-width: 2px;
+    transition: all 500ms ease-in-out;
+  }
+}
+
+@keyframes turnOn {
+  0% {
+    filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
+    opacity: 0;
+  }
+  100% {
+    filter: drop-shadow(0px 0px 3px rgba(33, 196, 250, 1)) blur(0px);
+    opacity: 1;
+  }
+}
+
+.roadMapContainer {
+  margin-left: -50px;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.blockContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   //border: 1px solid red;
 }
 
+.top {
+  margin-bottom: -200px;
+  // margin-left: -100px;
+  width: 800px;
+  text-align: left;
+}
+
+.bottom {
+  margin-top: -100px;
+  // margin-left: -100px;
+  width: 500px;
+  text-align: right;
+}
+
+.block {
+  width: 200px;
+  > * {
+    stroke: $white-color;
+    stroke-width: 2px;
+    transition: all 500ms ease-in-out;
+  }
+}
+
+.b1 {
+  margin-top: 90px;
+  margin-bottom: -90px;
+}
+
+.b3 {
+  margin-top: 50px;
+  margin-bottom: -50px;
+}
+
+.b4 {
+  margin-top: -30px;
+}
+
+.b5 {
+  margin-top: -40px;
+}
 /*********************************** Seven View ***********************************/
 
 .contentFAQ {
