@@ -57,25 +57,45 @@ import RoadMap9 from "@/assets/imgs/roadmap/5Ellipse Roadmap-01.svg";
 export default {
   name: "RoadMap",
   components: { RoadMap1, RoadMap2, RoadMap3, RoadMap4, RoadMap5, RoadMap6, RoadMap7, RoadMap8, RoadMap9 },
+  data: function () {
+    return {
+      loaded: false,
+    };
+  },
   mounted() {
     this.scrollAnimation();
+    setTimeout(() => {
+      this.loaded = true;
+      console.log("go");
+    }, 5000);
   },
   methods: {
     scrollAnimation() {
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: ".triger",
-      //       start: "center center",
-      //       end: "bottom top",
-      //       markers: this.scrollMarker,
-      //       scrub: false,
-      //       pin: false,
-      //     },
-      //   })
-      //   .from(".o1", { x: -innerWidth * 1, opacity: 0 })
-      //   .from(".o2", { x: -innerWidth * 1, opacity: 0 })
-      //   .from(".o3", { x: -innerWidth * 1, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".triger",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".o1", { x: -innerWidth * 1, opacity: 0 })
+        .from(".o2", { x: -innerWidth * 1, opacity: 0 })
+        .from(".b1", { x: -innerWidth * 1, opacity: 0 })
+        .from(".o3", { x: -innerWidth * 1, opacity: 0 })
+        .from(".b4", { x: -innerWidth * 1, opacity: 0 })
+        .from(".o4", { x: -innerWidth * 1, opacity: 0 })
+        .from(".o5", { x: -innerWidth * 1, opacity: 0 })
+        .from(".b2", { x: -innerWidth * 1, opacity: 0 })
+        .from(".o6", { x: innerWidth * 1, opacity: 0 })
+        .from(".o7", { x: innerWidth * 1, opacity: 0 })
+        .from(".b5", { x: innerWidth * 1, opacity: 0 })
+        .from(".o8", { x: innerWidth * 1, opacity: 0 })
+        .from(".o9", { x: innerWidth * 1, opacity: 0 })
+        .from(".b3", { x: innerWidth * 1, opacity: 0 });
     },
   },
 };
@@ -94,8 +114,8 @@ export default {
   height: 510px;
   transition: all 500ms ease-in-out;
   fill: $white-color;
-  opacity: 0.85;
-  filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
+  //opacity: 0.85;
+  //filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
   animation: shineRoadMap 3s infinite linear;
 
   > * {
@@ -110,41 +130,41 @@ export default {
 @keyframes shineRoadMap {
   0% {
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 1;
+    //opacity: 1;
   }
   50% {
     filter: drop-shadow(0px 0px 3px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 2px rgb(250, 156, 33)) blur(0px);
-    opacity: 1;
+    //opacity: 1;
   }
   100% {
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 1;
+    //opacity: 1;
   }
 }
 
 .line1 {
-  animation: shineRoadMapLine1 4.5s infinite linear;
+  //animation: shineRoadMapLine1 4.5s infinite linear;
   z-index: 20;
 }
 
 @keyframes shineRoadMapLine1 {
   0% {
-    width: 815px;
-    transform: rotate(-0.5deg);
+    //width: 815px;
+    //transform: rotate(-0.5deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 0.85;
+    //opacity: 0.85;
   }
   50% {
-    width: 785px;
-    transform: rotate(0.5deg);
+    //width: 785px;
+    //transform: rotate(0.5deg);
     filter: drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) blur(0px);
-    opacity: 1;
+    //opacity: 1;
   }
   100% {
-    width: 815px;
-    transform: rotate(-0.5deg);
+    //width: 815px;
+    //transform: rotate(-0.5deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 0.85;
+    // opacity: 0.85;
   }
 }
 
@@ -155,22 +175,22 @@ export default {
 
 @keyframes shineRoadMapLine2 {
   0% {
-    width: 815px;
-    transform: rotate(1deg);
+    // width: 815px;
+    // transform: rotate(1deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 0.85;
+    // opacity: 0.85;
   }
   50% {
-    width: 785px;
-    transform: rotate(-1deg);
+    // width: 785px;
+    /// transform: rotate(-1deg);
     filter: drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 5px rgba(33, 196, 250, 1)) blur(0px);
-    opacity: 1;
+    //  opacity: 1;
   }
   100% {
-    width: 815px;
-    transform: rotate(1deg);
+    // width: 815px;
+    // transform: rotate(1deg);
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 0.85;
+    // opacity: 0.85;
   }
 }
 

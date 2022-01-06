@@ -337,8 +337,8 @@ export default {
             pin: false,
           },
         })
-        .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from(".c7", { x: -innerWidth * this.aSpeed, opacity: 0 });
+        .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 });
+      //.from(".c7", { x: -innerWidth * this.aSpeed, opacity: 0 });
 
       /************ FAQ ***********/
       gsap
