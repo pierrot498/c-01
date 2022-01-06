@@ -14,8 +14,9 @@
         <p class="title">TITLE 3</p>
       </div>
     </div>
-    <div class="roadMap2">
-      <!-- v-bind:style="{ animation: loaded ? ' animation: shineRoadMap 3s infinite linear;' : 'turnOn 3s forwards linear' }"  -->
+
+    <RoadMap class="" />
+    <!-- <div class="roadMap2">    
       <RoadMap1 class="rmap o1" />
       <RoadMap2 class="rmap line1 o2" />
       <RoadMap3 class="rmap o3" />
@@ -25,7 +26,7 @@
       <RoadMap7 class="rmap o7" />
       <RoadMap8 class="rmap line2 o8" />
       <RoadMap9 class="rmap o9" />
-    </div>
+    </div> -->
 
     <div class="blockContainer bottom">
       <div class="block b4">
@@ -45,19 +46,21 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import RoadMap1 from "@/assets/imgs/roadmap/1Ellipse Roadmap-01.svg";
-import RoadMap2 from "@/assets/imgs/roadmap/Line 1-01.svg";
-import RoadMap3 from "@/assets/imgs/roadmap/2Ellipse Roadmap-01.svg";
-import RoadMap4 from "@/assets/imgs/roadmap/Line 2-01.svg";
-import RoadMap5 from "@/assets/imgs/roadmap/3Ellipse Roadmap-01.svg";
-import RoadMap6 from "@/assets/imgs/roadmap/Line 3-01.svg";
-import RoadMap7 from "@/assets/imgs/roadmap/4Ellipse Roadmap-01.svg";
-import RoadMap8 from "@/assets/imgs/roadmap/Line 4-01.svg";
-import RoadMap9 from "@/assets/imgs/roadmap/5Ellipse Roadmap-01.svg";
+import RoadMap from "@/assets/imgs/roadmap.svg";
+
+// import RoadMap1 from "@/assets/imgs/roadmap/1Ellipse Roadmap-01.svg";
+// import RoadMap2 from "@/assets/imgs/roadmap/Line 1-01.svg";
+// import RoadMap3 from "@/assets/imgs/roadmap/2Ellipse Roadmap-01.svg";
+// import RoadMap4 from "@/assets/imgs/roadmap/Line 2-01.svg";
+// import RoadMap5 from "@/assets/imgs/roadmap/3Ellipse Roadmap-01.svg";
+// import RoadMap6 from "@/assets/imgs/roadmap/Line 3-01.svg";
+// import RoadMap7 from "@/assets/imgs/roadmap/4Ellipse Roadmap-01.svg";
+// import RoadMap8 from "@/assets/imgs/roadmap/Line 4-01.svg";
+// import RoadMap9 from "@/assets/imgs/roadmap/5Ellipse Roadmap-01.svg";
 
 export default {
   name: "RoadMap",
-  components: { RoadMap1, RoadMap2, RoadMap3, RoadMap4, RoadMap5, RoadMap6, RoadMap7, RoadMap8, RoadMap9 },
+  components: { RoadMap /*, RoadMap2, RoadMap3, RoadMap4, RoadMap5, RoadMap6, RoadMap7, RoadMap8, RoadMap9 */ },
   data: function () {
     return {
       loaded: false,
