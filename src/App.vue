@@ -416,6 +416,7 @@ export default {
         .from(".t1", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .from(".d1", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .from(".tx1", { x: -innerWidth * this.aSpeed, opacity: 0 });
+
       gsap
         .timeline({
           scrollTrigger: {
@@ -436,99 +437,25 @@ export default {
           }, 200);
         });
 
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: ".r3",
-      //       start: "center center",
-      //       end: "bottom top",
-      //       markers: this.scrollMarker,
-      //       scrub: false,
-      //       pin: false,
-      //     },
-      //   })
-      //   .from(".t3", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from(".d3", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from(".tx3", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .call(() => {
-      //     this.show.about = true;
-      //   });
-
-      /************ ABOUT ***********/
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: ".r4",
-      //       start: "center center",
-      //       end: "bottom top",
-      //       markers: this.scrollMarker,
-      //       scrub: false,
-      //       pin: false,
-      //     },
-      //   })
-      //   .from(".t4", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //   .from(".c4", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .call(() => {
-      //     setTimeout(() => {
-      //       this.show.nft = true;
-      //     }, 1000);
-      //   });
-
-      /************ NFT ***********/
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: ".r5",
-      //       start: "center center",
-      //       end: "bottom top",
-      //       markers: this.scrollMarker,
-      //       scrub: false,
-      //       pin: false,
-      //     },
-      //   })
-      //   .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //   .call(() => {
-      //     setTimeout(() => {
-      //       this.show.total = true;
-      //     }, 1000);
-      //   });
-
-      // /************ FAQ ***********/
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: ".r8",
-      //       start: "center center",
-      //       end: "bottom top",
-      //       markers: this.scrollMarker,
-      //       scrub: false,
-      //       pin: false,
-      //     },
-      //   })
-      //   .from(".t8", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#faq0", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 });
-
-      // /************ TEAM ***********/
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: ".r9",
-      //       start: "center center",
-      //       end: "bottom top",
-      //       markers: this.scrollMarker,
-      //       scrub: false,
-      //       pin: false,
-      //     },
-      //   })
-      //   .from(".t9", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#pcard0", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
-      //   .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r3",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".d3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".tx3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .call(() => {
+          setTimeout(() => {
+            this.show.about = true;
+          }, 200);
+        });
     },
   },
 };
