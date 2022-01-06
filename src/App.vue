@@ -92,16 +92,6 @@
       </div>
     </div>
 
-    <!-- <div class="r7" id="triger"></div>
-    <div class="viewContainer" id="road" v-if="show.road" v-bind:style="{ opacity: show.roadLock ? '1' : '0' }">
-      <div class="center">
-        <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
-        <div class="contentRoadMap c7">
-          <RoadMap class="roadMap" />
-        </div>
-      </div>
-    </div> -->
-
     <div class="viewContainer" id="faq" v-if="show.road" v-bind:style="{ opacity: show.roadLock ? '1' : '0' }">
       <div class="r77"></div>
       <div class="center">
@@ -110,27 +100,30 @@
           <div class="roadMapContainer">
             <div class="blockContainer top">
               <div class="block b1">
-                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-                <p class="title">TITLE 1</p>
+                <p class="title titleb swapMob">TITLE 1</p>
+                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb rmMob">TITLE 1</p>
               </div>
               <div class="block b2">
-                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-                <p class="title">TITLE 2</p>
+                <p class="title titleb swapMob">TITLE 2</p>
+                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb rmMob">TITLE 2</p>
               </div>
               <div class="block b3">
-                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-                <p class="title">TITLE 3</p>
+                <p class="title titleb swapMob">TITLE 3</p>
+                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb rmMob">TITLE 3</p>
               </div>
             </div>
             <RoadMap class="roadMap" />
             <div class="blockContainer bottom">
               <div class="block b4">
-                <p class="title">TITLE 4</p>
-                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb">TITLE 4</p>
+                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
               </div>
               <div class="block b5">
-                <p class="title">TITLE 5</p>
-                <p class="text">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb">TITLE 5</p>
+                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
               </div>
             </div>
           </div>
@@ -803,13 +796,22 @@ body,
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 600px;
+  //max-width: 600px;
   margin: auto;
+  padding-top: 100px;
+  //border: 1px solid red;
+}
+
+.roadMapContainer {
+  width: 800px;
+  //height: 510px;
+  margin: auto;
+  //overflow: hidden;
+  //border: 1px solid red;
 }
 
 .roadMap {
-  width: 800px;
-  height: 510px;
+  width: 100%;
   transition: all 500ms ease-in-out;
   fill: $white-color;
   //opacity: 0.85;
@@ -835,12 +837,6 @@ body,
   }
 }
 
-.roadMapContainer {
-  margin-left: -50px;
-  margin-top: 100px;
-  overflow: hidden;
-}
-
 .blockContainer {
   display: flex;
   flex-direction: row;
@@ -851,14 +847,14 @@ body,
 .top {
   margin-bottom: -200px;
   // margin-left: -100px;
-  width: 800px;
+  width: 100%;
   text-align: left;
 }
 
 .bottom {
   margin-top: -100px;
   // margin-left: -100px;
-  width: 500px;
+  width: 62%;
   text-align: right;
 }
 
@@ -1019,9 +1015,92 @@ body,
     margin-left: 25px;
     margin-right: 25px;
   }
+
+  .roadMapContainer {
+    width: 100%;
+    margin: auto;
+    //border: 1px solid green;
+  }
+  .block {
+    width: 150px;
+  }
+  .top {
+    margin-bottom: -150px;
+    text-align: left;
+  }
+  .bottom {
+    margin-top: -75px;
+    text-align: right;
+  }
+  .txtb {
+    font-size: 10px;
+  }
+  .titleb {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .swapMob {
+    display: none;
+  }
+  .rmMob {
+    display: block;
+  }
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
+  .contentRoadMap {
+    padding-top: 50px;
+  }
+
+  .swapMob {
+    display: block;
+  }
+  .rmMob {
+    display: none;
+  }
+  .roadMapContainer {
+    //border: 1px solid pink;
+  }
+
+  .roadMap {
+    display: none;
+  }
+
+  .blockContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    //border: 1px solid red;
+  }
+
+  .block {
+    width: 100%;
+    padding: 0 15%;
+    margin-bottom: 20px;
+  }
+
+  .top,
+  .bottom,
+  .b1,
+  .b3,
+  .b4,
+  .b5 {
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .titleb {
+    width: 100%;
+    // margin-left: auto;
+    //border: 1px solid red;
+    text-align: center;
+  }
+
   .title1,
   .title2 {
     font-size: 19px;
