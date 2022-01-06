@@ -242,7 +242,7 @@ export default {
               .timeline({
                 scrollTrigger: {
                   trigger: ".r4",
-                  start: "center center",
+                  start: "center top",
                   end: "bottom top",
                   markers: this.scrollMarker,
                   scrub: false,
