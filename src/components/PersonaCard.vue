@@ -98,7 +98,7 @@ export default {
 .persona {
   width: 300px;
   margin: -40px 20px;
-  cursor: url("../assets/cursors/Cursor2Glow60px.png") 15 15, auto;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
 }
 
 .cornerLeftTop2 {

@@ -399,7 +399,7 @@ body,
   color: $white-color;
   background-color: $background-color1;
   background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
-  cursor: url("./assets/cursors/Cursor1Glow60px.png") 30 30, default;
+  cursor: url("./assets/cursors/Cursor1Glow60px.png") 32 32, default;
   z-index: 0;
 }
 
@@ -696,7 +696,7 @@ body,
   justify-content: center;
   flex-wrap: nowrap;
   margin-bottom: 50px;
-  cursor: url("./assets/cursors/Cursor2Glow60px.png") 15 15, auto;
+  cursor: url("./assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   opacity: 0.85;
   // border: 1px solid red;
 
