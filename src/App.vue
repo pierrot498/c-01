@@ -402,7 +402,7 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: ".r1",
-            start: "center top",
+            start: "center center",
             end: "bottom top",
             markers: this.scrollMarker,
             scrub: false,
