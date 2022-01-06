@@ -57,17 +57,8 @@ import RoadMap9 from "@/assets/imgs/roadmap/5Ellipse Roadmap-01.svg";
 export default {
   name: "RoadMap",
   components: { RoadMap1, RoadMap2, RoadMap3, RoadMap4, RoadMap5, RoadMap6, RoadMap7, RoadMap8, RoadMap9 },
-  data: function () {
-    return {
-      loaded: false,
-    };
-  },
   mounted() {
     this.scrollAnimation();
-    setTimeout(() => {
-      this.loaded = true;
-      console.log("go");
-    }, 5000);
   },
   methods: {
     scrollAnimation() {
