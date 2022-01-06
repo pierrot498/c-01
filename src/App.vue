@@ -97,7 +97,7 @@
       <div class="center">
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
-          <RoadMap class="roadMap" />
+          <!-- <RoadMap class="roadMap" /> -->
         </div>
       </div>
     </div>
@@ -150,12 +150,12 @@ import PersonaCardExtend from "@/components/PersonaCardExtend";
 import GlitchTxt from "@/components/GlitchTxt";
 import AutoType from "@/components/AutoType";
 import Spinner from "@/components/Spinner";
-import RoadMap from "@/components/RoadMap";
+// import RoadMap from "@/components/RoadMap";
 import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, /*RoadMap,*/ GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
   data: function () {
     return {
       scrollMarker: false,
