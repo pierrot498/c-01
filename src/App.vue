@@ -13,7 +13,7 @@
       <div class="r1"></div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="intro">
       <div class="center">
         <div class="row r2">
           <div class="left">
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="about">
       <div class="r4"></div>
       <div class="center">
         <!-- <p class="title1 title3 t4">About c-01 /</p> -->
@@ -69,7 +69,7 @@
       </div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="nft">
       <div class="r5"></div>
       <div class="center">
         <!-- <p class="title1 t5">NFT /</p> -->
@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="total">
       <div class="r6"></div>
       <div class="center">
         <!-- <p class="title1 title3 t6">Total distribution /</p> -->
@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="road">
       <div class="r7"></div>
       <div class="center">
         <!-- <p class="title1 title3 t7">Roadmap /</p> -->
@@ -109,7 +109,7 @@
       </div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="faq">
       <div class="r8"></div>
       <div class="center">
         <!-- <p class="title1 t8">FAQ /</p> -->
@@ -127,7 +127,7 @@
       </div>
     </div>
 
-    <div class="viewContainer">
+    <div class="viewContainer" id="team">
       <div class="r9"></div>
       <div class="center">
         <!-- <p class="title1 title3 t9">The theam /</p> -->
@@ -389,6 +389,7 @@ body,
   margin: 0;
   padding: 0;
   background: $background-color1;
+  scroll-behavior: smooth;
 }
 
 #app {

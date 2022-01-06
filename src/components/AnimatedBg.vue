@@ -22,7 +22,7 @@ export default {
     mouseMove(e) {
       this.cursor.x = e.clientX;
       this.cursor.y = e.clientY;
-      console.log(this.cursor.x, this.cursor.y);
+      //console.log(this.cursor.x, this.cursor.y);
     },
     starsAnimation() {
       const canvas = document.getElementById("canvas");
