@@ -527,7 +527,7 @@ body,
 }
 
 .text {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "MADE Sunflower", sans-serif;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.3em;

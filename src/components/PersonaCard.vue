@@ -8,13 +8,13 @@
     </div>
     <div class="socialsContainer2">
       <div class="logoContainer2" @click="goToExternal(insta)">
-        <i class="fa fa-instagram"></i>
+        <i class="fab fa-instagram"></i>
       </div>
       <div class="logoContainer2" @click="goToExternal(discord)">
-        <i class="fa fa-twitter" />
+        <i class="fab fa-twitter" />
       </div>
       <div class="logoContainer2" @click="goToExternal(twitter)">
-        <i class="fa fa-discord"></i>
+        <i class="fab fa-discord"></i>
       </div>
     </div>
   </div>
@@ -144,7 +144,7 @@ export default {
   opacity: 0.85;
 }
 
-.fa {
+.fab {
   color: $white-color;
   font-size: 35px;
   opacity: 0.85;

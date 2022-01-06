@@ -258,14 +258,15 @@ export default {
 .b5 {
   margin-top: -40px;
 }
-@media screen and (max-width: $layout-breakpoint-medium) {
+@media screen and (max-width: $layout-breakpoint-large) {
   .roadMap2 {
     margin: auto;
   }
+
   .rmap {
-    position: absolute;
-    width: 400px;
     display: none;
+    width: 100px;
+    height: 100px;
   }
 
   .roadMapContainer {

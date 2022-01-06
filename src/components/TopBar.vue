@@ -19,11 +19,11 @@
 
     <div class="myLinks" v-if="hide">
       <a class="nav-item2" @click="goTo('Shop')">
-        <i class="fa fa-instagram fa-so"></i>
-        <p class="text">Instagram</p></a
+        <i class="fab fa-discord fa-so"></i>
+        <p class="text">Discord</p></a
       >
       <a class="nav-item2" @click="goTo('D3PrintExample')">
-        <i class="fa fa-twitter fa-so" />
+        <i class="fab fa-twitter fa-so" />
         <p class="text">Twitter</p></a
       >
     </div>
@@ -214,7 +214,7 @@ export default {
 }
 
 .text {
-  font-family: "MADE Sunflower", sans-serif;
+  font-family: sans-serif;
   text-transform: uppercase;
   font-weight: 100;
   letter-spacing: 0.3em;
