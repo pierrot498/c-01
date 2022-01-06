@@ -10,35 +10,36 @@
         <Logo3 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2.2s infinite' : 'moveLogo 0.8s forwards linear' }" />
         <Logo4 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.6s infinite' : 'moveLogo 1s forwards linear' }" />
       </div>
-      <div class="r1"></div>
     </div>
 
     <div class="viewContainer" id="intro" v-if="show.intro">
       <div class="center">
-        <div class="row r2">
+        <div class="row r1">
           <div class="left">
             <GlitchTxt class="title1 t1">Avatars /</GlitchTxt>
             <p class="date d1">8.888</p>
-            <p class="text avatarTxt tx1">C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most experienced people in the industry to deliver a remarkable, cutting-edge product.</p>
+            <AutoType class="avatarTxt" :txt="intro.txt1" :active="intro.active1" />
+            <!-- <p class="text avatarTxt tx1">C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most experienced people in the industry to deliver a remarkable, cutting-edge product.</p>-->
           </div>
-
           <div class="right hideme"></div>
         </div>
-        <div class="row r3">
+
+        <div class="row r2">
           <div class="left hideme"></div>
           <div class="right">
             <GlitchTxt class="title1 title3 t2">Raffle Registration /</GlitchTxt>
             <p class="date d2">01.13</p>
-            <p class="text avatarTxt tx2">
-              You can participate in our Raffle to get a chance to mint your own C-01. On Tuesday 13th, 2pm UTC, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with at least 0.28 ETH inside.
-            </p>
+            <AutoType class="avatarTxt" :txt="intro.txt2" :active="intro.active2" />
+            <!-- <p class="text avatarTxt tx2">You can participate in our Raffle to get a chance to mint your own C-01. On Tuesday 13th, 2pm UTC, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with at least 0.28 ETH inside.</p> -->
           </div>
         </div>
-        <div class="row">
+
+        <div class="row r3">
           <div class="left">
             <GlitchTxt class="title1 t3">Public sale /</GlitchTxt>
             <p class="date d3">01.14</p>
-            <p class="text avatarTxt tx3">The winners of the raffle will be able to mint on Wednesday,14th at 4pm UTC with a maximum amount of 2 NFTs per wallet. If you are one of our whitelisted members, you will be able to mint 2 hours prior, at 2pm UTC.</p>
+            <AutoType class="avatarTxt" :txt="intro.txt3" :active="intro.active3" />
+            <!-- <p class="text avatarTxt tx3">The winners of the raffle will be able to mint on Wednesday,14th at 4pm UTC with a maximum amount of 2 NFTs per wallet. If you are one of our whitelisted members, you will be able to mint 2 hours prior, at 2pm UTC.</p>-->
           </div>
           <div class="right hideme"></div>
         </div>
@@ -46,8 +47,8 @@
     </div>
 
     <div class="viewContainer" id="about" v-if="show.about" v-bind:style="{ opacity: show.aboutLock ? '1' : '0' }">
-      <div class="r4"></div>
       <div class="center">
+        <div class="r4"></div>
         <GlitchTxt class="title1 title3 t4">About c-01 /</GlitchTxt>
         <div class="card c4">
           <div class="cardLeft">
@@ -147,13 +148,14 @@ import AnimatedBg from "@/components/AnimatedBg";
 import PersonaCard from "@/components/PersonaCard";
 import PersonaCardExtend from "@/components/PersonaCardExtend";
 import GlitchTxt from "@/components/GlitchTxt";
+import AutoType from "@/components/AutoType";
 import Spinner from "@/components/Spinner";
 import RoadMap from "@/components/RoadMap";
 import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
   data: function () {
     return {
       scrollMarker: false,
@@ -177,6 +179,14 @@ export default {
         teamLock: false,
         footer: false,
         footerLock: false,
+      },
+      intro: {
+        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most experienced people in the industry to deliver a remarkable, cutting-edge product.",
+        active1: false,
+        txt2: " You can participate in our Raffle to get a chance to mint your own C-01. On Tuesday 13th, 2pm UTC, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with at least 0.28 ETH inside.",
+        active2: false,
+        txt3: "The winners of the raffle will be able to mint on Wednesday,14th at 4pm UTC with a maximum amount of 2 NFTs per wallet. If you are one of our whitelisted members, you will be able to mint 2 hours prior, at 2pm UTC.",
+        active3: false,
       },
       Faq: [
         {
@@ -405,24 +415,27 @@ export default {
         .timeline({
           scrollTrigger: {
             trigger: ".r1",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
+            start: "top center",
+            end: "bottom bottom",
+            markers: false,
             scrub: false,
             pin: false,
           },
         })
         .from(".t1", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .from(".d1", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from(".tx1", { x: -innerWidth * this.aSpeed, opacity: 0 });
+        .from(".tx1", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .call(() => {
+          this.intro.active1 = true;
+        });
 
       gsap
         .timeline({
           scrollTrigger: {
             trigger: ".r2",
-            start: "center top",
-            end: "bottom top",
-            markers: this.scrollMarker,
+            start: "top center",
+            end: "bottom bottom",
+            markers: false,
             scrub: false,
             pin: false,
           },
@@ -431,18 +444,16 @@ export default {
         .from(".d2", { x: innerWidth * this.aSpeed, opacity: 0 })
         .from(".tx2", { x: innerWidth * this.aSpeed, opacity: 0 })
         .call(() => {
-          setTimeout(() => {
-            this.show.about = true;
-          }, 200);
+          this.intro.active2 = true;
         });
 
       gsap
         .timeline({
           scrollTrigger: {
             trigger: ".r3",
-            start: "center top",
-            end: "bottom center",
-            markers: this.scrollMarker,
+            start: "top center",
+            end: "bottom bottom",
+            markers: false,
             scrub: false,
             pin: false,
           },
@@ -451,9 +462,8 @@ export default {
         .from(".d3", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .from(".tx3", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .call(() => {
-          setTimeout(() => {
-            this.show.about = true;
-          }, 200);
+          this.intro.active3 = true;
+          this.show.about = true;
         });
     },
   },
@@ -640,9 +650,9 @@ body,
 .left {
   width: 50%;
   text-align: left;
-  .text {
-    text-align: right;
-  }
+  // .text {
+  //   text-align: right;
+  // }
 }
 
 .right {
@@ -669,7 +679,8 @@ body,
 }
 
 .avatarTxt {
-  font-size: 16px;
+  //border: 1px solid red;
+  height: 150px;
 }
 
 .t2 {
