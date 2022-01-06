@@ -36,10 +36,10 @@ export default {
   },
   methods: {
     mouseEnter() {
-      console.log("mouseEnter");
+      //console.log("mouseEnter");
     },
     mouseLeave() {
-      console.log("mouseLeave");
+      //console.log("mouseLeave");
       this.style = "transform: none";
     },
     mouseMove(e) {
@@ -98,7 +98,7 @@ export default {
 .persona {
   width: 300px;
   margin: -40px 20px;
-  cursor: url("../assets/imgs/cursorPointer.png") 21 21, auto;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 15 15, auto;
 }
 
 .cornerLeftTop2 {

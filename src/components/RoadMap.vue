@@ -236,12 +236,29 @@ export default {
 }
 @media screen and (max-width: $layout-breakpoint-medium) {
   .roadMap2 {
-    margin-left: -350px;
-    margin-bottom: 300px;
+    margin: auto;
   }
   .rmap {
     position: absolute;
     width: 400px;
+    display: none;
+  }
+
+  .roadMapContainer {
+    margin-left: 0;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .blockContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 1px solid red;
   }
 }
 </style>

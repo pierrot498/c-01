@@ -131,7 +131,7 @@
       <div class="r9"></div>
       <div class="center">
         <!-- <p class="title1 title3 t9">The theam /</p> -->
-        <GlitchTxt class="title1 title3 t9">The theam /</GlitchTxt>
+        <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
         <div class="contentTeam c9">
           <PersonaCard class="personaCard" v-for="(item, i) in Team" :key="i" :name="item.name" :insta="item.insta" :discord="item.discord" :twitter="item.twitter" :id="'pcard' + i" />
         </div>
@@ -167,6 +167,7 @@ export default {
   data: function () {
     return {
       scrollMarker: false,
+      aSpeed: 0.1,
       loaded: false,
       RoadMap: ["", "", "", "", ""],
       Faq: [
@@ -221,6 +222,7 @@ export default {
   },
   mounted() {
     this.scrollAnimation();
+    window.addEventListener("scroll", this.handleScroll);
     setTimeout(() => {
       this.loaded = true;
     }, 1000);
@@ -228,6 +230,9 @@ export default {
   methods: {
     goToExternal(url) {
       window.open(url);
+    },
+    handleScroll() {
+      console.log("eee");
     },
     scrollAnimation() {
       /************ TIMELINE ***********/
@@ -242,9 +247,9 @@ export default {
             pin: false,
           },
         })
-        .from(".t1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".d1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".tx1", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t1", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".d1", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".tx1", { x: -innerWidth * this.aSpeed, opacity: 0 });
       gsap
         .timeline({
           scrollTrigger: {
@@ -256,9 +261,9 @@ export default {
             pin: false,
           },
         })
-        .from(".t2", { x: innerWidth * 1, opacity: 0 })
-        .from(".d2", { x: innerWidth * 1, opacity: 0 })
-        .from(".tx2", { x: innerWidth * 1, opacity: 0 });
+        .from(".t2", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".d2", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".tx2", { x: innerWidth * this.aSpeed, opacity: 0 });
       gsap
         .timeline({
           scrollTrigger: {
@@ -270,9 +275,9 @@ export default {
             pin: false,
           },
         })
-        .from(".t3", { x: -innerWidth * 1, opacity: 0 })
-        .from(".d3", { x: -innerWidth * 1, opacity: 0 })
-        .from(".tx3", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".d3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".tx3", { x: -innerWidth * this.aSpeed, opacity: 0 });
 
       /************ ABOUT ***********/
       gsap
@@ -286,8 +291,8 @@ export default {
             pin: false,
           },
         })
-        .from(".t4", { x: innerWidth * 1, opacity: 0 })
-        .from(".c4", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t4", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".c4", { x: -innerWidth * this.aSpeed, opacity: 0 });
 
       /************ NFT ***********/
       gsap
@@ -301,8 +306,8 @@ export default {
             pin: false,
           },
         })
-        .from(".t5", { x: -innerWidth * 1, opacity: 0 })
-        .from(".c5", { x: innerWidth * 1, opacity: 0 });
+        .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 });
 
       /************ TOTAL DISTRIBUTION ***********/
       gsap
@@ -316,9 +321,9 @@ export default {
             pin: false,
           },
         })
-        .from(".t6", { x: innerWidth * 1, opacity: 0 })
-        .from(".spinMove", { x: -innerWidth * 1, opacity: 0 })
-        .from(".totalTxt", { x: innerWidth * 1, opacity: 0 });
+        .from(".t6", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".spinMove", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".totalTxt", { x: innerWidth * this.aSpeed, opacity: 0 });
 
       /************ ROADMAP ***********/
       gsap
@@ -332,8 +337,8 @@ export default {
             pin: false,
           },
         })
-        .from(".t7", { x: innerWidth * 1, opacity: 0 })
-        .from(".c7", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".c7", { x: -innerWidth * this.aSpeed, opacity: 0 });
 
       /************ FAQ ***********/
       gsap
@@ -347,11 +352,11 @@ export default {
             pin: false,
           },
         })
-        .from(".t8", { x: -innerWidth * 1, opacity: 0 })
-        .from("#faq0", { x: innerWidth * 1, opacity: 0 })
-        .from("#faq1", { x: -innerWidth * 1, opacity: 0 })
-        .from("#faq2", { x: innerWidth * 1, opacity: 0 })
-        .from("#faq3", { x: -innerWidth * 1, opacity: 0 });
+        .from(".t8", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq0", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 });
 
       /************ TEAM ***********/
       gsap
@@ -365,11 +370,11 @@ export default {
             pin: false,
           },
         })
-        .from(".t9", { x: innerWidth * 1, opacity: 0 })
-        .from("#pcard0", { x: -innerWidth * 1, opacity: 0 })
-        .from("#pcard1", { x: innerWidth * 1, opacity: 0 })
-        .from("#pcard2", { x: -innerWidth * 1, opacity: 0 })
-        .from("#pcard3", { x: innerWidth * 1, opacity: 0 });
+        .from(".t9", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard0", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 });
     },
   },
 };
@@ -394,7 +399,7 @@ body,
   color: $white-color;
   background-color: $background-color1;
   background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
-  cursor: url("./assets/imgs/cursorDefault.png") 21 21, auto;
+  cursor: url("./assets/cursors/Cursor1Glow60px.png") 30 30, default;
   z-index: 0;
 }
 
@@ -691,7 +696,7 @@ body,
   justify-content: center;
   flex-wrap: nowrap;
   margin-bottom: 50px;
-  cursor: url("./assets/imgs/cursorPointer.png") 21 21, auto;
+  cursor: url("./assets/cursors/Cursor2Glow60px.png") 15 15, auto;
   opacity: 0.85;
   // border: 1px solid red;
 
@@ -737,6 +742,7 @@ body,
 
 .question {
   font-weight: 800;
+  font-size: 16px;
 }
 
 .answer {
@@ -853,6 +859,11 @@ body,
   .spinMove {
     margin-top: -175px;
     margin-bottom: 225px;
+  }
+
+  .question {
+    font-weight: 800;
+    font-size: 14px;
   }
 }
 

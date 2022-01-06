@@ -1,5 +1,5 @@
 <template>
-  <div class="animatedBg">
+  <div class="animatedBg" @mousemove="mouseMove">
     <canvas id="canvas" class="canvas"></canvas>
   </div>
 </template>
@@ -10,6 +10,10 @@ export default {
   data: function () {
     return {
       scrollMarker: false,
+      cursor: {
+        x: 0,
+        y: 0,
+      },
       loaded: false,
       RoadMap: ["", "", "", "", ""],
       Faq: [
@@ -66,6 +70,12 @@ export default {
     this.starsAnimation();
   },
   methods: {
+    mouseMove(e) {
+      // let rect = e.target.getBoundingClientRect();
+      // let dx = e.clientX - rect.top / 2;
+      // let dy = e.clientY - rect.left / 2;
+      console.log(e.clientX, e.clientY);
+    },
     starsAnimation() {
       const canvas = document.getElementById("canvas");
       const c = canvas.getContext("2d");
@@ -78,7 +88,6 @@ export default {
         h = canvas.getBoundingClientRect().height;
         canvas.width = w;
         canvas.height = h;
-        console.log(w + " " + h);
       };
 
       setCanvasExtents();

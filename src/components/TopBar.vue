@@ -34,10 +34,11 @@ export default {
 
 <style lang="scss" scoped>
 .topBar {
-  position: fixed;
+  position: relative;
   top: 25px;
   width: calc(100% - 100px);
   height: 100px;
+  margin-bottom: -100px;
   padding: 0 50px;
   display: flex;
   flex-direction: row;
@@ -71,8 +72,7 @@ export default {
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
   border-radius: 5px;
-  //cursor: pointer;
-  cursor: url("../assets/imgs/cursorPointer.png") 21 21, auto;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 15 15, auto;
   opacity: 0.85;
   transition: all 200ms;
 
@@ -89,6 +89,8 @@ export default {
 
 @media screen and (max-width: $layout-breakpoint-medium) {
   .topBar {
+    position: fixed;
+
     top: 0px;
     height: 80px;
     width: calc(100% - 50px);
