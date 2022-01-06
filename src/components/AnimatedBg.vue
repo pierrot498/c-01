@@ -71,10 +71,12 @@ export default {
   },
   methods: {
     mouseMove(e) {
+      this.cursor.x = e.clientX;
+      this.cursor.y = e.clientY;
       // let rect = e.target.getBoundingClientRect();
       // let dx = e.clientX - rect.top / 2;
       // let dy = e.clientY - rect.left / 2;
-      console.log(e.clientX, e.clientY);
+      //console.log(e.clientX, e.clientY);
     },
     starsAnimation() {
       const canvas = document.getElementById("canvas");

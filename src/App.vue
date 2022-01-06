@@ -132,7 +132,7 @@
       <div class="center">
         <!-- <p class="title1 title3 t9">The theam /</p> -->
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
-        <div class="contentTeam c9">
+        <div class="contentTeam">
           <PersonaCard class="personaCard" v-for="(item, i) in Team" :key="i" :name="item.name" :insta="item.insta" :discord="item.discord" :twitter="item.twitter" :id="'pcard' + i" />
         </div>
       </div>
@@ -232,7 +232,7 @@ export default {
       window.open(url);
     },
     handleScroll() {
-      console.log("eee");
+      //console.log("Scrolling !");
     },
     scrollAnimation() {
       /************ TIMELINE ***********/
