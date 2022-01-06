@@ -19,7 +19,6 @@
             <GlitchTxt class="title1 t1">Avatars /</GlitchTxt>
             <p class="date d1">8.888</p>
             <AutoType class="avatarTxt tx1" :txt="intro.txt1" :active="intro.active1" />
-            <!-- <p class="text avatarTxt tx1">C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most experienced people in the industry to deliver a remarkable, cutting-edge product.</p>-->
           </div>
           <div class="right hideme"></div>
         </div>
@@ -30,7 +29,6 @@
             <GlitchTxt class="title1 title3 t2">Raffle Registration /</GlitchTxt>
             <p class="date d2">01.13</p>
             <AutoType class="avatarTxt tx2" :txt="intro.txt2" :active="intro.active2" />
-            <!-- <p class="text avatarTxt tx2">You can participate in our Raffle to get a chance to mint your own C-01. On Tuesday 13th, 2pm UTC, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with at least 0.28 ETH inside.</p> -->
           </div>
         </div>
 
@@ -39,7 +37,6 @@
             <GlitchTxt class="title1 t3">Public sale /</GlitchTxt>
             <p class="date d3">01.14</p>
             <AutoType class="avatarTxt tx3" :txt="intro.txt3" :active="intro.active3" />
-            <!-- <p class="text avatarTxt tx3">The winners of the raffle will be able to mint on Wednesday,14th at 4pm UTC with a maximum amount of 2 NFTs per wallet. If you are one of our whitelisted members, you will be able to mint 2 hours prior, at 2pm UTC.</p>-->
           </div>
           <div class="right hideme"></div>
         </div>
@@ -190,7 +187,6 @@ export default {
       scrollMarker: false,
       aSpeed: 0.1,
       loaded: false,
-      RoadMap: ["", "", "", "", ""],
       show: {
         intro: true,
         introLock: true,
