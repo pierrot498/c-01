@@ -9,61 +9,10 @@ export default {
   name: "AnimatedBg",
   data: function () {
     return {
-      scrollMarker: false,
       cursor: {
         x: 0,
         y: 0,
       },
-      loaded: false,
-      RoadMap: ["", "", "", "", ""],
-      Faq: [
-        {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
-          hide: true,
-        },
-        {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
-          hide: true,
-        },
-        {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
-          hide: true,
-        },
-        {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
-          hide: true,
-        },
-      ],
-      Team: [
-        {
-          name: "Prénom Nom",
-          insta: "",
-          twitter: "",
-          discord: "",
-        },
-        {
-          name: "Prénom Nom",
-          insta: "",
-          twitter: "",
-          discord: "",
-        },
-        {
-          name: "Prénom Nom",
-          insta: "",
-          twitter: "",
-          discord: "",
-        },
-        {
-          name: "Prénom Nom",
-          insta: "",
-          twitter: "",
-          discord: "",
-        },
-      ],
     };
   },
   mounted() {
@@ -73,10 +22,7 @@ export default {
     mouseMove(e) {
       this.cursor.x = e.clientX;
       this.cursor.y = e.clientY;
-      // let rect = e.target.getBoundingClientRect();
-      // let dx = e.clientX - rect.top / 2;
-      // let dy = e.clientY - rect.left / 2;
-      //console.log(e.clientX, e.clientY);
+      console.log(this.cursor.x, this.cursor.y);
     },
     starsAnimation() {
       const canvas = document.getElementById("canvas");

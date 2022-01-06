@@ -72,7 +72,7 @@ export default {
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
   border-radius: 5px;
-  cursor: url("../assets/cursors/Cursor2Glow60px.png") 15 15, auto;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   opacity: 0.85;
   transition: all 200ms;
 

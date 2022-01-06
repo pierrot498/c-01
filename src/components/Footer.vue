@@ -61,7 +61,7 @@ export default {
   background-color: transparent;
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
-  cursor: url("../assets/cursors/Cursor2Glow60px.png") 15 15, auto;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   opacity: 0.85;
   background: linear-gradient($white-color, transparent);
   text-shadow: 1px 1px 2px black;
