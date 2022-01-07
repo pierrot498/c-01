@@ -21,9 +21,9 @@ export default {
   mounted() {
     this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
     if (!this.check) {
-      this.starsAnimation();
       window.addEventListener("scroll", this.handleScroll);
     }
+    this.starsAnimation();
   },
   methods: {
     handleScroll() {
