@@ -62,7 +62,7 @@
     </div>
 
     <div class="r5"></div>
-    <div class="viewContainer" id="nft" v-bind:style="{ display: show.nft ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
+    <div class="viewContainer" id="nft" v-bind:style="{ display: show.nft ? 'flex' : 'none', opacity: show.nft ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 t5">NFT /</GlitchTxt>
         <div class="cardNft c5">
@@ -71,8 +71,8 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="total" v-bind:style="{ display: show.total ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
-      <div class="r6"></div>
+    <div class="r6"></div>
+    <div class="viewContainer" id="total" v-bind:style="{ display: show.total ? 'flex' : 'none', opacity: show.total ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 title3 t6">Community-centric /</GlitchTxt>
         <div class="contentTotalDistr c6">
@@ -87,8 +87,8 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="faq" v-bind:style="{ display: show.road ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
-      <div class="r77"></div>
+    <div class="r77"></div>
+    <div class="viewContainer" id="faq" v-bind:style="{ display: show.road ? 'flex' : 'none', opacity: show.road ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
@@ -126,8 +126,8 @@
       </div>
     </div>
 
+    <div class="r8"></div>
     <div class="viewContainer" id="faq" v-bind:style="{ display: show.faq ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
-      <div class="r8"></div>
       <div class="center">
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
@@ -143,8 +143,8 @@
       </div>
     </div>
 
+    <div class="r9"></div>
     <div class="viewContainer" id="team" v-bind:style="{ display: show.team ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
-      <div class="r9"></div>
       <div class="center">
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
         <div class="contentTeam">
@@ -297,13 +297,14 @@ export default {
     },
     scrollAnimation() {
       /************ TIMELINE ***********/
+      console.log("=> Intro");
       gsap
         .timeline({
           scrollTrigger: {
             trigger: ".r1",
             start: "top center",
             end: "bottom bottom",
-            markers: false,
+            markers: this.scrollMarker,
             scrub: false,
             pin: false,
           },
@@ -321,7 +322,7 @@ export default {
             trigger: ".r2",
             start: "top center",
             end: "bottom bottom",
-            markers: false,
+            markers: this.scrollMarker,
             scrub: false,
             pin: false,
           },
@@ -339,7 +340,7 @@ export default {
             trigger: ".r3",
             start: "top center",
             end: "bottom bottom",
-            markers: false,
+            markers: this.scrollMarker,
             scrub: false,
             pin: false,
           },
@@ -349,20 +350,22 @@ export default {
         .from(".tx3", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .call(() => {
           this.intro.active3 = true;
-          this.show.about = true;
-          console.log("about");
-          aboutAnimation();
+          setTimeout(() => {
+            this.show.about = true;
+            aboutAnimation();
+          }, 1000);
         });
 
       /************ ABOUT ***********/
-      function aboutAnimation() {
+      const aboutAnimation = () => {
+        console.log("=> About");
         gsap
           .timeline({
             scrollTrigger: {
               trigger: ".r4",
               start: "center center",
               end: "bottom center",
-              markers: true,
+              markers: this.scrollMarker,
               scrub: false,
               pin: false,
             },
@@ -372,121 +375,140 @@ export default {
           .call(() => {
             setTimeout(() => {
               this.show.nft = true;
-              console.log("nft");
+              nftAnimation();
             }, 200);
           });
-      }
+      };
+
       /************ NFT ***********/
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r5",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .call(() => {
-          setTimeout(() => {
-            this.show.total = true;
-            console.log("total");
-          }, 200);
-        });
+      const nftAnimation = () => {
+        console.log("=> NFT");
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r5",
+              start: "center center",
+              end: "bottom top",
+              markers: this.scrollMarker,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.total = true;
+              totalAnimation();
+            }, 200);
+          });
+      };
 
       /************ TOTAL DISTRIBUTION ***********/
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r6",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".t6", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from(".spinMove", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from(".totalTxt", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .call(() => {
-          setTimeout(() => {
-            this.show.road = true;
-          }, 200);
-        });
+      const totalAnimation = () => {
+        console.log("=> TOTAL");
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r6",
+              start: "center center",
+              end: "bottom top",
+              markers: this.scrollMarker,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t6", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from(".spinMove", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from(".totalTxt", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.road = true;
+              roadAnimation();
+            }, 200);
+          });
+      };
 
       /************ ROADMAP ***********/
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r77",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from(".b1", { x: -innerWidth * 1, opacity: 0 })
-        .from(".b4", { x: -innerWidth * 1, opacity: 0 })
-        .from(".b2", { x: -innerWidth * 1, opacity: 0 })
-        .from(".b5", { x: innerWidth * 1, opacity: 0 })
-        .from(".b3", { x: innerWidth * 1, opacity: 0 })
-        .call(() => {
-          setTimeout(() => {
-            this.show.faq = true;
-          }, 500);
-        });
+      const roadAnimation = () => {
+        console.log("=> ROADMAP");
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r77",
+              start: "center center",
+              end: "bottom top",
+              markers: this.scrollMarker,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from(".b1", { x: -innerWidth * 1, opacity: 0 })
+          .from(".b4", { x: -innerWidth * 1, opacity: 0 })
+          .from(".b2", { x: -innerWidth * 1, opacity: 0 })
+          .from(".b5", { x: innerWidth * 1, opacity: 0 })
+          .from(".b3", { x: innerWidth * 1, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.faq = true;
+              faqAnimation();
+            }, 500);
+          });
+      };
 
       /************ FAQ ***********/
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r8",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".t8", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from("#faq0", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .call(() => {
-          setTimeout(() => {
-            this.show.team = true;
-          }, 200);
-        });
+      const faqAnimation = () => {
+        console.log("=> FAQ");
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r8",
+              start: "center center",
+              end: "bottom top",
+              markers: this.scrollMarker,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t8", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq0", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.team = true;
+              teamAnimation();
+            }, 200);
+          });
+      };
 
       /************ TEAM ***********/
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".r9",
-            start: "center center",
-            end: "bottom top",
-            markers: this.scrollMarker,
-            scrub: false,
-            pin: false,
-          },
-        })
-        .from(".t9", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from("#pcard0", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
-        .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 })
-        .call(() => {
-          setTimeout(() => {
-            this.show.footer = true;
-          }, 200);
-        });
+      const teamAnimation = () => {
+        console.log("=> TEAM");
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r9",
+              start: "center center",
+              end: "bottom top",
+              markers: this.scrollMarker,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t9", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard0", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.footer = true;
+            }, 200);
+          });
+      };
     },
   },
 };
