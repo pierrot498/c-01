@@ -44,7 +44,7 @@ export default {
         },
         {
           name: "C-01D",
-          pic: require("@/assets/imgs/personas/persona1.png"),
+          pic: require("@/assets/imgs/personas/persona3.png"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
       ],

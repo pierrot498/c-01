@@ -35,9 +35,6 @@
       <div class="lineSmall">
         <p class="text small">All contents of this document, unless otherwise credited, are copyright © 2021 C-01</p>
       </div>
-      <!-- <div class="lineSmall">
-        <p class="text small builder">Website developed by <a class="builderlink" @click="goToExternal('https://foxlabs.fr')">FoxLabs</a></p>
-      </div> -->
     </div>
   </div>
 </template>
