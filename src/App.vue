@@ -194,7 +194,7 @@ export default {
   data: function () {
     return {
       scrollMarker: false,
-      aSpeed: 1,
+      aSpeed: 0.1,
       loaded: false,
       show: {
         intro: true,
