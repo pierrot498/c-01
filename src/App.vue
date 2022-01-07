@@ -281,18 +281,18 @@ export default {
 
     //let check = screen.width <= 280;
     //console.log(screen.width);
-    if (!check) {
-      this.show = {
-        intro: true,
-        about: true,
-        nft: true,
-        total: true,
-        road: true,
-        faq: true,
-        team: true,
-        footer: true,
-      };
-    }
+    // if (!check) {
+    //   this.show = {
+    //     intro: true,
+    //     about: true,
+    //     nft: true,
+    //     total: true,
+    //     road: true,
+    //     faq: true,
+    //     team: true,
+    //     footer: true,
+    //   };
+    // }
 
     this.scrollAnimation();
 
