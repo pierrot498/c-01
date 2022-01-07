@@ -26,7 +26,7 @@
         <div class="row r2">
           <div class="left hideme"></div>
           <div class="right">
-            <GlitchTxt class="title1 title3 t2">Raffle Registration /</GlitchTxt>
+            <GlitchTxt class="title1 title3 t2 rafle">Raffle Registration /</GlitchTxt>
             <p class="date d2">01.13</p>
             <AutoType class="avatarTxt tx2" :txt="intro.txt2" :active="intro.active2" />
           </div>
@@ -1118,6 +1118,10 @@ body,
     font-size: 50px;
     font-weight: 500;
     // line-height: 183px;
+  }
+
+  .rafle {
+    font-size: 15px;
   }
 
   .inline2 {
