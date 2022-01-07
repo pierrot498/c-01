@@ -27,7 +27,7 @@
           <div class="left hideme"></div>
           <div class="right">
             <GlitchTxt class="title1 title3 t2 rafle">Raffle Registration /</GlitchTxt>
-            <p class="date d2">01.13</p>
+            <p class="date d2">01/13</p>
             <AutoType class="avatarTxt tx2" :txt="intro.txt2" :active="intro.active2" />
           </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="row r3">
           <div class="left">
             <GlitchTxt class="title1 t3">Raffle sale /</GlitchTxt>
-            <p class="date d3">01.14</p>
+            <p class="date d3">01/14</p>
             <AutoType class="avatarTxt tx3" :txt="intro.txt3" :active="intro.active3" />
           </div>
           <div class="right hideme"></div>

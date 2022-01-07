@@ -203,6 +203,7 @@ export default {
     text-transform: none;
     font-size: 8px;
     opacity: 0.5;
+    font-family: "Helvetica Neue", sans-serif;
   }
 }
 </style>
