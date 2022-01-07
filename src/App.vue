@@ -649,7 +649,7 @@ body,
   text-align: center;
   color: $white-color;
   background-color: $background-color1;
-  background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
+  //background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
   cursor: url("./assets/cursors/Cursor1Glow60px.png") 32 32, default;
   z-index: 0;
 }

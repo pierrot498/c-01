@@ -18,7 +18,7 @@ export default {
     };
   },
   mounted() {
-    // this.starsAnimation();
+    this.starsAnimation();
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
