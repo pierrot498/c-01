@@ -52,7 +52,7 @@
             <img :src="require('@/assets/imgs/about.jpg')" />
           </div>
           <div class="cardRight">
-            <p class="text">
+            <p class="text aboutTxt">
               C-01 represents the synergy between the world of fashion and digital ownership. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create exclusive digital
               collections with well-known clothing brands reserved for C-01 holders.
             </p>
@@ -74,7 +74,7 @@
     <div class="viewContainer" id="total" v-if="show.total" v-bind:style="{ opacity: show.totalLock ? '1' : '0' }">
       <div class="r6"></div>
       <div class="center">
-        <GlitchTxt class="title1 title3 t6">Total distribution /</GlitchTxt>
+        <GlitchTxt class="title1 title3 t6">Community-centric /</GlitchTxt>
         <div class="contentTotalDistr c6">
           <div class="spinMove">
             <Spinner class="spinner" />
@@ -743,6 +743,7 @@ body,
   border-top: 1px solid $white-color;
   border-right: 1px solid $white-color;
   border-bottom: 1px solid $white-color;
+  padding-top: 80px;
   p {
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 300;
@@ -754,6 +755,10 @@ body,
   }
 }
 
+.aboutTxt {
+  text-align: justify;
+  text-justify: inter-word;
+}
 /*********************************** Fourth View ***********************************/
 
 .cardNft {
