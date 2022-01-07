@@ -1,6 +1,7 @@
 <template>
   <div class="animatedBg" @mousemove="mouseMove">
     <canvas id="canvas" class="canvas"></canvas>
+    <canvas id="canvasCurs" class="canvascurs"></canvas>
   </div>
 </template>
 
@@ -36,14 +37,21 @@ export default {
       const canvas = document.getElementById("canvas");
       const c = canvas.getContext("2d");
 
-      let w;
-      let h;
+      const canvasCurs = document.getElementById("canvasCurs");
+      //const cCurs = canvas.getContext("2d");
+
+      let w, wCurs;
+      let h, hCurs;
 
       const setCanvasExtents = () => {
         w = canvas.getBoundingClientRect().width;
         h = canvas.getBoundingClientRect().height;
         canvas.width = w;
         canvas.height = h;
+        wCurs = canvasCurs.getBoundingClientRect().width;
+        hCurs = canvasCurs.getBoundingClientRect().height;
+        canvasCurs.width = wCurs;
+        canvasCurs.height = hCurs;
       };
 
       setCanvasExtents();
@@ -141,6 +149,17 @@ export default {
   left: 0;
   z-index: 1;
   animation: killBg 10s infinite alternate;
+}
+
+.canvasCurs {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: blue;
+  border: 1px solid red;
 }
 
 @keyframes killBg {
