@@ -31,103 +31,101 @@ export default {
       this.lastScroll = window.scrollY;
     },
     starsAnimation() {
-      if (!this.check) {
-        const canvas = document.getElementById("canvas");
-        const c = canvas.getContext("2d");
+      const canvas = document.getElementById("canvas");
+      const c = canvas.getContext("2d");
 
-        let w;
-        let h;
+      let w;
+      let h;
 
-        const setCanvasExtents = () => {
-          w = canvas.getBoundingClientRect().width;
-          h = canvas.getBoundingClientRect().height;
-          canvas.width = w;
-          canvas.height = h;
-        };
+      const setCanvasExtents = () => {
+        w = canvas.getBoundingClientRect().width;
+        h = canvas.getBoundingClientRect().height;
+        canvas.width = w;
+        canvas.height = h;
+      };
 
+      setCanvasExtents();
+      window.onresize = () => {
         setCanvasExtents();
-        window.onresize = () => {
-          setCanvasExtents();
-        };
+      };
 
-        const makeStars = (count) => {
-          const out = [];
-          for (let i = 0; i < count; i++) {
-            const s = {
-              x: Math.random() * 1600 - 800,
-              y: Math.random() * 900 - 450,
-              z: Math.random() * 1000,
-              size: Math.random() * 4 + 1,
-              color: { r: Math.random() * 10, g: Math.random() * 10, b: Math.random() * 10 },
-              speed: Math.random(),
-            };
-            //console.log(s.x + " " + s.y + " " + s.z);
-            out.push(s);
+      const makeStars = (count) => {
+        const out = [];
+        for (let i = 0; i < count; i++) {
+          const s = {
+            x: Math.random() * 1600 - 800,
+            y: Math.random() * 900 - 450,
+            z: Math.random() * 1000,
+            size: Math.random() * 4 + 1,
+            color: { r: Math.random() * 10, g: Math.random() * 10, b: Math.random() * 10 },
+            speed: Math.random(),
+          };
+          //console.log(s.x + " " + s.y + " " + s.z);
+          out.push(s);
+        }
+        return out;
+      };
+
+      let stars = makeStars(1000);
+
+      const clear = () => {
+        c.clearRect(0, 0, canvas.width, canvas.height);
+      };
+
+      const putPixel = (x, y, brightness, size, color) => {
+        const intensity = brightness * 255;
+        const rgb = "rgb(" + color.r * intensity + "," + color.g * intensity + "," + color.b * intensity + ")";
+        c.fillStyle = rgb;
+        c.fillRect(x, y, size, size);
+      };
+
+      const moveStars = (distance) => {
+        const count = stars.length;
+        for (var i = 0; i < count; i++) {
+          const s = stars[i];
+          s.y += this.scrollV;
+          s.z -= distance;
+          while (s.z <= 1) {
+            s.z += 1000;
+            s.y = Math.random() * 900 - 450;
           }
-          return out;
-        };
+        }
+        this.scrollV = 0;
+      };
 
-        let stars = makeStars(1000);
+      let prevTime;
+      const init = (time) => {
+        prevTime = time;
+        requestAnimationFrame(tick);
+      };
 
-        const clear = () => {
-          c.clearRect(0, 0, canvas.width, canvas.height);
-        };
-
-        const putPixel = (x, y, brightness, size, color) => {
-          const intensity = brightness * 255;
-          const rgb = "rgb(" + color.r * intensity + "," + color.g * intensity + "," + color.b * intensity + ")";
-          c.fillStyle = rgb;
-          c.fillRect(x, y, size, size);
-        };
-
-        const moveStars = (distance) => {
-          const count = stars.length;
-          for (var i = 0; i < count; i++) {
-            const s = stars[i];
-            s.y += this.scrollV;
-            s.z -= distance;
-            while (s.z <= 1) {
-              s.z += 1000;
-              s.y = Math.random() * 900 - 450;
-            }
+      const tick = (time) => {
+        let elapsed = time - prevTime;
+        prevTime = time;
+        moveStars(elapsed * 0.1);
+        clear();
+        const cx = w / 2;
+        const cy = h / 2;
+        const count = stars.length;
+        for (var i = 0; i < count; i++) {
+          const star = stars[i];
+          const x = cx + star.x / (star.z * 0.001);
+          const y = cy + star.y / (star.z * 0.001);
+          if (x < 0 || x >= w || y < 0 || y >= h) {
+            continue;
           }
-          this.scrollV = 0;
-        };
+          const d = star.z / (1000.0 * star.speed);
+          const b = 1 - d * d;
 
-        let prevTime;
-        const init = (time) => {
-          prevTime = time;
+          putPixel(x, y, b, star.size, star.color);
+        }
+
+        setTimeout(() => {
           requestAnimationFrame(tick);
-        };
+        }, 10);
+      };
 
-        const tick = (time) => {
-          let elapsed = time - prevTime;
-          prevTime = time;
-          moveStars(elapsed * 0.1);
-          clear();
-          const cx = w / 2;
-          const cy = h / 2;
-          const count = stars.length;
-          for (var i = 0; i < count; i++) {
-            const star = stars[i];
-            const x = cx + star.x / (star.z * 0.001);
-            const y = cy + star.y / (star.z * 0.001);
-            if (x < 0 || x >= w || y < 0 || y >= h) {
-              continue;
-            }
-            const d = star.z / (1000.0 * star.speed);
-            const b = 1 - d * d;
-
-            putPixel(x, y, b, star.size, star.color);
-          }
-
-          setTimeout(() => {
-            requestAnimationFrame(tick);
-          }, 10);
-        };
-
-        requestAnimationFrame(init);
-      }
+      requestAnimationFrame(init);
     },
   },
 };
