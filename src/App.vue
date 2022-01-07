@@ -138,7 +138,7 @@
     </div>
 
     <div class="r8"></div>
-    <div class="viewContainer" id="faq" v-bind:style="{ display: show.faq ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
+    <div class="viewContainer" id="faq" v-bind:style="{ display: show.faq ? 'flex' : 'none', opacity: show.faq ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
@@ -155,7 +155,7 @@
     </div>
 
     <div class="r9"></div>
-    <div class="viewContainer" id="team" v-bind:style="{ display: show.team ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
+    <div class="viewContainer" id="team" v-bind:style="{ display: show.team ? 'flex' : 'none', opacity: show.team ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
         <div class="contentTeam">
@@ -592,6 +592,8 @@ export default {
           .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
           .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq4", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq5", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
             setTimeout(() => {
               this.show.team = true;
