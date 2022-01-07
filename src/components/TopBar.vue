@@ -18,11 +18,11 @@
     </div>
 
     <div class="myLinks" v-if="hide">
-      <a class="nav-item2" @click="goTo('Shop')">
+      <a class="nav-item2" @click="goToExternal('https://discord.gg/c-01')">
         <i class="fab fa-discord fa-so"></i>
         <p class="text">Discord</p></a
       >
-      <a class="nav-item2" @click="goTo('D3PrintExample')">
+      <a class="nav-item2" @click="goToExternal('https://twitter.com/C_01_Project')">
         <i class="fab fa-twitter fa-so" />
         <p class="text">Twitter</p></a
       >

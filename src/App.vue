@@ -54,8 +54,7 @@
           <div class="cardRight">
             <p class="text">
               C-01 represents the synergy between the world of fashion and digital ownership. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create exclusive digital
-              collections with well-known clothing brands reserved for C-01 holders.The blockchain brings the decentralization and community around new digital initiatives, and we have the vision to keep it that way. That’s why we decided to split the revenue made with the fashion industry directly
-              with our community and core holders. The money earned will be given to our holders in terms of tokens, exclusive branded NFT drops, and physical merch drops from all our fashion partners.
+              collections with well-known clothing brands reserved for C-01 holders.
             </p>
           </div>
         </div>
@@ -81,9 +80,8 @@
             <Spinner class="spinner" />
           </div>
           <p class="text totalTxt">
-            Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam. Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis
-            laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem fugiat ad consequatur veniam.Cum quod illum ut molestiae quaerat qui numquam labore eum natus galisum aut officiis laboriosam quo sapiente quod? Cum recusandae quasi vel eligendi corrupti est quidem
-            fugiat ad consequatur veniam.
+            The blockchain brings the decentralization and community around new digital initiatives, and we have the vision to keep it that way. That’s why we decided to split the revenue made with the fashion industry directly with our community and core holders. The money earned will be given to
+            our holders in terms of tokens, exclusive branded NFT drops, and physical merch drops from all our fashion partners.
           </p>
         </div>
       </div>

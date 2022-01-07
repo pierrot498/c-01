@@ -19,15 +19,15 @@
         <a class="text link" href="#team">The team</a>
       </div>
       <div class="socialsContainer2">
-        <div class="logoContainer2" @click="goToExternal(insta)">
+        <div class="logoContainer2" @click="goToExternal('https://www.instagram.com/c_01.nft/')">
           <i class="fab fa-instagram"></i>
         </div>
-        <div class="logoContainer2" @click="goToExternal(discord)">
+        <div class="logoContainer2" @click="goToExternal('https://twitter.com/C_01_Project')">
           <i class="fab fa-twitter" />
         </div>
-        <!-- <div class="logoContainer2" @click="goToExternal(twitter)">
-          <i class="fa fa-discord"></i>
-        </div> -->
+        <div class="logoContainer2" @click="goToExternal('https://discord.gg/c-01')">
+          <i class="fab fa-discord"></i>
+        </div>
       </div>
       <div class="lineSmall">
         <p class="text small">All Rights Reserved C-01</p>
@@ -35,8 +35,10 @@
       <div class="lineSmall">
         <p class="text small">All contents of this document, unless otherwise credited, are copyright © 2021 C-01</p>
       </div>
+      <!-- <div class="lineSmall">
+        <p class="text small builder">Website developed by <a class="builderlink" @click="goToExternal('https://foxlabs.fr')">FoxLabs</a></p>
+      </div> -->
     </div>
-    <!-- <button class="footerButton" @click="goToExternal('')">Join Discord</button> -->
   </div>
 </template>
 
@@ -157,6 +159,20 @@ export default {
   font-size: 12px;
   font-weight: 00;
   opacity: 0.4;
+}
+
+.builder {
+  font-size: 10px;
+}
+
+.builderlink {
+  border-bottom: 1px solid $white-color;
+  opacity: 0.85;
+  &:hover {
+    opacity: 1;
+    color: $white-color;
+    cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
+  }
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
