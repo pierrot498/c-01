@@ -49,7 +49,7 @@
         <GlitchTxt class="title1 title3 t4">About c-01 /</GlitchTxt>
         <div class="card c4">
           <div class="cardLeft">
-            <img :src="require('@/assets/imgs/about.jpg')" />
+            <img :src="require('@/assets/imgs/aboutcmp.jpg')" />
           </div>
           <div class="cardRight">
             <p class="text aboutTxt">
@@ -864,7 +864,9 @@ b {
 
 .cardLeft {
   width: 45%;
+
   img {
+    min-height: 500px;
     width: 100%;
     height: 100%;
     object-fit: cover;
