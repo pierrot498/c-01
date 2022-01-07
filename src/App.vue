@@ -27,7 +27,7 @@
           <div class="left hideme"></div>
           <div class="right">
             <GlitchTxt class="title1 title3 t2 rafle">Raffle Registration /</GlitchTxt>
-            <p class="date d2">01.13</p>
+            <p class="date d2">01/13</p>
             <AutoType class="avatarTxt tx2" :txt="intro.txt2" :active="intro.active2" />
           </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="row r3">
           <div class="left">
             <GlitchTxt class="title1 t3">Raffle sale /</GlitchTxt>
-            <p class="date d3">01.14</p>
+            <p class="date d3">01/14</p>
             <AutoType class="avatarTxt tx3" :txt="intro.txt3" :active="intro.active3" />
           </div>
           <div class="right hideme"></div>
@@ -49,7 +49,7 @@
         <GlitchTxt class="title1 title3 t4">About c-01 /</GlitchTxt>
         <div class="card c4">
           <div class="cardLeft">
-            <img :src="require('@/assets/imgs/about.jpg')" />
+            <img :src="require('@/assets/imgs/aboutcmp.jpg')" />
           </div>
           <div class="cardRight">
             <p class="text aboutTxt">
@@ -95,46 +95,41 @@
           <div class="roadMapContainer">
             <div class="blockContainer top">
               <div class="block b1">
-                <p class="title titleb swapMob">Genesis</p>
+                <p class="title titleb">Genesis</p>
                 <p class="text txtb">
                   We took more than two months to create each of the facial expressions of our 3D models to make them look as natural and as human as possible. We then designed each of their clothing – the materials and textures with our team. Our goal was to go beyond the boundaries of everything
                   made so far and provide an ultra-realistic look through detailed clothing and fabrics. We wanted to make the avatars look like real-life models, but for the metaverse.
                 </p>
-                <p class="title titleb rmMob">Genesis</p>
               </div>
               <div class="block b2">
-                <p class="title titleb swapMob">Discovery</p>
+                <p class="title titleb">Discovery</p>
                 <p class="text txtb">
                   After the reveal of the artwork, you will be able to know which character, ethnicity, and clothing style you successfully minted. The rarity rank of your NFT will be directly available across the main two rarity services available – Rarity Tools and Rarity Sniper.
                 </p>
-                <p class="title titleb rmMob">Discovery</p>
               </div>
               <div class="block b3">
-                <p class="title titleb swapMob">Ready Player One</p>
+                <p class="title titleb">Ready Player One</p>
                 <p class="text txtb">
                   After a few successful partnerships in Q1, 2022, we will implement ourselves in Sandbox and Decentraland. We will create a virtual fashion show with all our partners that will be retransmitted live across social media. The goal is to replicate the real world’s well-known fashion
                   parade and make it an unbelievable digital experience.
                 </p>
-                <p class="title titleb rmMob">Ready Player One</p>
               </div>
             </div>
             <canvas id="rcanva" class="roadMap2"></canvas>
             <!-- <RoadMap class="roadMap" /> -->
             <div class="blockContainer bottom">
               <div class="block b4">
-                <p class="title titleb swapMob">Sale Event</p>
+                <p class="title titleb">Sale Event</p>
                 <p class="text txtb">
                   The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
                   experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
                 </p>
-                <p class="title titleb rmMob">Sale Event</p>
               </div>
               <div class="block b5">
-                <p class="title titleb swapMob">Conquer the Metaverse</p>
+                <p class="title titleb">Conquer the Metaverse</p>
                 <p class="text txtb">
                   One week after the mint, we will create the token economics for our ecosystem. Our goal is to be the pioneers of luxury fashion in the metaverse. We will provide support for luxury fashion brands around the world to showcase their digital collection with our 3D model avatars.
                 </p>
-                <p class="title titleb rmMob">Conquer the Metaverse</p>
               </div>
             </div>
           </div>
@@ -143,7 +138,7 @@
     </div>
 
     <div class="r8"></div>
-    <div class="viewContainer" id="faq" v-bind:style="{ display: show.faq ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
+    <div class="viewContainer" id="faq" v-bind:style="{ display: show.faq ? 'flex' : 'none', opacity: show.faq ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
@@ -160,7 +155,7 @@
     </div>
 
     <div class="r9"></div>
-    <div class="viewContainer" id="team" v-bind:style="{ display: show.team ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
+    <div class="viewContainer" id="team" v-bind:style="{ display: show.team ? 'flex' : 'none', opacity: show.team ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
         <div class="contentTeam">
@@ -229,23 +224,33 @@ export default {
       },
       Faq: [
         {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          q: "What is the mint price ?",
+          r: "The mint price is 0.25 ETH plus gas",
           hide: true,
         },
         {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          q: "How many NFT can I mint per wallet ? ",
+          r: "You can mint a maximum of 2 NTFs per Ethereum wallet.",
           hide: true,
         },
         {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          q: "How can I register for the raffle ?",
+          r: "Visit our website on Tuesday 13th at 2pm UTC to register for the raffle. Please be aware that you need enough funds on your wallet to mint at least 1 C-01 NFT. We will only verify the wallet addresses with a minimum of 0.28 ETH (0.25 + Gas fees).",
           hide: true,
         },
         {
-          q: "Quo illo voluptatem et soluta error est error recusandae ?",
-          r: "Quo illo voluptatem et soluta error est error recusandae ?",
+          q: "When is the public sale ?",
+          r: "The public sale will occur on January 14th, at 4 pm UTC on our website. Only the winners of the raffle will be able to mint.",
+          hide: true,
+        },
+        {
+          q: "How do I know if I won the raffle?",
+          r: "Please visit our website on Friday,14th at 4pm UTC and connect your Metamask account to see if you've won. If you win the raffle, you will be able to mint right away.",
+          hide: true,
+        },
+        {
+          q: "Do I need to register for the raffle if I’m whitelisted?",
+          r: "If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.",
           hide: true,
         },
       ],
@@ -587,6 +592,8 @@ export default {
           .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
           .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq4", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#faq5", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
             setTimeout(() => {
               this.show.team = true;
@@ -633,7 +640,8 @@ body,
 #app {
   margin: 0;
   padding: 0;
-  background: $background-color1;
+  // background: $background-color1;
+  background-color: $background-color3;
   scroll-behavior: smooth;
 }
 
@@ -643,8 +651,8 @@ body,
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $white-color;
-  background-color: $background-color1;
-  background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
+  background-color: $background-color3;
+  //background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
   cursor: url("./assets/cursors/Cursor1Glow60px.png") 32 32, default;
   z-index: 0;
 }
@@ -673,11 +681,13 @@ b {
   margin: auto;
   width: 100%;
   max-width: 900px;
+  z-index: 200;
   //border: 1px solid green;
 }
 
 .max {
   max-width: 1200px;
+  margin-top: 50px;
 }
 
 .title1 {
@@ -756,6 +766,7 @@ b {
   flex-wrap: nowrap;
   margin: auto;
   width: 700px;
+  z-index: 200;
   //border: 1px solid red;
 }
 
@@ -868,7 +879,9 @@ b {
 
 .cardLeft {
   width: 45%;
+
   img {
+    min-height: 500px;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1047,6 +1060,13 @@ b {
 .b5 {
   margin-left: 15px;
 }
+
+.titleb {
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 20px;
+}
+
 /*********************************** Seven View ***********************************/
 
 .contentFAQ {
@@ -1266,6 +1286,7 @@ b {
   .titleb {
     text-transform: uppercase;
     width: 100%;
+    font-size: 15px;
     // margin-left: auto;
     //border: 1px solid red;
     text-align: center;

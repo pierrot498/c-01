@@ -1,5 +1,5 @@
 <template>
-  <div class="animatedBg" @mousemove="mouseMove">
+  <div class="animatedBg">
     <canvas id="canvas" class="canvas"></canvas>
     <canvas id="canvasCurs" class="canvascurs"></canvas>
   </div>
@@ -28,11 +28,11 @@ export default {
       this.scrollV = window.scrollY - this.lastScroll;
       this.lastScroll = window.scrollY;
     },
-    mouseMove(e) {
-      this.cursor.x = e.clientX;
-      this.cursor.y = e.clientY;
-      //console.log(this.cursor.x, this.cursor.y);
-    },
+    // mouseMove(e) {
+    //   this.cursor.x = e.clientX;
+    //   this.cursor.y = e.clientY;
+    //   //console.log(this.cursor.x, this.cursor.y);
+    // },
     starsAnimation() {
       const canvas = document.getElementById("canvas");
       const c = canvas.getContext("2d");
@@ -76,7 +76,7 @@ export default {
         return out;
       };
 
-      let stars = makeStars(2000);
+      let stars = makeStars(1000);
 
       const clear = () => {
         c.clearRect(0, 0, canvas.width, canvas.height);
@@ -100,6 +100,7 @@ export default {
             s.y = Math.random() * 900 - 450;
           }
         }
+        this.scrollV = 0;
       };
 
       let prevTime;
@@ -131,7 +132,7 @@ export default {
 
         setTimeout(() => {
           requestAnimationFrame(tick);
-        }, 20);
+        }, 10);
       };
 
       requestAnimationFrame(init);

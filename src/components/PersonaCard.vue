@@ -189,13 +189,25 @@ export default {
     margin-left: 25px;
   }
 
-  .fa {
-    font-size: 30px;
+  .fab {
+    font-size: 25px;
+  }
+
+  .logoContainer2 {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.85;
   }
 
   .socialsContainer2 {
-    margin-left: 0px;
-    margin-top: -20px;
+    margin-left: 10px;
+    margin-top: -10px;
   }
 }
 </style>
