@@ -29,22 +29,22 @@ export default {
       personaList: [
         {
           name: "C-01A",
-          pic: require("@/assets/imgs/personas/persona1.png"),
+          pic: require("@/assets/imgs/personas/persona1.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "C-01B",
-          pic: require("@/assets/imgs/personas/persona2.png"),
+          pic: require("@/assets/imgs/personas/persona2.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "C-01C",
-          pic: require("@/assets/imgs/personas/persona4.png"),
+          pic: require("@/assets/imgs/personas/persona4.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "C-01D",
-          pic: require("@/assets/imgs/personas/persona3.png"),
+          pic: require("@/assets/imgs/personas/persona3.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
       ],
@@ -52,7 +52,7 @@ export default {
     };
   },
   mounted() {
-    this.selectedPersona = this.personaList[3];
+    this.selectedPersona = this.personaList[0];
   },
   methods: {
     selectPersona(i) {

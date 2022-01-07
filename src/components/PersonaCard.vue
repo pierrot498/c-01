@@ -3,7 +3,7 @@
     <p class="text name">{{ name }}</p>
     <div class="personaContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
       <div class="cornerLeftTop2" />
-      <img class="persona" :style="style" :src="require('@/assets/imgs/personas/persona1.png')" />
+      <img class="persona" :style="style" :src="require('@/assets/imgs/personas/persona1.jpg')" />
       <div class="cornerRightBottom2" />
     </div>
     <div class="socialsContainer2">
