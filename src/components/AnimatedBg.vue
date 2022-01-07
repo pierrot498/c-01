@@ -19,7 +19,7 @@ export default {
   },
   mounted() {
     this.starsAnimation();
-    //window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
@@ -122,9 +122,9 @@ export default {
           putPixel(x, y, b, star.size, star.color);
         }
 
-        setTimeout(() => {
-          requestAnimationFrame(tick);
-        }, 30);
+        // setTimeout(() => {
+        requestAnimationFrame(tick);
+        // }, 30);
       };
 
       requestAnimationFrame(init);
