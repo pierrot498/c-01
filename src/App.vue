@@ -752,6 +752,7 @@ b {
   flex-wrap: nowrap;
   margin: auto;
   width: 700px;
+  z-index: 200;
   //border: 1px solid red;
 }
 

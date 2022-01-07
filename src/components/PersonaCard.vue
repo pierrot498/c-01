@@ -189,7 +189,7 @@ export default {
     margin-left: 25px;
   }
 
-  .fa {
+  .fab {
     font-size: 30px;
   }
 
