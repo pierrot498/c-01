@@ -10,13 +10,13 @@
         <a class="text link" href="#nft">NFT</a>
       </div>
       <div class="line">
-        <a class="text link" href="#total">Total distribution</a>
+        <a class="text link" href="#total">Community</a>
         <a class="text">/</a>
         <a class="text link" href="#road">RoadMap</a>
         <a class="text">/</a>
         <a class="text link" href="#faq">FAQ</a>
         <a class="text">/</a>
-        <a class="text link" href="#team">The team</a>
+        <a class="text link" href="#team">Team</a>
       </div>
       <div class="socialsContainer2">
         <div class="logoContainer2" @click="goToExternal('https://www.instagram.com/c_01.nft/')">
