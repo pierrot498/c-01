@@ -110,15 +110,18 @@
                 <p class="title titleb rmMob">Ready Player One</p>
               </div>
             </div>
-            <RoadMap class="roadMap" />
+            <canvas id="rcanva" class="roadMap2"></canvas>
+            <!-- <RoadMap class="roadMap" /> -->
             <div class="blockContainer bottom">
               <div class="block b4">
-                <p class="title titleb">Sale Event</p>
+                <p class="title titleb swapMob">Sale Event</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb rmMob">Sale Event</p>
               </div>
               <div class="block b5">
-                <p class="title titleb">Conquer the Metaverse</p>
+                <p class="title titleb swapMob">Conquer the Metaverse</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="title titleb rmMob">Conquer the Metaverse</p>
               </div>
             </div>
           </div>
@@ -174,12 +177,12 @@ import PersonaCardExtend from "@/components/PersonaCardExtend";
 import GlitchTxt from "@/components/GlitchTxt";
 import AutoType from "@/components/AutoType";
 import Spinner from "@/components/Spinner";
-import RoadMap from "@/assets/imgs/ROADMAP-01.svg";
+
 import Footer from "@/components/Footer";
 
 export default {
   name: "App",
-  components: { Logo1, Logo2, Logo3, Logo4, Spinner, RoadMap, GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
+  components: { Logo1, Logo2, Logo3, Logo4, Spinner, GlitchTxt, AutoType, TopBar, AnimatedBg, PersonaCard, PersonaCardExtend, Footer },
   data: function () {
     return {
       scrollMarker: false,
@@ -431,7 +434,102 @@ export default {
 
       /************ ROADMAP ***********/
       const roadAnimation = () => {
-        console.log("=> ROADMAP");
+        // console.log("=> ROADMAP");
+        const canvas2 = document.getElementById("rcanva");
+        const c2 = canvas2.getContext("2d");
+        c2.globalCompositeOperation = "destination-atop";
+        c2.webkitImageSmoothingEnabled = true;
+        let w = 300; //canvas2.getBoundingClientRect().width;
+        let h = 1200; //canvas2.getBoundingClientRect().height;
+        canvas2.width = w;
+        canvas2.height = h;
+
+        let move = 0;
+        let lock = false;
+        const dot = [
+          {
+            y: (h / 6) * 1,
+            x: w / 2,
+            r: 10,
+            d: -1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 2,
+            x: w / 2,
+            r: 15,
+            d: 1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 3,
+            x: w / 2,
+            r: 20,
+            d: -1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 4,
+            x: w / 2,
+            r: 25,
+            d: 1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 5,
+            x: w / 2,
+            r: 30,
+            d: -1,
+            rnd: 0,
+          },
+        ];
+
+        const tick2 = () => {
+          //console.log("tick");
+          c2.clearRect(0, 0, w, h);
+
+          for (let i = 0; i < dot.length; i++) {
+            if (i < dot.length - 1) {
+              c2.beginPath();
+              c2.lineWidth = 3;
+              c2.strokeStyle = "#ffffff75";
+              c2.moveTo(dot[i].x + move * dot[i].d * (dot[i].r / 30) + dot[i].rnd, dot[i].y + dot[i].rnd);
+              c2.lineTo(dot[i + 1].x + move * dot[i + 1].d * (dot[i + 1].r / 30) + dot[i + 1].rnd, dot[i + 1].y + dot[i + 1].rnd);
+              c2.stroke();
+            }
+
+            c2.beginPath();
+            c2.arc(dot[i].x + move * dot[i].d * (dot[i].r / 30) + dot[i].rnd, dot[i].y + dot[i].rnd, dot[i].r + dot[i].rnd, 0, 2 * Math.PI, false);
+            c2.fillStyle = "white";
+            c2.fill();
+            c2.lineWidth = 2;
+            c2.strokeStyle = "rgba(33, 196, 250, 0.5)";
+            c2.stroke();
+          }
+
+          if (move < w / 3) {
+            move += 1;
+            lock = true;
+          }
+
+          if (lock == true) {
+            for (let i = 0; i < dot.length; i++) {
+              if (dot[i].rnd < 10) {
+                dot[i].rnd += Math.random();
+              } else if (dot[i].rnd > 20) {
+                dot[i].rnd -= Math.random();
+              } else {
+                dot[i].rnd += (Math.random() - 0.5) * 0.5;
+              }
+            }
+          }
+
+          setTimeout(() => {
+            requestAnimationFrame(tick2);
+          }, 20);
+        };
+        requestAnimationFrame(tick2);
+
         gsap
           .timeline({
             scrollTrigger: {
@@ -551,7 +649,7 @@ b {
   min-height: 100vh;
   overflow-x: hidden;
   z-index: 200;
-  border: 1px solid red;
+  //border: 1px solid red;
 }
 
 .center {
@@ -562,7 +660,7 @@ b {
   margin: auto;
   width: 100%;
   max-width: 900px;
-  border: 1px solid green;
+  //border: 1px solid green;
 }
 
 .title1 {
@@ -828,10 +926,14 @@ b {
 }
 
 .roadMapContainer {
-  width: 800px;
+  width: 100%;
   //height: 510px;
   margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   //overflow: hidden;
+  //border: 1px solid red;
   //border: 1px solid red;
 }
 
@@ -843,71 +945,90 @@ b {
   //filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
   // animation: shineRoadMap 3s infinite linear;
   animation: turnOn 3s forwards linear;
-
   > * {
     stroke: $white-color;
     stroke-width: 2px;
     transition: all 500ms ease-in-out;
   }
+}
+
+.roadMap2 {
+  z-index: 200;
+  //border: 1px solid red;
+  width: 300px;
+  height: 1200px;
+  transition: all 500ms ease-in-out;
+  //fill: $white-color;
+  animation: turnOn 3s infinite linear;
+  //color: #ffffff75
 }
 
 @keyframes turnOn {
   0% {
     filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
-    opacity: 0;
+    opacity: 0.85;
+  }
+  50% {
+    filter: drop-shadow(0px 0px 3px rgb(250, 199, 33)) blur(0px);
+    opacity: 1;
   }
   100% {
-    filter: drop-shadow(0px 0px 3px rgba(33, 196, 250, 1)) blur(0px);
-    opacity: 1;
+    filter: drop-shadow(0px 0px 1px rgba(33, 196, 250, 1)) blur(1px);
+    opacity: 0.85;
   }
 }
 
 .blockContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   //border: 1px solid red;
 }
 
 .top {
-  margin-bottom: -200px;
-  // margin-left: -100px;
-  width: 100%;
-  text-align: left;
-}
+  margin-top: 100px;
+  margin-bottom: 100px;
+  //margin-bottom: -200px;
 
-.bottom {
-  margin-top: -100px;
-  // margin-left: -100px;
-  width: 62%;
+  //width: 100%;
   text-align: right;
 }
 
+.bottom {
+  //margin-top: -100px;
+  //margin-left: -20px;
+  // width: 62%;
+  text-align: left;
+  margin-top: 300px;
+  margin-bottom: 300px;
+}
+
 .block {
-  width: 200px;
+  // border: 1px solid pink;
+  width: calc(100% + 10px);
   > * {
-    stroke: $white-color;
-    stroke-width: 2px;
     transition: all 500ms ease-in-out;
   }
 }
 
 .b1 {
-  margin-top: 90px;
-  margin-bottom: -90px;
+  margin-left: 60px;
+}
+
+.b2 {
+  margin-left: 20px;
 }
 
 .b3 {
-  margin-top: 50px;
-  margin-bottom: -50px;
+  margin-left: -15px;
 }
 
 .b4 {
-  margin-top: -30px;
+  margin-left: -30px;
 }
 
 .b5 {
-  margin-top: -40px;
+  margin-left: 15px;
 }
 /*********************************** Seven View ***********************************/
 
@@ -1047,16 +1168,16 @@ b {
     //border: 1px solid green;
   }
   .block {
-    width: 150px;
+    // width: 150px;
   }
-  .top {
-    margin-bottom: -150px;
-    text-align: left;
-  }
-  .bottom {
-    margin-top: -75px;
-    text-align: right;
-  }
+  // .top {
+  //   margin-bottom: -150px;
+  //   text-align: left;
+  // }
+  // .bottom {
+  //   margin-top: -75px;
+  //   text-align: right;
+  // }
   .txtb {
     font-size: 10px;
   }
@@ -1087,10 +1208,12 @@ b {
     display: none;
   }
   .roadMapContainer {
-    //border: 1px solid pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .roadMap {
+  .roadMap2 {
     display: none;
   }
 
@@ -1121,6 +1244,7 @@ b {
   }
 
   .titleb {
+    text-transform: uppercase;
     width: 100%;
     // margin-left: auto;
     //border: 1px solid red;
