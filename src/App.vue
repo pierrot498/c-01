@@ -371,10 +371,10 @@ export default {
         .from(".tx3", { x: -innerWidth * this.aSpeed, opacity: 0 })
         .call(() => {
           this.intro.active3 = true;
-          //setTimeout(() => {
-          this.show.about = true;
-          aboutAnimation();
-          //}, 1000);
+          setTimeout(() => {
+            this.show.about = true;
+            aboutAnimation();
+          }, 1000);
         });
 
       /************ ABOUT ***********/
@@ -394,10 +394,10 @@ export default {
           .from(".t4", { x: innerWidth * this.aSpeed, opacity: 0 })
           .from(".c4", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
-            //setTimeout(() => {
-            this.show.nft = true;
-            nftAnimation();
-            //}, 200);
+            setTimeout(() => {
+              this.show.nft = true;
+              nftAnimation();
+            }, 200);
           });
       };
 
@@ -418,10 +418,10 @@ export default {
           .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
-            //setTimeout(() => {
-            this.show.total = true;
-            totalAnimation();
-            // }, 200);
+            setTimeout(() => {
+              this.show.total = true;
+              totalAnimation();
+            }, 200);
           });
       };
 
@@ -443,10 +443,10 @@ export default {
           .from(".spinMove", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .from(".totalTxt", { x: innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
-            // setTimeout(() => {
-            this.show.road = true;
-            roadAnimation();
-            //}, 200);
+            setTimeout(() => {
+              this.show.road = true;
+              roadAnimation();
+            }, 200);
           });
       };
 
@@ -542,9 +542,9 @@ export default {
             }
           }
 
-          //  setTimeout(() => {
-          requestAnimationFrame(tick2);
-          // }, 20);
+          setTimeout(() => {
+            requestAnimationFrame(tick2);
+          }, 20);
         };
         requestAnimationFrame(tick2);
 

@@ -122,9 +122,9 @@ export default {
           putPixel(x, y, b, star.size, star.color);
         }
 
-        // setTimeout(() => {
-        requestAnimationFrame(tick);
-        // }, 30);
+        setTimeout(() => {
+          requestAnimationFrame(tick);
+        }, 10);
       };
 
       requestAnimationFrame(init);
