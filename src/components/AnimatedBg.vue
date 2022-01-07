@@ -92,6 +92,7 @@ export default {
             s.y = Math.random() * 900 - 450;
           }
         }
+        this.scrollV = 0;
       };
 
       let prevTime;
