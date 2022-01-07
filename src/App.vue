@@ -34,7 +34,7 @@
 
         <div class="row r3">
           <div class="left">
-            <GlitchTxt class="title1 t3">Public sale /</GlitchTxt>
+            <GlitchTxt class="title1 t3">Raffle sale /</GlitchTxt>
             <p class="date d3">01.14</p>
             <AutoType class="avatarTxt tx3" :txt="intro.txt3" :active="intro.active3" />
           </div>
@@ -53,8 +53,8 @@
           </div>
           <div class="cardRight">
             <p class="text aboutTxt">
-              C-01 represents the synergy between the world of fashion and digital ownership. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create exclusive digital
-              collections with well-known clothing brands reserved for C-01 holders.
+              C-01 represents the <b>synergy</b> between the world of /fashion/ and /digital ownership/. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create /exclusive
+              digital collections/ with well-known clothing brands reserved for C-01 holders.
             </p>
           </div>
         </div>
@@ -204,11 +204,11 @@ export default {
         footerLock: false,
       },
       intro: {
-        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most experienced people in the industry to deliver a remarkable, cutting-edge product.",
+        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most /experienced people/ in the industry to deliver a remarkable, cutting-edge product.",
         active1: false,
-        txt2: " You can participate in our Raffle to get a chance to mint your own C-01. On Tuesday 13th, 2pm UTC, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with at least 0.28 ETH inside.",
+        txt2: "You can participate in our Raffle to get a chance to mint your own C-01. On /Tuesday 13th, 2pm UTC/, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with /at least 0.28 ETH/.",
         active2: false,
-        txt3: "The winners of the raffle will be able to mint on Wednesday,14th at 4pm UTC with a maximum amount of 2 NFTs per wallet. If you are one of our whitelisted members, you will be able to mint 2 hours prior, at 2pm UTC.",
+        txt3: "The winners of the raffle will be able to mint on /Wednesday, 14th at 4pm UTC/ with a maximum amount of /2 NFTs per wallet/. If you are one of our whitelisted members, you will be able to /mint 2 hours prior/, at /2pm UTC/.",
         active3: false,
       },
       Faq: [
@@ -743,7 +743,6 @@ body,
   border-top: 1px solid $white-color;
   border-right: 1px solid $white-color;
   border-bottom: 1px solid $white-color;
-  //padding-top: 80px;
   p {
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 300;
@@ -762,7 +761,6 @@ body,
 .aboutTxt {
   text-align: justify;
   text-justify: inter-word;
-  //border: 1px solid red;
 }
 /*********************************** Fourth View ***********************************/
 

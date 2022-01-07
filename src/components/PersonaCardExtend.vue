@@ -28,22 +28,22 @@ export default {
       style: "",
       personaList: [
         {
-          name: "Mark Zuckerberg",
-          pic: require("@/assets/imgs/personas/persona4.png"),
+          name: "C-01A",
+          pic: require("@/assets/imgs/personas/persona1.png"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
-          name: "Elon Musk ",
-          pic: require("@/assets/imgs/personas/persona3.png"),
-          txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
-        },
-        {
-          name: "Jeff Bezos",
+          name: "C-01B",
           pic: require("@/assets/imgs/personas/persona2.png"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
-          name: "Asian Girl",
+          name: "C-01C",
+          pic: require("@/assets/imgs/personas/persona4.png"),
+          txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
+        },
+        {
+          name: "C-01D",
           pic: require("@/assets/imgs/personas/persona1.png"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
