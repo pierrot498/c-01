@@ -277,8 +277,11 @@ export default {
   mounted() {
     console.clear();
     console.log("Loading ...");
-    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
-    if (!this.check) {
+    let check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
+
+    //let check = screen.width <= 280;
+    //console.log(screen.width);
+    if (!check) {
       this.show = {
         intro: true,
         about: true,
