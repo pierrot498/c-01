@@ -673,6 +673,7 @@ b {
   margin: auto;
   width: 100%;
   max-width: 900px;
+  z-index: 200;
   //border: 1px solid green;
 }
 
