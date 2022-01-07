@@ -137,9 +137,11 @@ export default {
 }
 
 .persona {
-  width: 300px;
+  width: 400px;
   margin: -40px 20px;
+  border-radius: 10px;
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
+  //transition: all 300ms ease-in-out;
 }
 
 .cornerLeftTop2 {
@@ -209,12 +211,20 @@ export default {
 }
 
 .personaMini {
-  height: 90px;
+  height: 120px;
+  width: 90px;
   border-radius: 5px;
+  transition: all 200ms ease-in-out;
   &:hover {
     box-sizing: border-box;
     filter: drop-shadow(0px 0px 4px $white-color);
     border: 1px solid $white-color;
+    height: 140px;
+    width: 100px;
+    margin-top: -11px;
+    margin-bottom: -11px;
+    margin-left: -6px;
+    margin-right: -6px;
   }
 }
 
@@ -232,6 +242,25 @@ export default {
   margin-top: 100px;
   font-size: 12px;
   font-weight: 100;
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .persona {
+    width: 300px;
+  }
+  .personaMini {
+    height: 90px;
+    width: 65px;
+
+    &:hover {
+      height: 100px;
+      width: 75px;
+      margin-top: -6px;
+      margin-bottom: -6px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
 }
 
 @media screen and (max-width: $layout-breakpoint-small) {
@@ -296,10 +325,28 @@ export default {
     //border: 1px solid red;
   }
 
+  .personaMini {
+    height: 90px;
+    width: 65px;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      box-sizing: border-box;
+      filter: drop-shadow(0px 0px 4px $white-color);
+      border: 1px solid $white-color;
+      height: 100px;
+      width: 75px;
+      margin-top: -6px;
+      margin-bottom: -6px;
+      margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+
   .characters {
     width: 100%;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     flex-direction: row;
     //border: 1px solid red;
     padding: 0;
