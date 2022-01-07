@@ -89,24 +89,32 @@
 
     <div class="r77"></div>
     <div class="viewContainer" id="faq" v-bind:style="{ display: show.road ? 'flex' : 'none', opacity: show.road ? '1' : '0' }">
-      <div class="center">
+      <div class="center max">
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
           <div class="roadMapContainer">
             <div class="blockContainer top">
               <div class="block b1">
                 <p class="title titleb swapMob">Genesis</p>
-                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="text txtb">
+                  We took more than two months to create each of the facial expressions of our 3D models to make them look as natural and as human as possible. We then designed each of their clothing – the materials and textures with our team. Our goal was to go beyond the boundaries of everything
+                  made so far and provide an ultra-realistic look through detailed clothing and fabrics. We wanted to make the avatars look like real-life models, but for the metaverse.
+                </p>
                 <p class="title titleb rmMob">Genesis</p>
               </div>
               <div class="block b2">
                 <p class="title titleb swapMob">Discovery</p>
-                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="text txtb">
+                  After the reveal of the artwork, you will be able to know which character, ethnicity, and clothing style you successfully minted. The rarity rank of your NFT will be directly available across the main two rarity services available – Rarity Tools and Rarity Sniper.
+                </p>
                 <p class="title titleb rmMob">Discovery</p>
               </div>
               <div class="block b3">
                 <p class="title titleb swapMob">Ready Player One</p>
-                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="text txtb">
+                  After a few successful partnerships in Q1, 2022, we will implement ourselves in Sandbox and Decentraland. We will create a virtual fashion show with all our partners that will be retransmitted live across social media. The goal is to replicate the real world’s well-known fashion
+                  parade and make it an unbelievable digital experience.
+                </p>
                 <p class="title titleb rmMob">Ready Player One</p>
               </div>
             </div>
@@ -115,12 +123,17 @@
             <div class="blockContainer bottom">
               <div class="block b4">
                 <p class="title titleb swapMob">Sale Event</p>
-                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="text txtb">
+                  The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
+                  experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
+                </p>
                 <p class="title titleb rmMob">Sale Event</p>
               </div>
               <div class="block b5">
                 <p class="title titleb swapMob">Conquer the Metaverse</p>
-                <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
+                <p class="text txtb">
+                  One week after the mint, we will create the token economics for our ecosystem. Our goal is to be the pioneers of luxury fashion in the metaverse. We will provide support for luxury fashion brands around the world to showcase their digital collection with our 3D model avatars.
+                </p>
                 <p class="title titleb rmMob">Conquer the Metaverse</p>
               </div>
             </div>
@@ -663,6 +676,10 @@ b {
   //border: 1px solid green;
 }
 
+.max {
+  max-width: 1200px;
+}
+
 .title1 {
   font-family: "MADE Sunflower", sans-serif;
   text-transform: uppercase;
@@ -1190,9 +1207,11 @@ b {
 @media screen and (min-width: $layout-breakpoint-medium) {
   .swapMob {
     display: none;
+    text-transform: uppercase;
   }
   .rmMob {
     display: block;
+    text-transform: uppercase;
   }
 }
 
@@ -1234,6 +1253,7 @@ b {
   .top,
   .bottom,
   .b1,
+  .b2,
   .b3,
   .b4,
   .b5 {
