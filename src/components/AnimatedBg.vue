@@ -19,7 +19,7 @@ export default {
     };
   },
   mounted() {
-    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Safari/i.test(navigator.userAgent);
+    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Safari|safari/i.test(navigator.userAgent);
     console.log("edfgghh" + this.check);
 
     if (!this.check) {
