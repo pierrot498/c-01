@@ -53,8 +53,8 @@
           </div>
           <div class="cardRight">
             <p class="text aboutTxt">
-              C-01 represents the <b>synergy</b> between the world of /fashion/ and /digital ownership/. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create /exclusive
-              digital collections/ with well-known clothing brands reserved for C-01 holders.
+              C-01 represents the <b>synergy</b> between the world of <b>fashion</b> and <b>digital ownership</b>. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create
+              <b>exclusive digital collections</b> with well-known clothing brands reserved for C-01 holders.
             </p>
           </div>
         </div>
@@ -204,11 +204,11 @@ export default {
         footerLock: false,
       },
       intro: {
-        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most /experienced people/ in the industry to deliver a remarkable, cutting-edge product.",
+        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most <b>experienced people</b> in the industry to deliver a remarkable, cutting-edge product.",
         active1: false,
-        txt2: "You can participate in our Raffle to get a chance to mint your own C-01. On /Tuesday 13th, 2pm UTC/, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with /at least 0.28 ETH/.",
+        txt2: "You can participate in our Raffle to get a chance to mint your own C-01. On <b>Tuesday 13th, 2pm UTC</b>, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with <b>at least 0.28 ETH</b>.",
         active2: false,
-        txt3: "The winners of the raffle will be able to mint on /Wednesday, 14th at 4pm UTC/ with a maximum amount of /2 NFTs per wallet/. If you are one of our whitelisted members, you will be able to /mint 2 hours prior/, at /2pm UTC/.",
+        txt3: "The winners of the raffle will be able to mint on <b>Wednesday, 14th at 4pm UTC</b> with a maximum amount of <b>2 NFTs per wallet</b>. If you are one of our whitelisted members, you will be able to <b>mint 2 hours prior</b>, at <b>2pm UTC</b>.",
         active3: false,
       },
       Faq: [
@@ -522,6 +522,11 @@ body,
   z-index: 0;
 }
 
+b {
+  font-weight: 800;
+  //font-size: 16px;
+}
+
 .viewContainer {
   position: relative;
   display: flex;
@@ -558,7 +563,7 @@ body,
   font-family: "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  letter-spacing: 0.3em;
+  letter-spacing: 3px;
   line-height: 19px;
   margin: 0;
   text-justify: auto;
