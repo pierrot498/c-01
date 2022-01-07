@@ -327,7 +327,7 @@ export default {
     },
     scrollAnimation() {
       /************ TIMELINE ***********/
-      console.log("=> Intro");
+      //console.log("=> Intro");
       gsap
         .timeline({
           scrollTrigger: {
@@ -388,7 +388,7 @@ export default {
 
       /************ ABOUT ***********/
       const aboutAnimation = () => {
-        console.log("=> About");
+        //console.log("=> About");
         gsap
           .timeline({
             scrollTrigger: {
@@ -412,7 +412,7 @@ export default {
 
       /************ NFT ***********/
       const nftAnimation = () => {
-        console.log("=> NFT");
+        //console.log("=> NFT");
         gsap
           .timeline({
             scrollTrigger: {
@@ -436,7 +436,7 @@ export default {
 
       /************ TOTAL DISTRIBUTION ***********/
       const totalAnimation = () => {
-        console.log("=> TOTAL");
+        //console.log("=> TOTAL");
         gsap
           .timeline({
             scrollTrigger: {
@@ -584,7 +584,7 @@ export default {
 
       /************ FAQ ***********/
       const faqAnimation = () => {
-        console.log("=> FAQ");
+        //console.log("=> FAQ");
         gsap
           .timeline({
             scrollTrigger: {
@@ -613,7 +613,7 @@ export default {
 
       /************ TEAM ***********/
       const teamAnimation = () => {
-        console.log("=> TEAM");
+        //console.log("=> TEAM");
         gsap
           .timeline({
             scrollTrigger: {
