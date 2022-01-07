@@ -33,7 +33,8 @@ export default {
             this.autoType();
           }
         },
-        Math.random() > 0.1 ? 2 : 50
+        2
+        //Math.random() > 0.1 ? 2 : 50
       );
     },
   },
