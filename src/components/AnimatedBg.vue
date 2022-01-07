@@ -18,7 +18,14 @@ export default {
     };
   },
   mounted() {
-    this.starsAnimation();
+    const toMatch = [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i, /Safari/i];
+    let check = toMatch.some((toMatchItem) => {
+      return navigator.userAgent.match(toMatchItem);
+    });
+    if (check) {
+      this.starsAnimation();
+    }
+
     window.addEventListener("scroll", this.handleScroll);
   },
   methods: {

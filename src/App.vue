@@ -198,21 +198,13 @@ export default {
       loaded: false,
       show: {
         intro: true,
-        introLock: true,
         about: false,
-        aboutLock: false,
         nft: false,
-        nftLock: false,
         total: false,
-        totalLock: false,
         road: false,
-        roadLock: false,
         faq: false,
-        faqLock: false,
         team: false,
-        teamLock: false,
         footer: false,
-        footerLock: false,
       },
       intro: {
         txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most <b>experienced people</b> in the industry to deliver a remarkable, cutting-edge product.",
@@ -288,7 +280,6 @@ export default {
     this.scrollAnimation();
     setTimeout(() => {
       this.loaded = true;
-
       console.log("                                                                     ");
       console.log("        CCCCCCCCCCCCC                      000000000       1111111   ");
       console.log("     CCC::::::::::::C                    00:::::::::00    1::::::1   ");
@@ -1222,6 +1213,10 @@ b {
     text-transform: uppercase;
     font-size: 15px;
   }
+}
+
+.rafle {
+  font-size: 20px;
 }
 
 @media screen and (min-width: $layout-breakpoint-medium) {
