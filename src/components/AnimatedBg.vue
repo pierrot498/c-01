@@ -19,9 +19,7 @@ export default {
     };
   },
   mounted() {
-    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Safari|safari/i.test(navigator.userAgent);
-    console.log("edfgghh" + this.check);
-
+    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
     if (!this.check) {
       this.starsAnimation();
       window.addEventListener("scroll", this.handleScroll);

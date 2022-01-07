@@ -278,6 +278,7 @@ export default {
     console.clear();
     console.log("Loading ...");
     this.scrollAnimation();
+
     setTimeout(() => {
       this.loaded = true;
       console.log("                                                                     ");
