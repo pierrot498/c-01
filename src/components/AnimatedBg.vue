@@ -19,7 +19,7 @@ export default {
   },
   mounted() {
     this.starsAnimation();
-    window.addEventListener("scroll", this.handleScroll);
+    //window.addEventListener("scroll", this.handleScroll);
   },
   methods: {
     handleScroll() {
