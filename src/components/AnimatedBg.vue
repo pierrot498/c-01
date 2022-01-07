@@ -87,7 +87,7 @@ export default {
           const s = stars[i];
           s.y += this.scrollV;
           s.z -= distance;
-          while (s.z <= 1) {
+          if (s.z <= 1) {
             s.z += 1000;
             s.y = Math.random() * 900 - 450;
           }
