@@ -1,5 +1,5 @@
 <template>
-  <div class="animatedBg" @mousemove="mouseMove">
+  <div class="animatedBg">
     <canvas id="canvas" class="canvas"></canvas>
   </div>
 </template>
@@ -27,11 +27,11 @@ export default {
       this.scrollV = window.scrollY - this.lastScroll;
       this.lastScroll = window.scrollY;
     },
-    mouseMove(e) {
-      this.cursor.x = e.clientX;
-      this.cursor.y = e.clientY;
-      //console.log(this.cursor.x, this.cursor.y);
-    },
+    // mouseMove(e) {
+    //   this.cursor.x = e.clientX;
+    //   this.cursor.y = e.clientY;
+    //   //console.log(this.cursor.x, this.cursor.y);
+    // },
     starsAnimation() {
       const canvas = document.getElementById("canvas");
       const c = canvas.getContext("2d");
