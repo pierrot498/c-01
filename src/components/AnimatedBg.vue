@@ -68,7 +68,7 @@ export default {
         return out;
       };
 
-      let stars = makeStars(2000);
+      let stars = makeStars(1000);
 
       const clear = () => {
         c.clearRect(0, 0, canvas.width, canvas.height);
