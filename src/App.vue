@@ -743,7 +743,7 @@ body,
   border-top: 1px solid $white-color;
   border-right: 1px solid $white-color;
   border-bottom: 1px solid $white-color;
-  padding-top: 80px;
+  //padding-top: 80px;
   p {
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 300;
@@ -753,11 +753,16 @@ body,
     text-align: left;
     padding: 20px;
   }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .aboutTxt {
   text-align: justify;
   text-justify: inter-word;
+  //border: 1px solid red;
 }
 /*********************************** Fourth View ***********************************/
 
