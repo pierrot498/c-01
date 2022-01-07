@@ -445,134 +445,133 @@ export default {
           .call(() => {
             setTimeout(() => {
               this.show.road = true;
-              //roadAnimation();
-              faqAnimation();
+              roadAnimation();
             }, 200);
           });
       };
 
       /************ ROADMAP ***********/
-      // const roadAnimation = () => {
-      //   // console.log("=> ROADMAP");
-      //   const canvas2 = document.getElementById("rcanva");
-      //   const c2 = canvas2.getContext("2d");
-      //   c2.globalCompositeOperation = "destination-atop";
-      //   c2.webkitImageSmoothingEnabled = true;
-      //   let w = 300; //canvas2.getBoundingClientRect().width;
-      //   let h = 1200; //canvas2.getBoundingClientRect().height;
-      //   canvas2.width = w;
-      //   canvas2.height = h;
+      const roadAnimation = () => {
+        // console.log("=> ROADMAP");
+        const canvas2 = document.getElementById("rcanva");
+        const c2 = canvas2.getContext("2d");
+        c2.globalCompositeOperation = "destination-atop";
+        c2.webkitImageSmoothingEnabled = true;
+        let w = 300; //canvas2.getBoundingClientRect().width;
+        let h = 1200; //canvas2.getBoundingClientRect().height;
+        canvas2.width = w;
+        canvas2.height = h;
 
-      //   let move = 0;
-      //   let lock = false;
-      //   const dot = [
-      //     {
-      //       y: (h / 6) * 1,
-      //       x: w / 2,
-      //       r: 10,
-      //       d: -1,
-      //       rnd: 0,
-      //     },
-      //     {
-      //       y: (h / 6) * 2,
-      //       x: w / 2,
-      //       r: 15,
-      //       d: 1,
-      //       rnd: 0,
-      //     },
-      //     {
-      //       y: (h / 6) * 3,
-      //       x: w / 2,
-      //       r: 20,
-      //       d: -1,
-      //       rnd: 0,
-      //     },
-      //     {
-      //       y: (h / 6) * 4,
-      //       x: w / 2,
-      //       r: 25,
-      //       d: 1,
-      //       rnd: 0,
-      //     },
-      //     {
-      //       y: (h / 6) * 5,
-      //       x: w / 2,
-      //       r: 30,
-      //       d: -1,
-      //       rnd: 0,
-      //     },
-      //   ];
+        let move = 0;
+        let lock = false;
+        const dot = [
+          {
+            y: (h / 6) * 1,
+            x: w / 2,
+            r: 10,
+            d: -1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 2,
+            x: w / 2,
+            r: 15,
+            d: 1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 3,
+            x: w / 2,
+            r: 20,
+            d: -1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 4,
+            x: w / 2,
+            r: 25,
+            d: 1,
+            rnd: 0,
+          },
+          {
+            y: (h / 6) * 5,
+            x: w / 2,
+            r: 30,
+            d: -1,
+            rnd: 0,
+          },
+        ];
 
-      //   const tick2 = () => {
-      //     //console.log("tick");
-      //     c2.clearRect(0, 0, w, h);
+        const tick2 = () => {
+          //console.log("tick");
+          c2.clearRect(0, 0, w, h);
 
-      //     for (let i = 0; i < dot.length; i++) {
-      //       if (i < dot.length - 1) {
-      //         c2.beginPath();
-      //         c2.lineWidth = 3;
-      //         c2.strokeStyle = "#ffffff75";
-      //         c2.moveTo(dot[i].x + move * dot[i].d * (dot[i].r / 30) + dot[i].rnd, dot[i].y + dot[i].rnd);
-      //         c2.lineTo(dot[i + 1].x + move * dot[i + 1].d * (dot[i + 1].r / 30) + dot[i + 1].rnd, dot[i + 1].y + dot[i + 1].rnd);
-      //         c2.stroke();
-      //       }
+          for (let i = 0; i < dot.length; i++) {
+            if (i < dot.length - 1) {
+              c2.beginPath();
+              c2.lineWidth = 3;
+              c2.strokeStyle = "#ffffff75";
+              c2.moveTo(dot[i].x + move * dot[i].d * (dot[i].r / 30) + dot[i].rnd, dot[i].y + dot[i].rnd);
+              c2.lineTo(dot[i + 1].x + move * dot[i + 1].d * (dot[i + 1].r / 30) + dot[i + 1].rnd, dot[i + 1].y + dot[i + 1].rnd);
+              c2.stroke();
+            }
 
-      //       c2.beginPath();
-      //       c2.arc(dot[i].x + move * dot[i].d * (dot[i].r / 30) + dot[i].rnd, dot[i].y + dot[i].rnd, dot[i].r + dot[i].rnd, 0, 2 * Math.PI, false);
-      //       c2.fillStyle = "white";
-      //       c2.fill();
-      //       c2.lineWidth = 2;
-      //       c2.strokeStyle = "rgba(33, 196, 250, 0.5)";
-      //       c2.stroke();
-      //     }
+            c2.beginPath();
+            c2.arc(dot[i].x + move * dot[i].d * (dot[i].r / 30) + dot[i].rnd, dot[i].y + dot[i].rnd, dot[i].r + dot[i].rnd, 0, 2 * Math.PI, false);
+            c2.fillStyle = "white";
+            c2.fill();
+            c2.lineWidth = 2;
+            c2.strokeStyle = "rgba(33, 196, 250, 0.5)";
+            c2.stroke();
+          }
 
-      //     if (move < w / 3) {
-      //       move += 1;
-      //       lock = true;
-      //     }
+          if (move < w / 3) {
+            move += 1;
+            lock = true;
+          }
 
-      //     if (lock == true) {
-      //       for (let i = 0; i < dot.length; i++) {
-      //         if (dot[i].rnd < 10) {
-      //           dot[i].rnd += Math.random();
-      //         } else if (dot[i].rnd > 20) {
-      //           dot[i].rnd -= Math.random();
-      //         } else {
-      //           dot[i].rnd += (Math.random() - 0.5) * 0.5;
-      //         }
-      //       }
-      //     }
+          if (lock == true) {
+            for (let i = 0; i < dot.length; i++) {
+              if (dot[i].rnd < 10) {
+                dot[i].rnd += Math.random();
+              } else if (dot[i].rnd > 20) {
+                dot[i].rnd -= Math.random();
+              } else {
+                dot[i].rnd += (Math.random() - 0.5) * 0.5;
+              }
+            }
+          }
 
-      //     setTimeout(() => {
-      //       requestAnimationFrame(tick2);
-      //     }, 20);
-      //   };
-      //   requestAnimationFrame(tick2);
+          setTimeout(() => {
+            requestAnimationFrame(tick2);
+          }, 20);
+        };
+        requestAnimationFrame(tick2);
 
-      //   gsap
-      //     .timeline({
-      //       scrollTrigger: {
-      //         trigger: ".r77",
-      //         start: "center center",
-      //         end: "bottom top",
-      //         markers: this.scrollMarker,
-      //         scrub: false,
-      //         pin: false,
-      //       },
-      //     })
-      //     .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
-      //     .from(".b1", { x: -innerWidth * 1, opacity: 0 })
-      //     .from(".b4", { x: -innerWidth * 1, opacity: 0 })
-      //     .from(".b2", { x: -innerWidth * 1, opacity: 0 })
-      //     .from(".b5", { x: innerWidth * 1, opacity: 0 })
-      //     .from(".b3", { x: innerWidth * 1, opacity: 0 })
-      //     .call(() => {
-      //       setTimeout(() => {
-      //         this.show.faq = true;
-      //         faqAnimation();
-      //       }, 500);
-      //     });
-      // };
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r77",
+              start: "center center",
+              end: "bottom top",
+              markers: this.scrollMarker,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from(".b1", { x: -innerWidth * 1, opacity: 0 })
+          .from(".b4", { x: -innerWidth * 1, opacity: 0 })
+          .from(".b2", { x: -innerWidth * 1, opacity: 0 })
+          .from(".b5", { x: innerWidth * 1, opacity: 0 })
+          .from(".b3", { x: innerWidth * 1, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.faq = true;
+              faqAnimation();
+            }, 500);
+          });
+      };
 
       /************ FAQ ***********/
       const faqAnimation = () => {
