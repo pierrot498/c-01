@@ -445,7 +445,7 @@ export default {
           .call(() => {
             setTimeout(() => {
               this.show.road = true;
-              roadAnimation();
+              //roadAnimation();
             }, 200);
           });
       };
