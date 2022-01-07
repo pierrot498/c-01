@@ -277,6 +277,20 @@ export default {
   mounted() {
     console.clear();
     console.log("Loading ...");
+    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
+    if (!this.check) {
+      this.show = {
+        intro: true,
+        about: true,
+        nft: true,
+        total: true,
+        road: true,
+        faq: true,
+        team: true,
+        footer: true,
+      };
+    }
+
     this.scrollAnimation();
 
     setTimeout(() => {
