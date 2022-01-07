@@ -43,9 +43,9 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="about" v-if="show.about" v-bind:style="{ opacity: show.aboutLock ? '1' : '0' }">
+    <div class="r4"></div>
+    <div class="viewContainer" id="about" v-bind:style="{ display: show.about ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
       <div class="center">
-        <div class="r4"></div>
         <GlitchTxt class="title1 title3 t4">About c-01 /</GlitchTxt>
         <div class="card c4">
           <div class="cardLeft">
@@ -61,8 +61,8 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="nft" v-if="show.nft" v-bind:style="{ opacity: show.nftLock ? '1' : '0' }">
-      <div class="r5"></div>
+    <div class="r5"></div>
+    <div class="viewContainer" id="nft" v-bind:style="{ display: show.nft ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
       <div class="center">
         <GlitchTxt class="title1 t5">NFT /</GlitchTxt>
         <div class="cardNft c5">
@@ -71,7 +71,7 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="total" v-if="show.total" v-bind:style="{ opacity: show.totalLock ? '1' : '0' }">
+    <div class="viewContainer" id="total" v-bind:style="{ display: show.total ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
       <div class="r6"></div>
       <div class="center">
         <GlitchTxt class="title1 title3 t6">Community-centric /</GlitchTxt>
@@ -87,7 +87,7 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="faq" v-if="show.road" v-bind:style="{ opacity: show.roadLock ? '1' : '0' }">
+    <div class="viewContainer" id="faq" v-bind:style="{ display: show.road ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
       <div class="r77"></div>
       <div class="center">
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
@@ -95,29 +95,29 @@
           <div class="roadMapContainer">
             <div class="blockContainer top">
               <div class="block b1">
-                <p class="title titleb swapMob">TITLE 1</p>
+                <p class="title titleb swapMob">Genesis</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-                <p class="title titleb rmMob">TITLE 1</p>
+                <p class="title titleb rmMob">Genesis</p>
               </div>
               <div class="block b2">
-                <p class="title titleb swapMob">TITLE 2</p>
+                <p class="title titleb swapMob">Discovery</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-                <p class="title titleb rmMob">TITLE 2</p>
+                <p class="title titleb rmMob">Discovery</p>
               </div>
               <div class="block b3">
-                <p class="title titleb swapMob">TITLE 3</p>
+                <p class="title titleb swapMob">Ready Player One</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
-                <p class="title titleb rmMob">TITLE 3</p>
+                <p class="title titleb rmMob">Ready Player One</p>
               </div>
             </div>
             <RoadMap class="roadMap" />
             <div class="blockContainer bottom">
               <div class="block b4">
-                <p class="title titleb">TITLE 4</p>
+                <p class="title titleb">Sale Event</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
               </div>
               <div class="block b5">
-                <p class="title titleb">TITLE 5</p>
+                <p class="title titleb">Conquer the Metaverse</p>
                 <p class="text txtb">Quo illo voluptatem et soluta error est error recusandae ?Quo illo voluptatem et soluta error est error recusandae ?</p>
               </div>
             </div>
@@ -126,7 +126,7 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="faq" v-if="show.faq" v-bind:style="{ opacity: show.faqLock ? '1' : '0' }">
+    <div class="viewContainer" id="faq" v-bind:style="{ display: show.faq ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
       <div class="r8"></div>
       <div class="center">
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
@@ -143,7 +143,7 @@
       </div>
     </div>
 
-    <div class="viewContainer" id="team" v-if="show.team" v-bind:style="{ opacity: show.teamLock ? '1' : '0' }">
+    <div class="viewContainer" id="team" v-bind:style="{ display: show.team ? 'flex' : 'none', opacity: show.about ? '1' : '0' }">
       <div class="r9"></div>
       <div class="center">
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
@@ -262,177 +262,35 @@ export default {
     };
   },
   mounted() {
+    console.clear();
+    console.log("Loading ...");
     this.scrollAnimation();
     setTimeout(() => {
       this.loaded = true;
+
+      console.log("                                                                     ");
+      console.log("        CCCCCCCCCCCCC                      000000000       1111111   ");
+      console.log("     CCC::::::::::::C                    00:::::::::00    1::::::1   ");
+      console.log("   CC:::::::::::::::C                  00:::::::::::::00 1:::::::1   ");
+      console.log("  C:::::CCCCCCCC::::C                 0:::::::000:::::::0111:::::1   ");
+      console.log(" C:::::C       CCCCCC                 0::::::0   0::::::0   1::::1   ");
+      console.log("C:::::C                               0:::::0     0:::::0   1::::1   ");
+      console.log("C:::::C                               0:::::0     0:::::0   1::::1   ");
+      console.log("C:::::C               --------------- 0:::::0 000 0:::::0   1::::l   ");
+      console.log("C:::::C               -:::::::::::::- 0:::::0 000 0:::::0   1::::l   ");
+      console.log("C:::::C               --------------- 0:::::0     0:::::0   1::::l   ");
+      console.log("C:::::C                               0:::::0     0:::::0   1::::l   ");
+      console.log(" C:::::C       CCCCCC                 0::::::0   0::::::0   1::::l   ");
+      console.log("  C:::::CCCCCCCC::::C                 0:::::::000:::::::0111::::::111");
+      console.log("   CC:::::::::::::::C                  00:::::::::::::00 1::::::::::1");
+      console.log("    CCC::::::::::::C                    00::::::::::00   1::::::::::1");
+      console.log("        CCCCCCCCCCCCC                      000000000     111111111111");
+      console.log("                                                                     ");
+      console.log("                                                                     ");
+      console.log("                                                                     ");
     }, 1000);
   },
-  watch: {
-    show: {
-      handler: function (v) {
-        if (v.about && !v.aboutLock) {
-          v.aboutLock = true;
-          setTimeout(() => {
-            /************ ABOUT ***********/
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: ".r4",
-                  start: "center center",
-                  end: "bottom center",
-                  markers: this.scrollMarker,
-                  scrub: false,
-                  pin: false,
-                },
-              })
-              .from(".t4", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from(".c4", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .call(() => {
-                setTimeout(() => {
-                  this.show.nft = true;
-                }, 200);
-              });
-          }, 100);
-        }
-        if (v.nft && !v.nftLock) {
-          v.nftLock = true;
-          setTimeout(() => {
-            /************ NFT ***********/
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: ".r5",
-                  start: "center center",
-                  end: "bottom top",
-                  markers: this.scrollMarker,
-                  scrub: false,
-                  pin: false,
-                },
-              })
-              .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 });
-            setTimeout(() => {
-              this.show.total = true;
-            }, 1000);
-          }, 100);
-        }
-        if (v.total && !v.totalLock) {
-          v.totalLock = true;
-          setTimeout(() => {
-            /************ TOTAL DISTRIBUTION ***********/
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: ".r6",
-                  start: "center center",
-                  end: "bottom top",
-                  markers: this.scrollMarker,
-                  scrub: false,
-                  pin: false,
-                },
-              })
-              .from(".t6", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from(".spinMove", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .from(".totalTxt", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .call(() => {
-                setTimeout(() => {
-                  this.show.road = true;
-                }, 200);
-              });
-          }, 100);
-        }
-        if (v.road && !v.roadLock) {
-          v.roadLock = true;
-          setTimeout(() => {
-            /************ ROADMAP ***********/
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: ".r77",
-                  start: "center center",
-                  end: "bottom top",
-                  markers: this.scrollMarker,
-                  scrub: false,
-                  pin: false,
-                },
-              })
-              .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from(".b1", { x: -innerWidth * 1, opacity: 0 })
-              .from(".b4", { x: -innerWidth * 1, opacity: 0 })
-              .from(".b2", { x: -innerWidth * 1, opacity: 0 })
-              .from(".b5", { x: innerWidth * 1, opacity: 0 })
-              .from(".b3", { x: innerWidth * 1, opacity: 0 })
-              .call(() => {
-                setTimeout(() => {
-                  this.show.faq = true;
-                }, 500);
-              });
-          }, 100);
-        }
-        if (v.faq && !v.faqLock) {
-          v.faqLock = true;
-          setTimeout(() => {
-            /************ FAQ ***********/
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: ".r8",
-                  start: "center center",
-                  end: "bottom top",
-                  markers: this.scrollMarker,
-                  scrub: false,
-                  pin: false,
-                },
-              })
-              .from(".t8", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .from("#faq0", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .call(() => {
-                setTimeout(() => {
-                  this.show.team = true;
-                }, 200);
-              });
-          }, 100);
-        }
-        if (v.team && !v.teamLock) {
-          v.teamLock = true;
-          setTimeout(() => {
-            /************ TEAM ***********/
-            gsap
-              .timeline({
-                scrollTrigger: {
-                  trigger: ".r9",
-                  start: "center center",
-                  end: "bottom top",
-                  markers: this.scrollMarker,
-                  scrub: false,
-                  pin: false,
-                },
-              })
-              .from(".t9", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from("#pcard0", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
-              .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 })
-              .call(() => {
-                setTimeout(() => {
-                  this.show.footer = true;
-                }, 200);
-              });
-          }, 100);
-        }
-        if (v.footer && !v.footerLock) {
-          v.footerLock = true;
-          setTimeout(() => {
-            /************ Footer ***********/
-          }, 100);
-        }
-      },
-      deep: true,
-    },
-  },
+
   methods: {
     goToExternal(url) {
       window.open(url);
@@ -492,6 +350,142 @@ export default {
         .call(() => {
           this.intro.active3 = true;
           this.show.about = true;
+          console.log("about");
+          aboutAnimation();
+        });
+
+      /************ ABOUT ***********/
+      function aboutAnimation() {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".r4",
+              start: "center center",
+              end: "bottom center",
+              markers: true,
+              scrub: false,
+              pin: false,
+            },
+          })
+          .from(".t4", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from(".c4", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .call(() => {
+            setTimeout(() => {
+              this.show.nft = true;
+              console.log("nft");
+            }, 200);
+          });
+      }
+      /************ NFT ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r5",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t5", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".c5", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .call(() => {
+          setTimeout(() => {
+            this.show.total = true;
+            console.log("total");
+          }, 200);
+        });
+
+      /************ TOTAL DISTRIBUTION ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r6",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t6", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".spinMove", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from(".totalTxt", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .call(() => {
+          setTimeout(() => {
+            this.show.road = true;
+          }, 200);
+        });
+
+      /************ ROADMAP ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r77",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t7", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from(".b1", { x: -innerWidth * 1, opacity: 0 })
+        .from(".b4", { x: -innerWidth * 1, opacity: 0 })
+        .from(".b2", { x: -innerWidth * 1, opacity: 0 })
+        .from(".b5", { x: innerWidth * 1, opacity: 0 })
+        .from(".b3", { x: innerWidth * 1, opacity: 0 })
+        .call(() => {
+          setTimeout(() => {
+            this.show.faq = true;
+          }, 500);
+        });
+
+      /************ FAQ ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r8",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t8", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq0", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq1", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq2", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#faq3", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .call(() => {
+          setTimeout(() => {
+            this.show.team = true;
+          }, 200);
+        });
+
+      /************ TEAM ***********/
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".r9",
+            start: "center center",
+            end: "bottom top",
+            markers: this.scrollMarker,
+            scrub: false,
+            pin: false,
+          },
+        })
+        .from(".t9", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard0", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
+        .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 })
+        .call(() => {
+          setTimeout(() => {
+            this.show.footer = true;
+          }, 200);
         });
     },
   },
@@ -528,13 +522,25 @@ b {
 }
 
 .viewContainer {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   min-height: 100vh;
   overflow-x: hidden;
   z-index: 200;
+  border: 1px solid red;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //height: 100%;
+  margin: auto;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid green;
 }
 
 .title1 {
@@ -661,16 +667,6 @@ b {
 }
 
 /*********************************** Second View ***********************************/
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  margin: auto;
-  width: 100%;
-  max-width: 900px;
-}
 
 .row {
   display: flex;
@@ -1043,6 +1039,7 @@ b {
     font-size: 10px;
   }
   .titleb {
+    text-transform: uppercase;
     font-size: 15px;
   }
 }
