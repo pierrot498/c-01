@@ -30,10 +30,14 @@ export default {
           this.autoTxt += this.txt[this.pos];
           if (this.pos < this.txt.length - 1) {
             this.pos++;
+          }
+          this.autoTxt += this.txt[this.pos];
+          if (this.pos < this.txt.length - 1) {
+            this.pos++;
             this.autoType();
           }
         },
-        2
+        4
         //Math.random() > 0.1 ? 2 : 50
       );
     },
