@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div class="page">
     <div class="viewContainer">
-      <div class="inline2">
+      <div class="inline LogoSize">
         <Logo1 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2s infinite' : 'moveLogo 0.4s forwards linear' }" />
         <Logo2 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 1.8s infinite' : 'moveLogo 0.6s forwards linear' }" />
         <Logo3 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2.2s infinite' : 'moveLogo 0.8s forwards linear' }" />
@@ -49,7 +49,7 @@
             <img :src="require('@/assets/imgs/aboutcmp.jpg')" />
           </div>
           <div class="cardRight">
-            <p class="text aboutTxt">
+            <p class="text">
               C-01 represents the <b>synergy</b> between the world of <b>fashion</b> and <b>digital ownership</b>. When buying a C-01, you are not only owning a digital collectible but also gaining access to the forefront of evolution in the fashion industry in the metaverse. We are going to create
               <b>exclusive digital collections</b> with well-known clothing brands reserved for C-01 holders.
             </p>
@@ -90,9 +90,9 @@
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
         <div class="contentRoadMap c7">
           <div class="roadMapContainer">
-            <div class="blockContainer top">
+            <div class="blockContainer leftBlock">
               <div class="block b1">
-                <p class="title titleb">Genesis</p>
+                <p class="titleb">Genesis</p>
                 <p class="text txtb">
                   We took more than two months to create each of the facial expressions of our 3D models to make them look as natural and as human as possible. We then designed each of their clothing – the materials and textures with our team. Our goal was to go beyond the boundaries of everything
                   made so far and provide an ultra-realistic look through detailed clothing and fabrics. We wanted to make the avatars look like real-life models, but for the metaverse.
@@ -100,7 +100,7 @@
               </div>
 
               <div class="block b4 swapMob">
-                <p class="title titleb">Sale Event</p>
+                <p class="titleb">Sale Event</p>
                 <p class="text txtb">
                   The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
                   experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
@@ -108,21 +108,21 @@
               </div>
 
               <div class="block b2">
-                <p class="title titleb">Discovery</p>
+                <p class="titleb">Discovery</p>
                 <p class="text txtb">
                   After the reveal of the artwork, you will be able to know which character, ethnicity, and clothing style you successfully minted. The rarity rank of your NFT will be directly available across the main two rarity services available – Rarity Tools and Rarity Sniper.
                 </p>
               </div>
 
               <div class="block b5 swapMob">
-                <p class="title titleb">Conquer the Metaverse</p>
+                <p class="titleb">Conquer the Metaverse</p>
                 <p class="text txtb">
                   One week after the mint, we will create the token economics for our ecosystem. Our goal is to be the pioneers of luxury fashion in the metaverse. We will provide support for luxury fashion brands around the world to showcase their digital collection with our 3D model avatars.
                 </p>
               </div>
 
               <div class="block b3">
-                <p class="title titleb">Ready Player One</p>
+                <p class="titleb">Ready Player One</p>
                 <p class="text txtb">
                   After a few successful partnerships in Q1, 2022, we will implement ourselves in Sandbox and Decentraland. We will create a virtual fashion show with all our partners that will be retransmitted live across social media. The goal is to replicate the real world’s well-known fashion
                   parade and make it an unbelievable digital experience.
@@ -130,17 +130,16 @@
               </div>
             </div>
             <canvas id="rcanva" class="roadMap2"></canvas>
-            <!-- <RoadMap class="roadMap" /> -->
-            <div class="blockContainer bottom rmMob">
+            <div class="blockContainer rightBlock rmMob">
               <div class="block b4 rmMob">
-                <p class="title titleb">Sale Event</p>
+                <p class="titleb">Sale Event</p>
                 <p class="text txtb">
                   The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
                   experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
                 </p>
               </div>
               <div class="block b5 rmMob">
-                <p class="title titleb">Conquer the Metaverse</p>
+                <p class="titleb">Conquer the Metaverse</p>
                 <p class="text txtb">
                   One week after the mint, we will create the token economics for our ecosystem. Our goal is to be the pioneers of luxury fashion in the metaverse. We will provide support for luxury fashion brands around the world to showcase their digital collection with our 3D model avatars.
                 </p>
@@ -156,7 +155,7 @@
       <div class="center">
         <GlitchTxt class="title1 t8">FAQ /</GlitchTxt>
         <div class="contentFAQ c8">
-          <div class="inline" v-for="(item, i) in Faq" :key="i" @click="item.hide = !item.hide" :id="'faq' + i">
+          <div class="faqLine" v-for="(item, i) in $store.state.Faq" :key="i" @click="item.hide = !item.hide" :id="'faq' + i">
             <div class="cornerLeftTop" />
             <div class="faqCol">
               <p class="text faqTxt question">{{ item.q }}</p>
@@ -173,7 +172,7 @@
       <div class="center">
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
         <div class="contentTeam">
-          <PersonaCard class="personaCard" div v-for="(item, i) in Team" :key="i" :name="item.name" :pic="item.pic" :twitter="item.twitter" :insta="item.insta" :linkedin="item.linkedin" :discord="item.discord" :artstation="item.artstation" :id="'pcard' + i" />
+          <PersonaCard class="personaCard" div v-for="(item, i) in $store.state.Team" :key="i" :name="item.name" :pic="item.pic" :twitter="item.twitter" :insta="item.insta" :linkedin="item.linkedin" :discord="item.discord" :artstation="item.artstation" :id="'pcard' + i" />
         </div>
       </div>
     </div>
@@ -226,94 +225,6 @@ export default {
         txt3: "The winners of the raffle will be able to mint on <b>Friday, 14th at 4pm UTC</b> with a maximum amount of <b>2 NFTs per wallet</b>. If you are one of our whitelisted members, you will be able to <b>mint 2 hours prior</b>, at <b>2pm UTC</b>.",
         active3: false,
       },
-      Faq: [
-        {
-          q: "What is the mint price ?",
-          r: "The mint price is 0.25 ETH plus gas",
-          hide: true,
-        },
-        {
-          q: "How many NFT can I mint per wallet ? ",
-          r: "You can mint a maximum of 2 NTFs per Ethereum wallet.",
-          hide: true,
-        },
-        {
-          q: "How can I register for the raffle ?",
-          r: "Visit our website on Tuesday 13th at 2pm UTC to register for the raffle. Please be aware that you need enough funds on your wallet to mint at least 1 C-01 NFT. We will only verify the wallet addresses with a minimum of 0.28 ETH (0.25 + Gas fees).",
-          hide: true,
-        },
-        {
-          q: "When is the public sale ?",
-          r: "The public sale will occur on January 14th, at 4 pm UTC on our website. Only the winners of the raffle will be able to mint.",
-          hide: true,
-        },
-        {
-          q: "How do I know if I won the raffle?",
-          r: "Please visit our website on Friday,14th at 4pm UTC and connect your Metamask account to see if you've won. If you win the raffle, you will be able to mint right away.",
-          hide: true,
-        },
-        {
-          q: "Do I need to register for the raffle if I’m whitelisted?",
-          r: "If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.",
-          hide: true,
-        },
-      ],
-      Team: [
-        {
-          name: "Gilberto Zaragoza, 3D artist",
-          pic: require("@/assets/team/gilberto.jpg"),
-          insta: "",
-          linkedin: "https://www.linkedin.com/in/gilbertozaragoza/?originalSubdomain=mx",
-          artstation: "https://www.artstation.com/s0r3n",
-          discord: "",
-          twitter: "",
-        },
-        {
-          name: "Kevin Didelot, Cyber security developer",
-          pic: require("@/assets/team/kevin.jpg"),
-          insta: "",
-          linkedin: " https://www.linkedin.com/in/kevin-didelot/",
-          artstation: "",
-          discord: "",
-          twitter: "",
-        },
-        {
-          name: "Luis Monteiro, Fashion designer",
-          pic: require("@/assets/team/luis.jpg"),
-          insta: "",
-          linkedin: "https://www.linkedin.com/in/luis-monteiro-31159b72/",
-          artstation: "",
-          discord: "",
-          twitter: "",
-        },
-        {
-          name: "Carla Huvelin, Accessory Designer",
-          pic: require("@/assets/team/carla.jpg"),
-          insta: "https://instagram.com/hvlcarla?utm_medium=copy_link",
-          linkedin: "https://www.linkedin.com/in/carla-huvelin-9a1460a2/",
-          artstation: "",
-          discord: "",
-          twitter: "",
-        },
-        {
-          name: "Dr. Kevin Haddad, Plastic Surgeon",
-          pic: require("@/assets/team/dr_kevin.jpg"),
-          insta: "",
-          linkedin: "https://www.linkedin.com/in/kevin-haddad-494438153/?originalSubdomain=fr",
-          artstation: "",
-          discord: "",
-          twitter: "",
-        },
-        {
-          name: "Rangga Chandra, Head moderator",
-          pic: require("@/assets/team/rangga.jpg"),
-          insta: "https://www.instagram.com/rc.noir/",
-          linkedin: "",
-          artstation: "",
-          discord: "",
-          twitter: "",
-        },
-      ],
     };
   },
   created() {
@@ -683,10 +594,6 @@ export default {
 
 <style lang="scss">
 /*********************************** First View ***********************************/
-.home {
-  margin: 0;
-  //border: 1px solid blue;
-}
 
 .mainLogo {
   object-fit: fit;
@@ -694,7 +601,6 @@ export default {
   width: 23%;
   min-width: 200px;
   margin: auto;
-  // animation: moveLogo 0.3s forwards linear;
 }
 
 @keyframes moveLogo {
@@ -715,15 +621,9 @@ export default {
   }
 }
 
-.inline2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  margin: auto;
+.LogoSize {
   width: 700px;
   z-index: 200;
-  //border: 1px solid red;
 }
 
 .logoLetter {
@@ -734,15 +634,11 @@ export default {
 
   fill: $white-color;
   > * {
-    //fill: $white-color;
     stroke: $white-color;
     stroke-width: 10px;
     transition: all 500ms ease-in-out;
   }
   box-sizing: border-box;
-  // filter: drop-shadow(2px 2px 10px rgba(33, 196, 250, 0.9));
-  //border: 1px solid red;
-  //animation: glitch1 2.5s infinite;
   transition: all 500ms ease-in-out;
   filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1));
 }
@@ -783,9 +679,6 @@ export default {
 .left {
   width: 50%;
   text-align: left;
-  // .text {
-  //   text-align: right;
-  // }
 }
 
 .right {
@@ -803,22 +696,14 @@ export default {
   margin: 0;
 }
 
-.text {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  margin: 0;
-  text-justify: auto;
-}
-
 .avatarTxt {
-  //border: 1px solid red;
   height: 150px;
 }
 
 .t2 {
   font-size: 22px;
 }
+
 /*********************************** Third View ***********************************/
 
 .title3 {
@@ -850,16 +735,7 @@ export default {
   border-top: 1px solid $white-color;
   border-right: 1px solid $white-color;
   border-bottom: 1px solid $white-color;
-  p {
-    font-family: "Helvetica Neue", sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 28px;
-    margin: 0;
-    text-align: left;
-    padding: 20px;
-  }
-
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -890,12 +766,10 @@ export default {
 .spinMove {
   margin-top: -250px;
   margin-bottom: 350px;
-  //border: 1px solid red;
 }
 
 .spinner {
   margin: 50px auto;
-  //border: 1px solid red;
 }
 
 /*********************************** Sixth View ***********************************/
@@ -905,31 +779,22 @@ export default {
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  //max-width: 600px;
   margin: auto;
   padding-top: 100px;
-  //border: 1px solid red;
 }
 
 .roadMapContainer {
   width: 100%;
-  //height: 510px;
   margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  //overflow: hidden;
-  //border: 1px solid red;
-  //border: 1px solid red;
 }
 
 .roadMap {
   width: 100%;
   transition: all 500ms ease-in-out;
   fill: $white-color;
-  //opacity: 0.85;
-  //filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 40px rgba(33, 196, 250, 1)) blur(2px);
-  // animation: shineRoadMap 3s infinite linear;
   animation: turnOn 3s forwards linear;
   > * {
     stroke: $white-color;
@@ -940,13 +805,10 @@ export default {
 
 .roadMap2 {
   z-index: 200;
-  //border: 1px solid red;
   width: 300px;
   height: 1200px;
   transition: all 500ms ease-in-out;
-  //fill: $white-color;
   animation: turnOn 3s infinite linear;
-  //color: #ffffff75
 }
 
 @keyframes turnOn {
@@ -968,51 +830,40 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  //border: 1px solid red;
-}
-
-.top {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  //margin-bottom: -200px;
-
-  //width: 100%;
-  text-align: right;
-}
-
-.bottom {
-  //margin-top: -100px;
-  //margin-left: -20px;
-  // width: 62%;
-  text-align: left;
-  margin-top: 300px;
-  margin-bottom: 300px;
 }
 
 .block {
-  // border: 1px solid pink;
   width: calc(100% + 10px);
   > * {
     transition: all 500ms ease-in-out;
   }
 }
 
+.leftBlock {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: right;
+}
+
+.rightBlock {
+  text-align: left;
+  margin-top: 300px;
+  margin-bottom: 300px;
+  font-size: 18px;
+}
+
 .b1 {
   margin-left: 60px;
 }
-
 .b2 {
   margin-left: 20px;
 }
-
 .b3 {
   margin-left: -15px;
 }
-
 .b4 {
   margin-left: -30px;
 }
-
 .b5 {
   margin-left: 15px;
 }
@@ -1021,6 +872,12 @@ export default {
   text-transform: uppercase;
   width: 100%;
   font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.txtb {
+  text-transform: none;
+  font-size: 15px;
 }
 
 /*********************************** Seven View ***********************************/
@@ -1036,7 +893,7 @@ export default {
   margin-top: 75px;
 }
 
-.inline {
+.faqLine {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1114,7 +971,6 @@ export default {
   filter: drop-shadow(0px 0px 4px $white-color);
   border-right: 2px solid $white-color;
   border-bottom: 2px solid $white-color;
-  // margin-top: 10px;
   margin-left: calc(100% - 40px);
   margin-top: -40px;
 }
@@ -1123,7 +979,7 @@ export default {
   .faqTxt {
     width: 300px;
   }
-  .inline {
+  .faqLine {
     &:hover {
       opacity: 1;
       margin-left: -15px;
@@ -1145,7 +1001,6 @@ export default {
   margin: auto;
   margin-top: 50px;
   max-width: 800px;
-  //border: 1px solid $white-color;
 }
 
 @media screen and (max-width: $layout-breakpoint-large) {
@@ -1157,10 +1012,9 @@ export default {
   .roadMapContainer {
     width: 100%;
     margin: auto;
-    //border: 1px solid green;
   }
   .txtb {
-    font-size: 10px;
+    font-size: 15px;
   }
   .titleb {
     text-transform: uppercase;
@@ -1172,38 +1026,18 @@ export default {
   font-size: 20px;
 }
 
-@media screen and (min-width: $layout-breakpoint-medium) {
-  .swapMob {
-    display: none;
-    text-transform: uppercase;
-  }
-  .rmMob {
-    display: block;
-    text-transform: uppercase;
-  }
-}
-
 @media screen and (max-width: $layout-breakpoint-medium) {
   .contentRoadMap {
     padding-top: 50px;
-  }
-
-  .swapMob {
-    display: block;
-  }
-  .rmMob {
-    display: none;
   }
   .roadMapContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
   .roadMap2 {
     display: none;
   }
-
   .blockContainer {
     display: flex;
     flex-direction: row;
@@ -1211,15 +1045,13 @@ export default {
     flex-wrap: wrap;
     //border: 1px solid red;
   }
-
   .block {
     width: 100%;
     padding: 0 15%;
     margin-bottom: 20px;
   }
-
-  .top,
-  .bottom,
+  .leftBlock,
+  .rightBlock,
   .b1,
   .b2,
   .b3,
@@ -1230,12 +1062,12 @@ export default {
     text-align: left;
     margin-bottom: 20px;
   }
-
-  .bottom {
+  .rightBlock {
     display: none;
-    border: 1px solid re;
   }
-
+  .txtb {
+    font-size: 15px;
+  }
   .titleb {
     text-transform: uppercase;
     width: 100%;
@@ -1244,29 +1076,15 @@ export default {
     //border: 1px solid red;
     text-align: center;
   }
-
-  .title1,
-  .title2 {
-    font-size: 19px;
-    //line-height: auto;
-    font-weight: 400;
-  }
-  .text {
-    font-size: 10px;
-    // line-height: 19px;
-    font-weight: 300;
-  }
   .date {
     font-size: 50px;
     font-weight: 500;
     // line-height: 183px;
   }
-
   .rafle {
     font-size: 15px;
   }
-
-  .inline2 {
+  .LogoSize {
     zoom: 50%;
   }
   .hideme {
@@ -1275,30 +1093,19 @@ export default {
   .showme {
     display: block;
   }
-
   .left {
     width: 100%;
   }
-
   .right {
     width: 100%;
   }
-
   .personaCard {
     margin-bottom: 50px;
   }
-
-  // .roadMap {
-  //   transform: rotate(90deg);
-
-  //   margin-left: 85%;
-  // }
-
   .spinMove {
     margin-top: -175px;
     margin-bottom: 225px;
   }
-
   .question {
     font-weight: 800;
     font-size: 14px;
@@ -1313,7 +1120,6 @@ export default {
     justify-content: center;
     width: 100%;
   }
-
   .cardLeft {
     width: 100%;
     margin-bottom: -5px;
@@ -1325,9 +1131,9 @@ export default {
       box-shadow: 0px 0px 7px #ffffff;
     }
   }
-
   .cardRight {
-    width: 100%;
+    padding: 15px;
+    width: calc(100% - 30px);
     border-top: none;
     border-left: 1px solid $white-color;
     border-right: 1px solid $white-color;

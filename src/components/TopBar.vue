@@ -140,7 +140,7 @@ export default {
   .title2 {
     font-size: 14px;
     margin-top: 5px;
-    width: 300px;
+    width: 100%;
   }
 
   .socialsContainer {

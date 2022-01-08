@@ -1,5 +1,5 @@
 <template>
-  <p class="text p" v-html="autoTxt"></p>
+  <p class="text" v-html="autoTxt"></p>
 </template>
 
 <script>
@@ -46,11 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  margin: 0;
+.text {
   text-justify: inter-word;
 }
 </style>

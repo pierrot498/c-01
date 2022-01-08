@@ -65,7 +65,6 @@ body,
 #app {
   margin: 0;
   padding: 0;
-  // background: $background-color1;
   background-color: $background-color3;
   scroll-behavior: smooth;
 }
@@ -82,31 +81,33 @@ body,
   z-index: 0;
 }
 
+.page {
+  margin: 0;
+}
+
 b {
   font-weight: 800;
-  //font-size: 16px;
 }
 
 .viewContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   min-height: 100vh;
   overflow-x: hidden;
   z-index: 200;
+  border: 1px solid blue;
 }
 
 .center {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //height: 100%;
   margin: auto;
   width: 100%;
   max-width: 900px;
   z-index: 200;
-  //border: 1px solid green;
+  border: 1px solid green;
 }
 
 .max {
@@ -114,36 +115,30 @@ b {
   margin-top: 50px;
 }
 
-.title1 {
+.title1,
+.title2 {
   font-family: "MADE Sunflower", sans-serif;
   text-transform: uppercase;
   font-size: 30px;
-  //line-height: 37px;
   font-weight: 400;
-  letter-spacing: 0.3em;
+  letter-spacing: 5px;
   text-align: left;
   margin: 0;
 }
 
 .title2 {
-  font-family: "MADE Sunflower", sans-serif;
-  text-transform: uppercase;
   font-size: 25px;
-  //line-height: 30px;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  text-align: left;
-  margin: 0;
 }
 
 .text {
   font-family: "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
   letter-spacing: 3px;
-  line-height: 19px;
   margin: 0;
-  text-justify: auto;
+  text-align: left;
+  margin: 10px auto;
+  text-align: justify;
 }
 
 .right {
@@ -152,5 +147,42 @@ b {
 
 .showme {
   display: none;
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: auto;
+}
+
+@media screen and (min-width: $layout-breakpoint-medium) {
+  .swapMob {
+    display: none;
+    text-transform: uppercase;
+  }
+  .rmMob {
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .swapMob {
+    display: block;
+  }
+  .rmMob {
+    display: none;
+  }
+  .title1,
+  .title2 {
+    font-size: 19px;
+    font-weight: 400;
+  }
+  .text {
+    font-size: 15px;
+    font-weight: 300;
+  }
 }
 </style>

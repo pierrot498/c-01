@@ -121,9 +121,9 @@ export default {
 
 .name {
   text-transform: uppercase;
-  font-size: 19px;
+  font-size: 22px;
   margin: auto;
-  margin-bottom: -10px;
+  margin-bottom: -15px;
   width: 200px;
   white-space: nowrap;
   overflow: hidden;
@@ -207,7 +207,7 @@ export default {
 .descrText {
   text-align: right;
   margin-top: 100px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 100;
 }
 

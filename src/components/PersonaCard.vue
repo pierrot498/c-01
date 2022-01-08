@@ -67,6 +67,7 @@ export default {
   margin: auto;
   margin-bottom: 40px;
   width: 200px;
+  text-align: center;
   // white-space: nowrap;
   // overflow: hidden;
   // text-overflow: ellipsis;
