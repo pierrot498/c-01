@@ -78,6 +78,7 @@ body,
   //background: linear-gradient(180deg, $background-color1 0%, $background-color2 248.54%);
   cursor: url("./assets/cursors/Cursor1Glow60px.png") 32 32, default;
   z-index: 0;
+  width: 100vw;
 }
 
 .page {
@@ -91,6 +92,7 @@ body,
   overflow-x: hidden;
   z-index: 200;
   //border: 1px solid blue;
+  width: 100%;
 }
 .center {
   display: flex;

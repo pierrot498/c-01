@@ -33,8 +33,8 @@ export default {
       let h;
 
       const setCanvasExtents = () => {
-        w = canvas.getBoundingClientRect().width;
-        h = canvas.getBoundingClientRect().height;
+        w = canvas.getBoundingClientRect().width / 2;
+        h = canvas.getBoundingClientRect().height / 2;
         canvas.width = w;
         canvas.height = h;
       };
@@ -48,8 +48,8 @@ export default {
         const out = [];
         for (let i = 0; i < count; i++) {
           const s = {
-            x: Math.random() * 1600 - 800,
-            y: Math.random() * 900 - 450,
+            x: Math.random() * w - w / 2,
+            y: Math.random() * h - h / 2,
             z: Math.random() * 1000,
             size: Math.random() * 4 + 1,
             color: { r: Math.random() * 10, g: Math.random() * 10, b: Math.random() * 10 },
@@ -61,7 +61,7 @@ export default {
         return out;
       };
 
-      let stars = makeStars(1000);
+      let stars = makeStars(500);
 
       const clear = () => {
         c.clearRect(0, 0, canvas.width, canvas.height);
@@ -109,15 +109,15 @@ export default {
           if (x < 0 || x >= w || y < 0 || y >= h) {
             continue;
           }
-          const d = star.z / (1000.0 * star.speed);
+          const d = star.z / (1000 * star.speed);
           const b = 1 - d * d;
 
           putPixel(x, y, b, star.size, star.color);
         }
 
-        //setTimeout(() => {
-        requestAnimationFrame(tick);
-        //}, 10);
+        setTimeout(() => {
+          requestAnimationFrame(tick);
+        }, 20);
       };
 
       requestAnimationFrame(init);

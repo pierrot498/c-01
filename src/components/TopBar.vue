@@ -70,6 +70,7 @@ export default {
 
 .title2 {
   font-size: 25px;
+  line-height: 120px;
 }
 
 .topBar {
@@ -136,7 +137,7 @@ export default {
 
   .title2 {
     font-size: 14px;
-    margin-top: 5px;
+    margin-top: 20px;
     width: 100%;
   }
 
