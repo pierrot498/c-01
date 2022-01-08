@@ -98,12 +98,29 @@
                   made so far and provide an ultra-realistic look through detailed clothing and fabrics. We wanted to make the avatars look like real-life models, but for the metaverse.
                 </p>
               </div>
+
+              <div class="block b4 swapMob">
+                <p class="title titleb">Sale Event</p>
+                <p class="text txtb">
+                  The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
+                  experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
+                </p>
+              </div>
+
               <div class="block b2">
                 <p class="title titleb">Discovery</p>
                 <p class="text txtb">
                   After the reveal of the artwork, you will be able to know which character, ethnicity, and clothing style you successfully minted. The rarity rank of your NFT will be directly available across the main two rarity services available – Rarity Tools and Rarity Sniper.
                 </p>
               </div>
+
+              <div class="block b5 swapMob">
+                <p class="title titleb">Conquer the Metaverse</p>
+                <p class="text txtb">
+                  One week after the mint, we will create the token economics for our ecosystem. Our goal is to be the pioneers of luxury fashion in the metaverse. We will provide support for luxury fashion brands around the world to showcase their digital collection with our 3D model avatars.
+                </p>
+              </div>
+
               <div class="block b3">
                 <p class="title titleb">Ready Player One</p>
                 <p class="text txtb">
@@ -114,15 +131,15 @@
             </div>
             <canvas id="rcanva" class="roadMap2"></canvas>
             <!-- <RoadMap class="roadMap" /> -->
-            <div class="blockContainer bottom">
-              <div class="block b4">
+            <div class="blockContainer bottom rmMob">
+              <div class="block b4 rmMob">
                 <p class="title titleb">Sale Event</p>
                 <p class="text txtb">
                   The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
                   experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
                 </p>
               </div>
-              <div class="block b5">
+              <div class="block b5 rmMob">
                 <p class="title titleb">Conquer the Metaverse</p>
                 <p class="text txtb">
                   One week after the mint, we will create the token economics for our ecosystem. Our goal is to be the pioneers of luxury fashion in the metaverse. We will provide support for luxury fashion brands around the world to showcase their digital collection with our 3D model avatars.
@@ -1134,23 +1151,11 @@ export default {
     margin-left: 25px;
     margin-right: 25px;
   }
-
   .roadMapContainer {
     width: 100%;
     margin: auto;
     //border: 1px solid green;
   }
-  .block {
-    // width: 150px;
-  }
-  // .top {
-  //   margin-bottom: -150px;
-  //   text-align: left;
-  // }
-  // .bottom {
-  //   margin-top: -75px;
-  //   text-align: right;
-  // }
   .txtb {
     font-size: 10px;
   }
@@ -1221,6 +1226,11 @@ export default {
     width: 100%;
     text-align: left;
     margin-bottom: 20px;
+  }
+
+  .bottom {
+    display: none;
+    border: 1px solid re;
   }
 
   .titleb {
