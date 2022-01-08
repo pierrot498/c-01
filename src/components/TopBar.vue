@@ -174,6 +174,7 @@ export default {
   top: 65px;
   left: 0px;
   border-bottom: 1px solid #c2c2c2;
+  box-shadow: 0px 0px 7px 0px #ffffff;
   width: 100%;
 }
 
