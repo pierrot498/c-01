@@ -1,5 +1,11 @@
 <template>
-  <div class="mint">Mint</div>
+  <div class="mint">
+    <div class="viewContainer">
+      <div class="center">
+        <GlitchTxt class="title1 title3 t4">Mint /</GlitchTxt>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

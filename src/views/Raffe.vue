@@ -1,5 +1,11 @@
 <template>
-  <div class="raffe">Raffe</div>
+  <div class="raffe">
+    <div class="viewContainer">
+      <div class="center">
+        <GlitchTxt class="title1 title3 t4">Raffe /</GlitchTxt>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
