@@ -1,5 +1,5 @@
 <template>
-  <div id="container">
+  <div class="glitchContainer">
     <p><slot></slot></p>
     <p><slot></slot></p>
     <p><slot></slot></p>
@@ -16,8 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#container {
-  //border: 1px solid red;
+.glitchContainer {
   height: 20px;
   margin-top: 20px;
 }

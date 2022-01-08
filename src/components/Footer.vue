@@ -64,11 +64,9 @@ export default {
   justify-content: center;
   flex-wrap: nowrap;
   max-width: 900px;
-  // height: 400px;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 50px;
-  //border: 1px solid red;
 }
 
 .logo {
@@ -83,11 +81,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  // width: 100%;
   flex-wrap: nowrap;
   margin: auto;
   margin-bottom: 15px;
-  //border: 1px solid red;
 }
 
 .lineSmall {
@@ -95,7 +91,7 @@ export default {
 }
 
 .text {
-  font-family: sans-serif;
+  font-family: "MADE Sunflower", sans-serif;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
@@ -120,7 +116,6 @@ export default {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  //border: 1px solid red;
   margin: auto;
   margin-top: 25px;
   margin-bottom: 35px;
@@ -151,25 +146,11 @@ export default {
 }
 
 .small {
-  font-family: sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   text-transform: none;
   font-size: 12px;
   font-weight: 00;
   opacity: 0.4;
-}
-
-.builder {
-  font-size: 10px;
-}
-
-.builderlink {
-  border-bottom: 1px solid $white-color;
-  opacity: 0.85;
-  &:hover {
-    opacity: 1;
-    color: $white-color;
-    cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
-  }
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
@@ -179,31 +160,22 @@ export default {
     justify-content: center;
     flex-wrap: nowrap;
     width: calc(100% - 20px);
-    // height: 400px;
     margin: auto;
     padding: 0 10px;
     padding-top: 20px;
     padding-bottom: 50px;
-    //border: 1px solid red;
   }
-
   .text {
-    font-family: "MADE Sunflower", sans-serif;
-    text-transform: uppercase;
     font-size: 10px;
     font-weight: 500;
   }
-
   .link {
     margin-left: 10px;
     margin-right: 10px;
   }
-
   .small {
-    text-transform: none;
     font-size: 8px;
     opacity: 0.5;
-    font-family: "Helvetica Neue", sans-serif;
   }
 }
 </style>

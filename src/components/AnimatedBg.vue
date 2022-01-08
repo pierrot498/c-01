@@ -15,17 +15,10 @@ export default {
       },
       lastScroll: 0,
       scrollV: 0,
-      check: false,
     };
   },
   mounted() {
-    this.check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
-    //this.check = screen.width <= 200;
-    //console.log(screen.width);
-
-    if (!this.check) {
-      window.addEventListener("scroll", this.handleScroll);
-    }
+    window.addEventListener("scroll", this.handleScroll);
     this.starsAnimation();
   },
   methods: {

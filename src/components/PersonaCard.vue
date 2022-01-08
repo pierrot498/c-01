@@ -52,31 +52,23 @@ export default {
 
 <style lang="scss" scoped>
 .teamMember {
-  margin: 50px;
   transition: all 500ms ease-in-out;
   opacity: 0.85;
-
+  margin-bottom: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
   > * {
-    transition: all 500ms ease-in-out;
+    transition: all 100ms ease-in-out;
   }
 }
 
 .name {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   margin: auto;
   margin-bottom: 40px;
-  width: 200px;
+  width: 300px;
   text-align: center;
-  // white-space: nowrap;
-  // overflow: hidden;
-  // text-overflow: ellipsis;
-}
-
-.personaContainer {
-  > * {
-    transition: all 500ms ease-in-out;
-  }
 }
 
 .persona {
@@ -84,27 +76,13 @@ export default {
   height: 300px;
   border-radius: 10000px;
   object-fit: cover;
-  // margin: -40px 20px;
-  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
-}
-
-.cornerLeftTop2 {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px 0 0 0;
-  box-sizing: border-box;
-  filter: drop-shadow(0px 0px 4px $white-color);
-  border-left: 2px solid $white-color;
-  border-top: 2px solid $white-color;
+  transition: all 100ms ease-in-out;
 }
 
 .socialsContainer2 {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  margin-top: -10px;
 }
 
 .logoContainer2 {
@@ -123,6 +101,7 @@ export default {
   color: $white-color;
   font-size: 35px;
   opacity: 0.85;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   &:hover {
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     opacity: 1;
@@ -131,20 +110,21 @@ export default {
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
+  .teamMember {
+    margin-bottom: 50px;
+  }
   .persona {
     width: 200px;
     height: 200px;
   }
-
   .name {
+    width: 200px;
     font-size: 15px;
     margin-bottom: 15px;
   }
-
   .fab {
     font-size: 25px;
   }
-
   .logoContainer2 {
     width: 40px;
     min-width: 40px;
@@ -156,7 +136,6 @@ export default {
     align-items: center;
     opacity: 0.85;
   }
-
   .socialsContainer2 {
     margin-left: 10px;
     margin-top: 0px;
