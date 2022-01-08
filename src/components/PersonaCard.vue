@@ -130,37 +130,15 @@ export default {
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
-  .teamMember {
-    margin: 10px;
-
-    &:hover {
-      opacity: 1;
-      margin: 0;
-    }
-    &:hover .persona {
-      margin: -20px 20px;
-    }
-  }
-
   .persona {
     width: 200px;
-    margin: -30px 10px;
-  }
-
-  .cornerLeftTop2,
-  .cornerRightBottom2 {
-    height: 40px;
-    width: 40px;
-  }
-  .cornerRightBottom2 {
-    margin-top: -5px;
-    margin-left: calc(100% - 40px);
+    height: 200px;
   }
 
   .name {
     font-size: 15px;
-    margin-bottom: -10px;
-    margin-left: 25px;
+    margin-bottom: 15px;
+    // margin-left: 25px;
   }
 
   .fab {
@@ -181,7 +159,7 @@ export default {
 
   .socialsContainer2 {
     margin-left: 10px;
-    margin-top: -10px;
+    margin-top: 0px;
   }
 }
 </style>
