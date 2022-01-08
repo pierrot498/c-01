@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TopBar />
-    <AnimatedBg />
+    <AnimatedBg v-if="!isMobile()" />
     <router-view />
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
   mounted() {
     console.clear();
     console.log("Loading ...");
+    console.log("Mobile : " + this.isMobile());
 
     setTimeout(() => {
       this.loaded = true;
@@ -44,7 +45,15 @@ export default {
       console.log("                                                                     ");
     }, 1000);
   },
-  methods: {},
+  methods: {
+    isMobile() {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
 };
 </script>
 
