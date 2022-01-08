@@ -68,7 +68,6 @@ body,
   background-color: $background-color3;
   scroll-behavior: smooth;
 }
-
 #app {
   font-family: "MADE Sunflower", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -84,11 +83,6 @@ body,
 .page {
   margin: 0;
 }
-
-b {
-  font-weight: 800;
-}
-
 .viewContainer {
   display: flex;
   flex-direction: column;
@@ -96,9 +90,8 @@ b {
   min-height: 100vh;
   overflow-x: hidden;
   z-index: 200;
-  border: 1px solid blue;
+  //border: 1px solid blue;
 }
-
 .center {
   display: flex;
   flex-direction: column;
@@ -107,7 +100,7 @@ b {
   width: 100%;
   max-width: 900px;
   z-index: 200;
-  border: 1px solid green;
+  //border: 1px solid green;
 }
 
 .max {
@@ -125,11 +118,9 @@ b {
   text-align: left;
   margin: 0;
 }
-
 .title2 {
   font-size: 25px;
 }
-
 .text {
   font-family: "Helvetica Neue", sans-serif;
   font-size: 18px;
@@ -140,13 +131,12 @@ b {
   margin: 10px auto;
   text-align: justify;
 }
-
-.right {
-  text-align: right;
+b {
+  font-weight: 800;
 }
 
-.showme {
-  display: none;
+.txtRight {
+  text-align: right;
 }
 
 .inline {
@@ -155,6 +145,14 @@ b {
   justify-content: center;
   flex-wrap: nowrap;
   margin: auto;
+}
+
+@media screen and (max-width: $layout-breakpoint-large) {
+  .center {
+    width: calc(100% - 50px);
+    margin-left: 25px;
+    margin-right: 25px;
+  }
 }
 
 @media screen and (min-width: $layout-breakpoint-medium) {

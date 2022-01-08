@@ -17,13 +17,13 @@
             <p class="date d1">8.888</p>
             <AutoType class="avatarTxt tx1" :txt="intro.txt1" :active="intro.active1" />
           </div>
-          <div class="right hideme"></div>
+          <div class="right rmMob"></div>
         </div>
 
         <div class="row r2">
-          <div class="left hideme"></div>
+          <div class="left rmMob"></div>
           <div class="right">
-            <GlitchTxt class="title1 title3 t2 rafle">Raffle Registration /</GlitchTxt>
+            <GlitchTxt class="title1 t2 raffle">Raffle Registration /</GlitchTxt>
             <p class="date d2">01/13</p>
             <AutoType class="avatarTxt tx2" :txt="intro.txt2" :active="intro.active2" />
           </div>
@@ -35,7 +35,7 @@
             <p class="date d3">01/14</p>
             <AutoType class="avatarTxt tx3" :txt="intro.txt3" :active="intro.active3" />
           </div>
-          <div class="right hideme"></div>
+          <div class="right rmMob"></div>
         </div>
       </div>
     </div>
@@ -595,12 +595,23 @@ export default {
 <style lang="scss">
 /*********************************** First View ***********************************/
 
-.mainLogo {
-  object-fit: fit;
-  max-width: 450px;
-  width: 23%;
-  min-width: 200px;
-  margin: auto;
+.LogoSize {
+  width: 700px;
+  z-index: 200;
+}
+.logoLetter {
+  margin: 0;
+  line-height: 0;
+  height: 200px;
+  margin: 0 20px;
+  fill: $white-color;
+  > * {
+    stroke: $white-color;
+    stroke-width: 8px;
+    transition: all 500ms ease-in-out;
+  }
+  box-sizing: border-box;
+  transition: all 500ms ease-in-out;
 }
 
 @keyframes moveLogo {
@@ -619,28 +630,6 @@ export default {
     transform: translateY(0%);
     opacity: 1;
   }
-}
-
-.LogoSize {
-  width: 700px;
-  z-index: 200;
-}
-
-.logoLetter {
-  margin: 0;
-  line-height: 0;
-  height: 200px;
-  margin: 0 20px;
-
-  fill: $white-color;
-  > * {
-    stroke: $white-color;
-    stroke-width: 10px;
-    transition: all 500ms ease-in-out;
-  }
-  box-sizing: border-box;
-  transition: all 500ms ease-in-out;
-  filter: drop-shadow(0px 0px 10px rgba(33, 196, 250, 1)) drop-shadow(0px 0px 20px rgba(33, 196, 250, 1));
 }
 
 @keyframes letter {
@@ -666,7 +655,7 @@ export default {
   }
 }
 
-/*********************************** Second View ***********************************/
+/*********************************** Intro View ***********************************/
 
 .row {
   display: flex;
@@ -675,18 +664,13 @@ export default {
   width: 100%;
   margin-bottom: 150px;
 }
-
 .left {
   width: 50%;
   text-align: left;
 }
-
 .right {
   width: 50%;
   text-align: right;
-  .text {
-    text-align: left;
-  }
 }
 
 .date {
@@ -695,20 +679,15 @@ export default {
   font-weight: 500;
   margin: 0;
 }
-
 .avatarTxt {
   height: 150px;
 }
-
-.t2 {
-  font-size: 22px;
-}
-
-/*********************************** Third View ***********************************/
-
-.title3 {
+.raffle {
+  font-size: 15px;
   text-align: right;
 }
+
+/*********************************** About View ***********************************/
 
 .card {
   margin-top: 75px;
@@ -717,10 +696,8 @@ export default {
   justify-content: center;
   width: 100%;
 }
-
 .cardLeft {
   width: 45%;
-
   img {
     min-height: 500px;
     width: 100%;
@@ -729,7 +706,6 @@ export default {
     box-shadow: 0px 0px 7px #ffffff;
   }
 }
-
 .cardRight {
   width: 55%;
   border-top: 1px solid $white-color;
@@ -741,18 +717,14 @@ export default {
   justify-content: center;
 }
 
-.aboutTxt {
-  text-align: justify;
-  text-justify: inter-word;
-}
-/*********************************** Fourth View ***********************************/
+/*********************************** NFT View ***********************************/
 
 .cardNft {
   margin: auto;
   margin-top: 75px;
 }
 
-/*********************************** Fifth View ***********************************/
+/*********************************** Community View ***********************************/
 
 .contentTotalDistr {
   display: flex;
@@ -767,12 +739,11 @@ export default {
   margin-top: -250px;
   margin-bottom: 350px;
 }
-
 .spinner {
   margin: 50px auto;
 }
 
-/*********************************** Sixth View ***********************************/
+/*********************************** RoadMap View ***********************************/
 
 .contentRoadMap {
   display: flex;
@@ -790,7 +761,6 @@ export default {
   flex-direction: row;
   justify-content: center;
 }
-
 .roadMap {
   width: 100%;
   transition: all 500ms ease-in-out;
@@ -802,7 +772,6 @@ export default {
     transition: all 500ms ease-in-out;
   }
 }
-
 .roadMap2 {
   z-index: 200;
   width: 300px;
@@ -831,27 +800,23 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .block {
   width: calc(100% + 10px);
   > * {
     transition: all 500ms ease-in-out;
   }
 }
-
 .leftBlock {
   margin-top: 100px;
   margin-bottom: 100px;
   text-align: right;
 }
-
 .rightBlock {
   text-align: left;
   margin-top: 300px;
   margin-bottom: 300px;
   font-size: 18px;
 }
-
 .b1 {
   margin-left: 60px;
 }
@@ -874,13 +839,12 @@ export default {
   font-size: 20px;
   letter-spacing: 5px;
 }
-
 .txtb {
   text-transform: none;
   font-size: 15px;
 }
 
-/*********************************** Seven View ***********************************/
+/*********************************** FAQ View ***********************************/
 
 .contentFAQ {
   display: flex;
@@ -901,13 +865,10 @@ export default {
   margin-bottom: 50px;
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   opacity: 0.85;
-  // border: 1px solid red;
-
   transition: all 300ms ease-in-out;
   > * {
     transition: all 300ms ease-in-out;
   }
-
   &:hover {
     opacity: 1;
     margin-left: -40px;
@@ -919,23 +880,19 @@ export default {
     margin: 50px;
   }
 }
-
 .faqCol {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //border: 1px solid red;
   margin: 20px;
   transition: all 300ms ease-in-out;
   > * {
     transition: all 300ms ease-in-out;
   }
 }
-
 .faqActive {
   margin-top: 50px;
 }
-
 .faqTxt {
   text-align: center;
   margin: auto;
@@ -947,7 +904,6 @@ export default {
   font-weight: 800;
   font-size: 16px;
 }
-
 .answer {
   margin-top: 50px;
 }
@@ -962,7 +918,6 @@ export default {
   border-top: 2px solid $white-color;
   margin-bottom: -40px;
 }
-
 .cornerRightBottom {
   width: 40px;
   height: 40px;
@@ -991,7 +946,7 @@ export default {
   }
 }
 
-/*********************************** Eighth View ***********************************/
+/*********************************** Team View ***********************************/
 
 .contentTeam {
   display: flex;
@@ -1003,12 +958,9 @@ export default {
   max-width: 800px;
 }
 
+/*********************************** Mobile View ***********************************/
+
 @media screen and (max-width: $layout-breakpoint-large) {
-  .center {
-    width: calc(100% - 50px);
-    margin-left: 25px;
-    margin-right: 25px;
-  }
   .roadMapContainer {
     width: 100%;
     margin: auto;
@@ -1039,7 +991,6 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    //border: 1px solid red;
   }
   .block {
     width: 100%;
@@ -1074,17 +1025,11 @@ export default {
     font-size: 50px;
     font-weight: 500;
   }
-  .rafle {
+  .raffle {
     font-size: 15px;
   }
   .LogoSize {
     zoom: 50%;
-  }
-  .hideme {
-    display: none;
-  }
-  .showme {
-    display: block;
   }
   .left {
     width: 100%;
