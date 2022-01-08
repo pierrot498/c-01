@@ -683,7 +683,7 @@ export default {
   height: 150px;
 }
 .raffle {
-  font-size: 15px;
+  font-size: 24px;
   text-align: right;
 }
 
