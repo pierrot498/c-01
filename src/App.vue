@@ -159,7 +159,7 @@
       <div class="center">
         <GlitchTxt class="title1 title3 t9">The team /</GlitchTxt>
         <div class="contentTeam">
-          <PersonaCard class="personaCard" v-for="(item, i) in Team" :key="i" :name="item.name" :insta="item.insta" :discord="item.discord" :twitter="item.twitter" :id="'pcard' + i" />
+          <PersonaCard class="personaCard" div v-for="(item, i) in Team" :key="i" :name="item.name" :pic="item.pic" :twitter="item.twitter" :insta="item.insta" :linkedin="item.linkedin" :discord="item.discord" :artstation="item.artstation" :id="'pcard' + i" />
         </div>
       </div>
     </div>
@@ -248,28 +248,58 @@ export default {
       ],
       Team: [
         {
-          name: "Prénom Nom",
+          name: "Gilberto Zaragoza, 3D artist",
+          pic: require("@/assets/team/gilberto.jpg"),
           insta: "",
-          twitter: "",
+          linkedin: "https://www.linkedin.com/in/gilbertozaragoza/?originalSubdomain=mx",
+          artstation: "https://www.artstation.com/s0r3n",
           discord: "",
+          twitter: "",
         },
         {
-          name: "Prénom Nom",
+          name: "Kevin Didelot, Smart contract/Cyber security developer",
+          pic: require("@/assets/team/kevin.jpg"),
           insta: "",
-          twitter: "",
+          linkedin: " https://www.linkedin.com/in/kevin-didelot/",
+          artstation: "",
           discord: "",
+          twitter: "",
         },
         {
-          name: "Prénom Nom",
+          name: "Luis Monteiro, Fashion designer",
+          pic: require("@/assets/team/luis.jpg"),
           insta: "",
-          twitter: "",
+          linkedin: "https://www.linkedin.com/in/luis-monteiro-31159b72/",
+          artstation: "",
           discord: "",
+          twitter: "",
         },
         {
-          name: "Prénom Nom",
-          insta: "",
-          twitter: "",
+          name: "Carla Huvelin, Accessory Designer",
+          pic: require("@/assets/team/carla.jpg"),
+          insta: "https://instagram.com/hvlcarla?utm_medium=copy_link",
+          linkedin: "https://www.linkedin.com/in/carla-huvelin-9a1460a2/",
+          artstation: "",
           discord: "",
+          twitter: "",
+        },
+        {
+          name: "Dr. Kevin Haddad, Plastic Surgeon",
+          pic: require("@/assets/team/dr_kevin.jpg"),
+          insta: "",
+          linkedin: "https://www.linkedin.com/in/kevin-haddad-494438153/?originalSubdomain=fr",
+          artstation: "",
+          discord: "",
+          twitter: "",
+        },
+        {
+          name: "Rangga Chandra, Head moderator",
+          pic: require("@/assets/team/rangga.jpg"),
+          insta: "https://www.instagram.com/rc.noir/",
+          linkedin: "",
+          artstation: "",
+          discord: "",
+          twitter: "",
         },
       ],
     };
@@ -277,7 +307,7 @@ export default {
   mounted() {
     console.clear();
     console.log("Loading ...");
-    let check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
+    //let check = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Macintosh/i.test(navigator.userAgent);
 
     //let check = screen.width <= 280;
     //console.log(screen.width);
@@ -630,6 +660,8 @@ export default {
           .from("#pcard1", { x: innerWidth * this.aSpeed, opacity: 0 })
           .from("#pcard2", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard4", { x: -innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard5", { x: innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
             setTimeout(() => {
               this.show.footer = true;
