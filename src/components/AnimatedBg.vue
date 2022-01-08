@@ -68,7 +68,7 @@ export default {
         c.height = h;
         opts.cx = w / 2;
         opts.cy = h / 2;
-        opts.len = w / 50;
+        opts.len = h / 50;
         dieX = w / 2 / opts.len;
         dieY = h / 2 / opts.len;
       };
