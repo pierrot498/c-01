@@ -3,7 +3,6 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Mint from "./views/Mint.vue";
 import Raffe from "./views/Raffe.vue";
-import Empty from "./views/Empty.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -27,8 +26,8 @@ export default new Router({
     },
     {
       path: "*",
-      name: "404",
-      component: Empty,
+      name: "Home",
+      component: Home,
     },
   ],
 });
