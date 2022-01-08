@@ -75,7 +75,7 @@ export default {
 
 .topBar {
   position: absolute;
-  top: 0;
+  top: 25px;
   width: calc(100% - 100px);
   height: 100px;
   padding: 0 50px;

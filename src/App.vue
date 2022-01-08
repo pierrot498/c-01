@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TopBar />
-    <AnimatedBg v-if="!isMobile()" />
+    <AnimatedBg />
     <router-view />
   </div>
 </template>
