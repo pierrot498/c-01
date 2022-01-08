@@ -68,7 +68,7 @@ export default {
         c.height = h;
         opts.cx = w / 2;
         opts.cy = h / 2;
-        opts.len = h / 50;
+        opts.len = (h + w) / 100;
         dieX = w / 2 / opts.len;
         dieY = h / 2 / opts.len;
       };
@@ -258,6 +258,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 1;
+  opacity: 0.5;
   // background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
   //animation: killBg 10s infinite alternate;
 }
