@@ -3,18 +3,24 @@
     <p class="text name">{{ name }}</p>
     <div class="personaContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
       <div class="cornerLeftTop2" />
-      <img class="persona" :style="style" :src="require('@/assets/imgs/personas/persona1.png')" />
+      <img class="persona" :style="style" :src="pic" />
       <div class="cornerRightBottom2" />
     </div>
     <div class="socialsContainer2">
-      <div class="logoContainer2" @click="goToExternal(insta)">
+      <div class="logoContainer2" v-if="insta != ''" @click="goToExternal(insta)">
         <i class="fab fa-instagram"></i>
       </div>
-      <div class="logoContainer2" @click="goToExternal(discord)">
+      <div class="logoContainer2" v-if="twitter != ''" @click="goToExternal(twitter)">
         <i class="fab fa-twitter" />
       </div>
-      <div class="logoContainer2" @click="goToExternal(twitter)">
+      <div class="logoContainer2" v-if="discord != ''" @click="goToExternal(discord)">
         <i class="fab fa-discord"></i>
+      </div>
+      <div class="logoContainer2" v-if="linkedin != ''" @click="goToExternal(linkedin)">
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <div class="logoContainer2" v-if="artstation != ''" @click="goToExternal(artstation)">
+        <i class="fab fa-artstation"></i>
       </div>
     </div>
   </div>
@@ -25,8 +31,11 @@ export default {
   name: "PersonaCard",
   props: {
     name: String,
+    pic: String,
     insta: String,
+    linkedin: String,
     discord: String,
+    artstation: String,
     twitter: String,
   },
   data() {
@@ -34,6 +43,7 @@ export default {
       style: "",
     };
   },
+  mounted() {},
   methods: {
     mouseEnter() {
       //console.log("mouseEnter");
@@ -55,12 +65,16 @@ export default {
 
       this.style = "transform: rotate3d(" + tiltx + ", " + tilty + ", 0, " + degree + "deg)";
     },
+    goToExternal(url) {
+      window.open(url);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .teamMember {
+  width: 350px;
   margin: 10px;
   transition: all 500ms ease-in-out;
   opacity: 0.85;
@@ -80,13 +94,13 @@ export default {
 
 .name {
   text-transform: uppercase;
-  font-size: 19px;
+  font-size: 12px;
   margin: auto;
   margin-bottom: -10px;
   width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  // white-space: nowrap;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
 }
 
 .personaContainer {
@@ -97,6 +111,9 @@ export default {
 
 .persona {
   width: 300px;
+  height: 400px;
+  border-radius: 10px;
+  object-fit: cover;
   margin: -40px 20px;
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
 }

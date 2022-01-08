@@ -29,22 +29,22 @@ export default {
       personaList: [
         {
           name: "C-01A",
-          pic: require("@/assets/imgs/personas/persona1.png"),
+          pic: require("@/assets/imgs/personas/persona1.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "C-01B",
-          pic: require("@/assets/imgs/personas/persona2.png"),
+          pic: require("@/assets/imgs/personas/persona2.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "C-01C",
-          pic: require("@/assets/imgs/personas/persona4.png"),
+          pic: require("@/assets/imgs/personas/persona4.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
         {
           name: "C-01D",
-          pic: require("@/assets/imgs/personas/persona3.png"),
+          pic: require("@/assets/imgs/personas/persona3.jpg"),
           txt: "Beauty comes in all different shapes, sizes, skin colors, and beliefs. This is why we decided to represent 4 ethnicities with different sets of clothings and accessories. Each NFT has specific attributes and variables that make it unique.",
         },
       ],
@@ -52,7 +52,7 @@ export default {
     };
   },
   mounted() {
-    this.selectedPersona = this.personaList[3];
+    this.selectedPersona = this.personaList[0];
   },
   methods: {
     selectPersona(i) {
@@ -163,39 +163,6 @@ export default {
   border-bottom: 2px solid $white-color;
   margin-top: -5px;
   margin-left: calc(100% - 62px);
-}
-
-.socialsContainer2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  margin-left: 15px;
-  margin-top: -30px;
-}
-
-.logoContainer2 {
-  width: 60px;
-  min-width: 60px;
-  height: 60px;
-  min-height: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.85;
-}
-
-.fa {
-  color: $white-color;
-  font-size: 35px;
-  opacity: 0.85;
-  &:hover {
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-    opacity: 1;
-    transform: translateY(-1px);
-  }
 }
 
 .characters {
