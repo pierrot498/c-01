@@ -119,7 +119,7 @@ body,
   margin: 0;
 }
 .title2 {
-  font-size: 25px;
+  font-size: 22px;
 }
 .text {
   font-family: "Helvetica Neue", sans-serif;
@@ -145,6 +145,28 @@ b {
   justify-content: center;
   flex-wrap: nowrap;
   margin: auto;
+}
+
+button {
+  font-family: "MADE Sunflower", sans-serif;
+  margin: auto;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid $white-color;
+  background-color: transparent;
+  color: $white-color;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  opacity: 0.85;
+
+  cursor: url("./assets/cursors/Cursor2Glow60px.png") 32 32, auto;
+  &:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    box-shadow: 0px 0px 7px 0px #ffffff;
+  }
 }
 
 @media screen and (max-width: $layout-breakpoint-large) {
@@ -173,7 +195,10 @@ b {
   .rmMob {
     display: none;
   }
-  .title1,
+  .title1 {
+    font-size: 19px;
+    font-weight: 400;
+  }
   .title2 {
     font-size: 19px;
     font-weight: 400;

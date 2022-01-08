@@ -10,7 +10,7 @@
             <div class="cornerRightTop2" />
           </div>
           <div class="txt">
-            <p class="title1 t2">Register to the raffle now</p>
+            <p class="title2">Register to the raffle now</p>
             <p class="text">If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.</p>
           </div>
           <div class="inline3">
@@ -59,25 +59,19 @@ export default {
 
 .txt {
   margin: auto;
-  //border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 60px;
   > * {
     transition: all 500ms ease-in-out;
   }
 }
 
-.t2 {
-  font-size: 20px;
-  margin-bottom: 50px;
-}
-
-.text {
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 15px;
+.title2 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .cornerLeftTop2 {
@@ -108,8 +102,6 @@ export default {
   filter: drop-shadow(0px 0px 4px $white-color);
   border-left: 2px solid $white-color;
   border-bottom: 2px solid $white-color;
-  // margin-top: -5px;
-  // margin-right: calc(100% - 62px);
 }
 
 .cornerRightBottom2 {
@@ -120,27 +112,10 @@ export default {
   filter: drop-shadow(0px 0px 4px $white-color);
   border-right: 2px solid $white-color;
   border-bottom: 2px solid $white-color;
-  //margin-top: -5px;
-  // margin-left: calc(100% - 62px);
 }
 
 .regButton {
-  font-family: "MADE Sunflower", sans-serif;
-  margin: auto;
   margin-top: 50px;
-  width: 300px;
-  height: 60px;
-  border-radius: 5px;
-  //filter: drop-shadow(0px 0px 4px $white-color);
-  border: 1px solid $white-color;
-  background-color: transparent;
-  color: $white-color;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 50px;
-  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {

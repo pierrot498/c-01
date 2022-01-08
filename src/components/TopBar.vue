@@ -68,6 +68,10 @@ export default {
   display: none;
 }
 
+.title2 {
+  font-size: 25px;
+}
+
 .topBar {
   position: absolute;
   top: 0;
