@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Mint from "./views/Mint.vue";
-import Raffe from "./views/Raffe.vue";
+import Raffle from "./views/Raffle.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -20,9 +20,9 @@ export default new Router({
       component: Mint,
     },
     {
-      path: "/raffe",
-      name: "Raffe",
-      component: Raffe,
+      path: "/raffle",
+      name: "Raffle",
+      component: Raffle,
     },
     {
       path: "*",
