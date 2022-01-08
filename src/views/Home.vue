@@ -1022,10 +1022,6 @@ export default {
   }
 }
 
-.rafle {
-  font-size: 20px;
-}
-
 @media screen and (max-width: $layout-breakpoint-medium) {
   .contentRoadMap {
     padding-top: 50px;
@@ -1047,7 +1043,7 @@ export default {
   }
   .block {
     width: 100%;
-    padding: 0 15%;
+    padding: 0 15px;
     margin-bottom: 20px;
   }
   .leftBlock,
@@ -1072,14 +1068,11 @@ export default {
     text-transform: uppercase;
     width: 100%;
     font-size: 15px;
-    // margin-left: auto;
-    //border: 1px solid red;
     text-align: center;
   }
   .date {
     font-size: 50px;
     font-weight: 500;
-    // line-height: 183px;
   }
   .rafle {
     font-size: 15px;

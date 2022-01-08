@@ -128,6 +128,7 @@ export default {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 
 .personaContainer {
@@ -321,7 +322,6 @@ export default {
       margin-left: 0px;
     }
   }
-
   .name {
     text-transform: uppercase;
     font-size: 19px;
