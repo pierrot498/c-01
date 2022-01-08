@@ -64,7 +64,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  padding: 0 30px;
   > * {
     transition: all 500ms ease-in-out;
   }
@@ -140,5 +140,15 @@ export default {
   text-align: center;
   line-height: 50px;
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .t2 {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  .text {
+    font-size: 12px;
+  }
 }
 </style>

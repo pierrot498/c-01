@@ -138,7 +138,6 @@ export default {
   .name {
     font-size: 15px;
     margin-bottom: 15px;
-    // margin-left: 25px;
   }
 
   .fab {

@@ -34,7 +34,6 @@ import GlitchTxt from "@/components/GlitchTxt";
 export default {
   name: "Mint",
   components: { GlitchTxt },
-
   data: function () {
     return {};
   },
@@ -69,7 +68,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  padding: 10px;
   > * {
     transition: all 500ms ease-in-out;
   }
@@ -165,5 +164,11 @@ export default {
   text-align: center;
   line-height: 50px;
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
+}
+
+@media screen and (max-width: $layout-breakpoint-medium) {
+  .text {
+    font-size: 15px;
+  }
 }
 </style>
