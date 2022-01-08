@@ -103,7 +103,6 @@ export default {
   justify-content: center;
   align-items: center;
   margin-right: 50px;
-
   border: 1px solid #ffffff;
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 2px rgba(186, 228, 242, 0.25));
@@ -111,9 +110,8 @@ export default {
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   opacity: 0.85;
   transition: all 200ms;
-
   &:hover {
-    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 7px 0px #ffffff;
     opacity: 1;
     transform: translateY(-1px);
   }
@@ -173,8 +171,6 @@ export default {
   position: absolute;
   top: 65px;
   left: 0px;
-  border-bottom: 1px solid #c2c2c2;
-  box-shadow: 0px 0px 7px 0px #ffffff;
   width: 100%;
 }
 

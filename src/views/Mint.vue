@@ -2,26 +2,24 @@
   <div class="mint">
     <div class="viewContainer">
       <div class="center">
-        <!-- <GlitchTxt class="title1 title3">Mint /</GlitchTxt> -->
-
         <div class="raffeContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
-          <div class="inline3">
+          <div class="inline">
             <div class="cornerLeftTop2" />
             <div class="cornerRightTop2" />
           </div>
           <div class="txt">
             <p class="title2">How many Avatar do you want to mint</p>
-            <div class="inline3" style="width: 200px">
+            <div class="inline" style="width: 200px">
               <button class="mintButton">1</button>
               <button class="mintButton">2</button>
             </div>
           </div>
-          <div class="inline3">
+          <div class="inline">
             <div class="cornerLeftBottom2" />
             <div class="cornerRightBottom2" />
           </div>
         </div>
-        <button class="regButton">Connect Wallet</button>
+        <button class="coButton" @click="connect">Connect Wallet</button>
       </div>
     </div>
   </div>
@@ -29,16 +27,17 @@
 
 <script>
 //https://www.figma.com/proto/7IZGtgiA5TxOvWH7HtH945/C-01-MINT?page-id=0%3A1&node-id=1%3A122&scaling=min-zoom
-// import GlitchTxt from "@/components/GlitchTxt";
-
 export default {
   name: "Mint",
-  // components: { GlitchTxt },
   data: function () {
     return {};
   },
   mounted() {},
-  methods: {},
+  methods: {
+    connect() {
+      console.log("connect");
+    },
+  },
 };
 </script>
 
@@ -54,7 +53,7 @@ export default {
   }
 }
 
-.inline3 {
+.inline {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -123,7 +122,7 @@ export default {
   height: 60px;
 }
 
-.regButton {
+.coButton {
   margin-top: 50px;
 }
 

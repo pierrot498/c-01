@@ -2,10 +2,8 @@
   <div class="raffle">
     <div class="viewContainer">
       <div class="center">
-        <!-- <GlitchTxt class="title1">Raffle /</GlitchTxt> -->
-
         <div class="raffeContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
-          <div class="inline3">
+          <div class="inline">
             <div class="cornerLeftTop2" />
             <div class="cornerRightTop2" />
           </div>
@@ -13,12 +11,12 @@
             <p class="title2">Register to the raffle now</p>
             <p class="text">If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.</p>
           </div>
-          <div class="inline3">
+          <div class="inline">
             <div class="cornerLeftBottom2" />
             <div class="cornerRightBottom2" />
           </div>
         </div>
-        <button class="regButton">Register</button>
+        <button class="regButton" @click="register">Register</button>
       </div>
     </div>
   </div>
@@ -26,16 +24,17 @@
 
 <script>
 // https://www.figma.com/proto/8jqkgljMtHj597jYXLx22c/C-01-RAFFLE?page-id=0%3A1&node-id=1%3A122&scaling=min-zoom
-// import GlitchTxt from "@/components/GlitchTxt";
-
 export default {
   name: "Raffle",
-  // components: { GlitchTxt },
   data: function () {
     return {};
   },
   mounted() {},
-  methods: {},
+  methods: {
+    register() {
+      console.log("register");
+    },
+  },
 };
 </script>
 
