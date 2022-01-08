@@ -319,6 +319,17 @@ export default {
     }
     setTimeout(() => {
       this.loaded = true;
+      if (this.isMobile()) {
+        setTimeout(() => {
+          this.intro.active1 = true;
+          setTimeout(() => {
+            this.intro.active2 = true;
+            setTimeout(() => {
+              this.intro.active3 = true;
+            }, 100);
+          }, 100);
+        }, 100);
+      }
     }, 1000);
   },
   methods: {
