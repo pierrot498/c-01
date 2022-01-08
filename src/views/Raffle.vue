@@ -2,7 +2,7 @@
   <div class="raffle">
     <div class="viewContainer">
       <div class="center">
-        <GlitchTxt class="title1">Raffle /</GlitchTxt>
+        <!-- <GlitchTxt class="title1">Raffle /</GlitchTxt> -->
 
         <div class="raffeContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
           <div class="inline3">
@@ -26,11 +26,11 @@
 
 <script>
 // https://www.figma.com/proto/8jqkgljMtHj597jYXLx22c/C-01-RAFFLE?page-id=0%3A1&node-id=1%3A122&scaling=min-zoom
-import GlitchTxt from "@/components/GlitchTxt";
+// import GlitchTxt from "@/components/GlitchTxt";
 
 export default {
   name: "Raffle",
-  components: { GlitchTxt },
+  // components: { GlitchTxt },
   data: function () {
     return {};
   },
@@ -72,6 +72,7 @@ export default {
 
 .t2 {
   font-size: 20px;
+  margin-bottom: 50px;
 }
 
 .text {
