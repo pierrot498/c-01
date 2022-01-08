@@ -1,17 +1,17 @@
 <template>
-  <div class="raffe">
+  <div class="raffle">
     <div class="viewContainer">
       <div class="center">
-        <GlitchTxt class="title1 title3 t4">Raffle /</GlitchTxt>
+        <GlitchTxt class="title1">Raffle /</GlitchTxt>
 
         <div class="raffeContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
           <div class="inline3">
             <div class="cornerLeftTop2" />
             <div class="cornerRightTop2" />
           </div>
-          <div class="texte txt">
-            <p class="title1">Register to the raffle now</p>
-            <p>If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.</p>
+          <div class="txt">
+            <p class="title1 t2">Register to the raffle now</p>
+            <p class="text">If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.</p>
           </div>
           <div class="inline3">
             <div class="cornerLeftBottom2" />
@@ -26,12 +26,14 @@
 
 <script>
 // https://www.figma.com/proto/8jqkgljMtHj597jYXLx22c/C-01-RAFFLE?page-id=0%3A1&node-id=1%3A122&scaling=min-zoom
+import GlitchTxt from "@/components/GlitchTxt";
+
 export default {
-  name: "Raffe",
+  name: "Raffle",
+  components: { GlitchTxt },
   data: function () {
     return {};
   },
-
   mounted() {},
   methods: {},
 };
@@ -56,20 +58,25 @@ export default {
 }
 
 .txt {
-  font-family: "Helvetica Neue", sans-serif;
-  max-width: 700px;
-  min-width: 500px;
-  font-size: 20px;
   margin: auto;
-  //margin: -40px 20px;
+  //border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   > * {
     transition: all 500ms ease-in-out;
   }
 }
 
-.title1 {
-  font-size: 25px;
+.t2 {
+  font-size: 20px;
+}
+
+.text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 15px;
 }
 
 .cornerLeftTop2 {
