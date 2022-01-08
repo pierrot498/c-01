@@ -70,11 +70,11 @@ export default {
 }
 
 .topBar {
-  position: relative;
-  top: 25px;
+  position: absolute;
+  top: 0;
   width: calc(100% - 100px);
   height: 100px;
-  margin-bottom: -100px;
+  //margin-bottom: -0px;
   padding: 0 50px;
   display: flex;
   flex-direction: row;
@@ -84,6 +84,7 @@ export default {
   vertical-align: middle;
   z-index: 1000;
   transition: all 200ms;
+  //border: 1px solid red;
 }
 
 .socialsContainer {

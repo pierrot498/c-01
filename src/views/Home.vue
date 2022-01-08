@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="home">
     <div class="viewContainer">
       <div class="inline2">
         <Logo1 class="logoLetter" v-bind:style="{ animation: loaded ? 'letter 2s infinite' : 'moveLogo 0.4s forwards linear' }" />
@@ -206,7 +206,7 @@ export default {
         active1: false,
         txt2: "You can participate in our Raffle to get a chance to mint your own C-01. On <b>Tuesday 13th, 2pm UTC</b>, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with <b>at least 0.28 ETH</b>.",
         active2: false,
-        txt3: "The winners of the raffle will be able to mint on <b>Wednesday, 14th at 4pm UTC</b> with a maximum amount of <b>2 NFTs per wallet</b>. If you are one of our whitelisted members, you will be able to <b>mint 2 hours prior</b>, at <b>2pm UTC</b>.",
+        txt3: "The winners of the raffle will be able to mint on <b>Friday, 14th at 4pm UTC</b> with a maximum amount of <b>2 NFTs per wallet</b>. If you are one of our whitelisted members, you will be able to <b>mint 2 hours prior</b>, at <b>2pm UTC</b>.",
         active3: false,
       },
       Faq: [
@@ -252,7 +252,7 @@ export default {
           twitter: "",
         },
         {
-          name: "Kevin Didelot, Smart contract/Cyber security developer",
+          name: "Kevin Didelot, Cyber security developer",
           pic: require("@/assets/team/kevin.jpg"),
           insta: "",
           linkedin: " https://www.linkedin.com/in/kevin-didelot/",
@@ -629,6 +629,10 @@ export default {
 
 <style lang="scss">
 /*********************************** First View ***********************************/
+.home {
+  margin: 0;
+  //border: 1px solid blue;
+}
 
 .mainLogo {
   object-fit: fit;

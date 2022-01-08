@@ -86,7 +86,6 @@ b {
   min-height: 100vh;
   overflow-x: hidden;
   z-index: 200;
-  //border: 1px solid red;
 }
 
 .center {
