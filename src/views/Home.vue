@@ -299,13 +299,36 @@ export default {
       ],
     };
   },
+  created() {
+    if (this.isMobile()) {
+      this.show = {
+        intro: true,
+        about: true,
+        nft: true,
+        total: true,
+        road: true,
+        faq: true,
+        team: true,
+        footer: true,
+      };
+    }
+  },
   mounted() {
-    this.scrollAnimation();
+    if (!this.isMobile()) {
+      this.scrollAnimation();
+    }
     setTimeout(() => {
       this.loaded = true;
     }, 1000);
   },
   methods: {
+    isMobile() {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     goToExternal(url) {
       window.open(url);
     },
