@@ -5,7 +5,7 @@
     </div>
     <div class="teamMember">
       <p class="text name">{{ selectedPersona.name }}</p>
-      <div class="personaContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
+      <div class="personaContainer" @mousemove="mouseMove" @mouseleave="mouseLeave">
         <div class="cornerLeftTop2" />
         <img class="persona" :style="style" :src="selectedPersona.pic" />
         <div class="cornerRightBottom2" />
@@ -58,11 +58,7 @@ export default {
     selectPersona(i) {
       this.selectedPersona = this.personaList[i];
     },
-    mouseEnter() {
-      //console.log("mouseEnter");
-    },
     mouseLeave() {
-      //console.log("mouseLeave");
       this.style = "transform: none";
     },
     mouseMove(e) {
@@ -75,7 +71,6 @@ export default {
       let tilty = -(dx / rect.left) / 1.5;
       let radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2));
       let degree = radius * 20;
-
       this.style = "transform: rotate3d(" + tiltx + ", " + tilty + ", 0, " + degree + "deg)";
     },
   },
@@ -142,7 +137,6 @@ export default {
   margin: -40px 20px;
   border-radius: 10px;
   cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
-  //transition: all 300ms ease-in-out;
 }
 
 .cornerLeftTop2 {
@@ -172,7 +166,6 @@ export default {
   justify-content: space-around;
   flex-wrap: nowrap;
   padding: 30px 10px;
-  // border: 1px solid red;
   &:hover {
     margin-left: -10px;
   }
@@ -200,7 +193,6 @@ export default {
   width: 150px;
   margin-right: -20px;
   height: 425px;
-  //border: 1px solid red;
   overflow: hidden;
   margin-left: -70px;
 }
@@ -279,7 +271,6 @@ export default {
     height: auto;
     width: 100%;
     margin: 0;
-    //border: 1px solid red;
   }
 
   .descrText {
@@ -290,7 +281,6 @@ export default {
     margin-top: 10px;
     font-size: 12px;
     font-weight: 100;
-    //border: 1px solid red;
   }
 
   .personaMini {
@@ -316,7 +306,6 @@ export default {
     margin: auto;
     margin-top: 20px;
     flex-direction: row;
-    //border: 1px solid red;
     padding: 0;
     &:hover {
       margin-left: 0px;

@@ -1,6 +1,5 @@
 <template>
   <div class="topBar">
-    <!-- <p class="title2">C-01 project</p> -->
     <GlitchTxt class="title2">C-01 project</GlitchTxt>
     <div class="socialsContainer">
       <div class="logoContainer" @click="goToExternal('https://discord.gg/c-01')">
@@ -74,24 +73,20 @@ export default {
   top: 0;
   width: calc(100% - 100px);
   height: 100px;
-  //margin-bottom: -0px;
   padding: 0 50px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   vertical-align: middle;
   z-index: 1000;
   transition: all 200ms;
-  //border: 1px solid red;
 }
 
 .socialsContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  //width: 190px;
 }
 
 .logoContainer {

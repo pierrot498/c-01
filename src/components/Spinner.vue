@@ -23,8 +23,6 @@ export default {
 
 <style lang="scss" scoped>
 .spin {
-  // width: 300px;
-  // height: 300px;
   margin-left: -300px;
   margin-bottom: 300px;
 }
@@ -36,7 +34,6 @@ export default {
   transition: all 500ms ease-in-out;
   fill: $white-color;
   > * {
-    //fill: $white-color;
     stroke: $white-color;
     stroke-width: 2px;
     transition: all 500ms ease-in-out;
