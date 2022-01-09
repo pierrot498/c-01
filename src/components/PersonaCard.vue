@@ -1,6 +1,6 @@
 <template>
   <div class="teamMember">
-    <p class="text name">{{ name }}</p>
+    <p class="text name" v-html="name"></p>
     <div class="personaContainer">
       <img class="persona" :style="style" :src="pic" />
     </div>

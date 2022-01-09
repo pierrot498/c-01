@@ -38,7 +38,7 @@ export default new Vuex.Store({
     ],
     Team: [
       {
-        name: "Gilberto Zaragoza, 3D artist",
+        name: "Gilberto Zaragoza,<br/> 3D artist",
         pic: require("@/assets/team/gilberto.jpg"),
         insta: "",
         linkedin: "https://www.linkedin.com/in/gilbertozaragoza/?originalSubdomain=mx",
@@ -47,7 +47,7 @@ export default new Vuex.Store({
         twitter: "",
       },
       {
-        name: "Kevin Didelot, Cyber security developer",
+        name: "Kevin Didelot,<br/> Cyber security developer",
         pic: require("@/assets/team/kevin.jpg"),
         insta: "",
         linkedin: " https://www.linkedin.com/in/kevin-didelot/",
@@ -56,7 +56,7 @@ export default new Vuex.Store({
         twitter: "",
       },
       {
-        name: "Luis Monteiro,</b> Fashion designer",
+        name: "Luis Monteiro,<br/> Fashion designer",
         pic: require("@/assets/team/luis.jpg"),
         insta: "",
         linkedin: "https://www.linkedin.com/in/luis-monteiro-31159b72/",
@@ -65,7 +65,7 @@ export default new Vuex.Store({
         twitter: "",
       },
       {
-        name: "Carla Huvelin, Accessory Designer",
+        name: "Carla Huvelin,<br/> Accessory Designer",
         pic: require("@/assets/team/carla.jpg"),
         insta: "https://instagram.com/hvlcarla?utm_medium=copy_link",
         linkedin: "https://www.linkedin.com/in/carla-huvelin-9a1460a2/",
@@ -74,7 +74,7 @@ export default new Vuex.Store({
         twitter: "",
       },
       {
-        name: "Tanguy Demme, Web Developer",
+        name: "Tanguy Demme,<br/> Web Developer",
         pic: require("@/assets/team/tanguy.jpg"),
         insta: "",
         linkedin: "https://www.linkedin.com/in/dtanguy",
@@ -83,7 +83,7 @@ export default new Vuex.Store({
         twitter: "",
       },
       {
-        name: "Dr. Kevin Haddad, Plastic Surgeon",
+        name: "Dr. Kevin Haddad,<br/> Plastic Surgeon",
         pic: require("@/assets/team/dr_kevin.jpg"),
         insta: "",
         linkedin: "https://www.linkedin.com/in/kevin-haddad-494438153/?originalSubdomain=fr",
@@ -92,7 +92,7 @@ export default new Vuex.Store({
         twitter: "",
       },
       {
-        name: "Rangga Chandra, Head moderator",
+        name: "Rangga Chandra,<br/> Head moderator",
         pic: require("@/assets/team/rangga.jpg"),
         insta: "https://www.instagram.com/rc.noir/",
         linkedin: "",

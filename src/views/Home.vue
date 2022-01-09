@@ -485,6 +485,7 @@ export default {
           .from("#pcard3", { x: innerWidth * this.aSpeed, opacity: 0 })
           .from("#pcard4", { x: -innerWidth * this.aSpeed, opacity: 0 })
           .from("#pcard5", { x: innerWidth * this.aSpeed, opacity: 0 })
+          .from("#pcard6", { x: innerWidth * this.aSpeed, opacity: 0 })
           .call(() => {
             setTimeout(() => {
               this.show.footer = true;

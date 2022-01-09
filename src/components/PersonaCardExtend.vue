@@ -176,6 +176,7 @@ export default {
   width: 90px;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   &:hover {
     box-sizing: border-box;
     filter: drop-shadow(0px 0px 4px $white-color);
