@@ -261,7 +261,7 @@ export default {
   top: 0;
   left: 0;
   z-index: 1;
-  opacity: 0.5;
+  opacity: 0.4;
   // background-image: url("https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg");
   //animation: killBg 10s infinite alternate;
 }

@@ -56,6 +56,7 @@ export default {
   margin-top: 200px;
   box-shadow: 0px 0px 3px #ffffff;
   z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .footercontainer {
