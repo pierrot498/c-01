@@ -120,7 +120,7 @@ export default {
   }
   .name {
     width: 200px;
-    font-size: 15px;
+    font-size: 14px;
     margin-bottom: 15px;
   }
   .fab {

@@ -86,8 +86,10 @@
 
     <div class="r77"></div>
     <div class="viewContainer" id="faq" v-bind:style="{ display: show.road ? 'flex' : 'none', opacity: show.road ? '1' : '0' }">
-      <div class="center max">
+      <div class="center" style="margin-top: 75px; margin-bottom: 0">
         <GlitchTxt class="title1 title3 t7">Roadmap /</GlitchTxt>
+      </div>
+      <div class="center max">
         <div class="contentRoadMap c7">
           <div class="roadMapContainer">
             <div class="blockContainer leftBlock">
@@ -757,7 +759,7 @@ export default {
   justify-content: center;
   width: 100%;
   margin: auto;
-  padding-top: 100px;
+  margin-top: -50px;
 }
 
 .roadMapContainer {
@@ -981,8 +983,20 @@ export default {
 }
 
 @media screen and (max-width: $layout-breakpoint-medium) {
+  .cardNft {
+    margin-top: 25px;
+    // margin-bottom: -150px;
+  }
+  .contentTotalDistr {
+    //   margin-bottom: -150px;
+  }
   .contentRoadMap {
-    padding-top: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .contentFAQ {
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   .roadMapContainer {
     display: flex;
