@@ -187,6 +187,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
 }
 
 .icon {
