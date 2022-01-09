@@ -68,7 +68,7 @@ export default {
         c.height = h;
         opts.cx = w / 2;
         opts.cy = h / 2;
-        opts.len = (h + w) / 100;
+        opts.len = (h + w) / 60;
         dieX = w / 2 / opts.len;
         dieY = h / 2 / opts.len;
       };
@@ -82,7 +82,10 @@ export default {
       ctx.fillRect(0, 0, w, h);
 
       function loop() {
-        window.requestAnimationFrame(loop);
+        setTimeout(() => {
+          window.requestAnimationFrame(loop);
+        }, 20);
+        // window.requestAnimationFrame(loop);
 
         ++tick;
 

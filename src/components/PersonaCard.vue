@@ -77,6 +77,7 @@ export default {
   border-radius: 10000px;
   object-fit: cover;
   transition: all 100ms ease-in-out;
+  box-shadow: 0px 0px 5px 0px #ffffff;
 }
 
 .socialsContainer2 {

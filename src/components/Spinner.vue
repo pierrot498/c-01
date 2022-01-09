@@ -35,7 +35,7 @@ export default {
   fill: $white-color;
   > * {
     stroke: $white-color;
-    stroke-width: 2px;
+    stroke-width: 3px;
     transition: all 500ms ease-in-out;
   }
 }

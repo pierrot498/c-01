@@ -695,6 +695,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  margin-bottom: 75px;
 }
 .cardLeft {
   width: 45%;
@@ -703,14 +704,17 @@ export default {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    box-shadow: 0px 0px 7px #ffffff;
+    box-shadow: 0px 0px 5px #ffffff;
   }
 }
 .cardRight {
+  background-color: rgba(0, 0, 0, 0.5);
   width: 55%;
   border-top: 1px solid $white-color;
   border-right: 1px solid $white-color;
   border-bottom: 1px solid $white-color;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0px 0px 5px 0px #ffffff;
   padding: 20px;
   display: flex;
   flex-direction: column;
