@@ -77,8 +77,8 @@
             <Spinner class="spinner" />
           </div>
           <p class="text totalTxt">
-            The blockchain brings the decentralization and community around new digital initiatives, and we have the vision to keep it that way. That’s why we decided to split the revenue made with the fashion industry directly with our community and core holders. The money earned will be given to
-            our holders in terms of tokens, exclusive branded NFT drops, and physical merch drops from all our fashion partners.
+            The blockchain brings the decentralization and community around new digital initiatives, and we have the vision to keep it that way. That’s why we decided to split the revenue made with the fashion industry directly with our community and core holders.<br />The money earned will be given
+            to our holders in terms of tokens, exclusive branded NFT drops, and physical merch drops from all our fashion partners.
           </p>
         </div>
       </div>
@@ -102,7 +102,7 @@
               <div class="block b4 swapMob">
                 <p class="titleb">Sale Event</p>
                 <p class="text txtb">
-                  The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord . The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
+                  The collection of 8,888 NFTs will be directly available for purchase on our website. Please use only the link provided by our social media account or in Discord. The security of our holders is our top priority, and so we have spent an immense amount of time with our cyber security
                   experts to secure and protect our website against any attack or scams, as well as to provide our holders with the most gas efficient ERC-1155 token possible.
                 </p>
               </div>
@@ -218,9 +218,9 @@ export default {
         footer: false,
       },
       intro: {
-        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers. We unified the most <b>experienced people</b> in the industry to deliver a remarkable, cutting-edge product.",
+        txt1: "C-01 is a project composed of 8,888 NFTs crafted by talented and expert designers and developers.<br/>We unified the most <b>experienced people</b> in the industry to deliver a remarkable, cutting-edge product.",
         active1: false,
-        txt2: "You can participate in our Raffle to get a chance to mint your own C-01. On <b>Thursday 13th, 2pm UTC</b>, Metamask wallets registration for the Raffle will open for 12 hours. To enter the raffle you will have to go on our website and log your wallet account with <b>at least 0.28 ETH</b>.",
+        txt2: "You can participate in our Raffle to get a chance to mint your own C-01.<br/>On <b>Thursday 13th, 2pm UTC</b>, Metamask wallets registration for the Raffle will open for 12 hours.<br/>To enter the raffle you will have to go on our website and log your wallet account with <b>at least 0.28 ETH</b>.",
         active2: false,
         txt3: "The winners of the raffle will be able to mint on <b>Friday, 14th at 4pm UTC</b> with a maximum amount of <b>2 NFTs per wallet</b>. If you are one of our whitelisted members, you will be able to <b>mint 2 hours prior</b>, at <b>2pm UTC</b>.",
         active3: false,

@@ -129,7 +129,7 @@ body,
   margin: 0;
   text-align: left;
   margin: 10px auto;
-  text-align: justify;
+  //text-align: justify;
 }
 b {
   font-weight: 800;

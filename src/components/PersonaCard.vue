@@ -64,7 +64,7 @@ export default {
 
 .name {
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 15px;
   margin: auto;
   margin-bottom: 40px;
   width: 300px;

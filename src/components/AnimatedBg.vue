@@ -72,7 +72,6 @@ export default {
         dieX = w / 2 / opts.len;
         dieY = h / 2 / opts.len;
       };
-
       setCanvasExtents();
       window.onresize = () => {
         setCanvasExtents();
