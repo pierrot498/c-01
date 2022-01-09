@@ -727,6 +727,7 @@ export default {
 .cardNft {
   margin: auto;
   margin-top: 75px;
+  margin-bottom: 75px;
 }
 
 /*********************************** Community View ***********************************/
