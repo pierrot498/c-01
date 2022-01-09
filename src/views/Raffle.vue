@@ -50,7 +50,7 @@ export default {
   }
 }
 
-.inline3 {
+.inline {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
