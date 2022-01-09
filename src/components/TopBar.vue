@@ -218,5 +218,8 @@ export default {
   font-weight: 100;
   letter-spacing: 0.3em;
   font-size: 13px;
+  // &:hover {
+  //   //background: rgba(#c2c2c2, 0.3);
+  // }
 }
 </style>
