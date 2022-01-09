@@ -277,8 +277,8 @@ export default {
   .descrText {
     margin: auto;
     text-align: left;
-    text-align: justify;
-    text-justify: inter-word;
+    // text-align: justify;
+    // text-justify: inter-word;
     margin-top: 10px;
     font-size: 12px;
     font-weight: 100;
