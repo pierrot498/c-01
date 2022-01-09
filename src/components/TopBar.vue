@@ -187,7 +187,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
 }
 
 .icon {
@@ -196,6 +195,7 @@ export default {
   margin: 0;
   padding: 15px 20px;
   padding-right: 22px;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   &:hover {
     background: rgba(#c2c2c2, 0.3);
   }
@@ -205,6 +205,7 @@ export default {
   color: $white-color;
   font-size: 30px;
   opacity: 0.85;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   &:hover {
     box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
     opacity: 1;
@@ -218,6 +219,7 @@ export default {
   font-weight: 100;
   letter-spacing: 0.3em;
   font-size: 13px;
+  cursor: url("../assets/cursors/Cursor2Glow60px.png") 32 32, auto;
   // &:hover {
   //   //background: rgba(#c2c2c2, 0.3);
   // }
