@@ -12,12 +12,12 @@ export default new Vuex.Store({
       },
       {
         q: "How many NFT can I mint per wallet ? ",
-        r: "You can mint a maximum of 2 NTFs per Ethereum wallet.",
+        r: "You can mint a maximum of 2 NFTs per Ethereum wallet.",
         hide: true,
       },
       {
         q: "How can I register for the raffle ?",
-        r: "Visit our website on Tuesday 13th at 2pm UTC to register for the raffle. Please be aware that you need enough funds on your wallet to mint at least 1 C-01 NFT. We will only verify the wallet addresses with a minimum of 0.28 ETH (0.25 + Gas fees).",
+        r: "Visit our website on Thursday 13th at 2pm UTC to register for the raffle. Please be aware that you need enough funds on your wallet to mint at least 1 C-01 NFT. We will only verify the wallet addresses with a minimum of 0.28 ETH (0.25 + Gas fees).",
         hide: true,
       },
       {
