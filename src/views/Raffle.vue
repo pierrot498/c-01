@@ -2,7 +2,7 @@
   <div class="raffle">
     <div class="viewContainer">
       <div class="center">
-        <div class="raffeContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
+        <div class="raffeContainer">
           <div class="inline">
             <div class="cornerLeftTop2" />
             <div class="cornerRightTop2" />
@@ -10,6 +10,9 @@
           <div class="txt">
             <p class="title2">Register to the raffle now</p>
             <p class="text">If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.</p>
+            <div class="countdown">
+              <p class="title2">{{ cd }}</p>
+            </div>
           </div>
           <div class="inline">
             <div class="cornerLeftBottom2" />
@@ -24,12 +27,39 @@
 
 <script>
 // https://www.figma.com/proto/8jqkgljMtHj597jYXLx22c/C-01-RAFFLE?page-id=0%3A1&node-id=1%3A122&scaling=min-zoom
+
+// Raffle Begins in "countdown"
+// 13/01 a 2PM UTC (+1 paris)
+
+// Raffle ends "Countdown"
+// 14th 2AM UTC
+
 export default {
   name: "Raffle",
   data: function () {
-    return {};
+    return {
+      cd: "--:--:--:--",
+    };
   },
-  mounted() {},
+  created() {
+    let raffleDate1 = new Date("Jan 13, 2022 14:00:00").getTime();
+    //let raffleDate2 = new Date("Jan 14, 2022 02:00:00").getTime();
+
+    let x = setInterval(() => {
+      let now = new Date().getTime();
+      let d = raffleDate1 - now;
+
+      var days = Math.floor(d / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((d % (1000 * 60)) / 1000);
+
+      this.cd = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (d < 0) {
+        clearInterval(x);
+      }
+    }, 1000);
+  },
   methods: {
     register() {
       console.log("register");
@@ -71,6 +101,10 @@ export default {
 .title2 {
   text-align: center;
   margin-bottom: 30px;
+}
+
+.countdown {
+  font-size: 50px;
 }
 
 .cornerLeftTop2 {

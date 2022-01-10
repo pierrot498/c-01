@@ -2,7 +2,7 @@
   <div class="mint">
     <div class="viewContainer">
       <div class="center">
-        <div class="raffeContainer" @mouseenter="mouseEnter" @mousemove="mouseMove" @mouseleave="mouseLeave">
+        <div class="raffeContainer">
           <div class="inline">
             <div class="cornerLeftTop2" />
             <div class="cornerRightTop2" />
