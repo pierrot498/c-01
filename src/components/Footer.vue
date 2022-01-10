@@ -33,7 +33,7 @@
         <p class="text small">All Rights Reserved C-01</p>
       </div>
       <div class="lineSmall">
-        <p class="text small">All contents of this document, unless otherwise credited, are copyright © 2021 C-01</p>
+        <p class="text small">All contents of this document, unless otherwise credited, are copyright © 2022 C-01</p>
       </div>
     </div>
   </div>
