@@ -10,8 +10,10 @@
           <div class="txt">
             <p class="title2">Register to the raffle now</p>
             <p class="text">If you are whitelisted, you will be able to mint 2 hours prior to the public sale on Friday,14th at 2pm UTC. You will be guaranteed to mint up to 2 NFTs. You can however register for the raffle with a different Ethereum address.</p>
+
+            <p class="title2 tt">{{ curTxt }}</p>
             <div class="countdown">
-              <p class="title2">{{ cd }}</p>
+              <GlitchTxt class="tt2">{{ cd }}</GlitchTxt>
             </div>
           </div>
           <div class="inline">
@@ -26,6 +28,7 @@
 </template>
 
 <script>
+import GlitchTxt from "@/components/GlitchTxt";
 // https://www.figma.com/proto/8jqkgljMtHj597jYXLx22c/C-01-RAFFLE?page-id=0%3A1&node-id=1%3A122&scaling=min-zoom
 
 // Raffle Begins in "countdown"
@@ -38,25 +41,37 @@ export default {
   name: "Raffle",
   data: function () {
     return {
-      cd: "--:--:--:--",
+      // raffleDate1: new Date("Jan 13, 2022 14:00:00").getTime(),
+      // raffleDate2: new Date("Jan 14, 2022 02:00:00").getTime(),
+      raffleDate1: new Date("Jan 10, 2022 12:39:50").getTime(),
+      raffleDate2: new Date("Jan 10, 2022 12:40:10").getTime(),
+      txt1: "Raffle registration begins in",
+      txt2: "Raffle registration ends in",
+      curDateGoal: "",
+      curTxt: "",
+      cd: "-- -- -- --",
     };
   },
+  components: { GlitchTxt },
   created() {
-    let raffleDate1 = new Date("Jan 13, 2022 14:00:00").getTime();
-    //let raffleDate2 = new Date("Jan 14, 2022 02:00:00").getTime();
+    this.curDateGoal = this.raffleDate1;
+    this.curTxt = this.txt1;
 
     let x = setInterval(() => {
       let now = new Date().getTime();
-      let d = raffleDate1 - now;
+      let d = this.curDateGoal - now;
 
-      var days = Math.floor(d / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((d % (1000 * 60)) / 1000);
-
-      this.cd = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-      if (d < 0) {
+      if (d < 0 && this.curDateGoal === this.raffleDate1) {
+        this.curDateGoal = this.raffleDate2;
+        this.curTxt = this.txt2;
+      } else if (d < 0) {
         clearInterval(x);
+      } else {
+        var days = Math.floor(d / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((d % (1000 * 60)) / 1000);
+        this.cd = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
       }
     }, 1000);
   },
@@ -103,8 +118,19 @@ export default {
   margin-bottom: 30px;
 }
 
+.tt {
+  margin-top: 15px;
+}
+
 .countdown {
+}
+
+.tt2 {
+  font-family: "Helvetica Neue", sans-serif;
+  letter-spacing: 3px;
+  font-weight: 100;
   font-size: 50px;
+  text-transform: uppercase;
 }
 
 .cornerLeftTop2 {
